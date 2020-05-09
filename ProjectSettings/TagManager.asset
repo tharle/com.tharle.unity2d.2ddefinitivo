@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - tagTerreno
+  - tagCaixa
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Chao
+  - teste
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3153204671
+    locked: 0
+  - name: layParedeFundo
+    uniqueID: 3937391267
+    locked: 0
+  - name: layObjetosDecoracao
+    uniqueID: 3771401267
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: layPlataforma
+    uniqueID: 1698541087
+    locked: 0
+  - name: layDecoracaoPrimeiroPlano
+    uniqueID: 4071403411
+    locked: 0
