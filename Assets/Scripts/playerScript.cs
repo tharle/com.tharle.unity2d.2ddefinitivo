@@ -36,8 +36,9 @@ public class playerScript : MonoBehaviour{
         playerAnimator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         updateDirecaoVisao();
-
     }
+
+    //Adicionando comentario teste GIT
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
     void FixedUpdate() {
