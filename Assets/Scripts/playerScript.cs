@@ -21,6 +21,11 @@ public class playerScript : MonoBehaviour{
     public Collider2D colliderStand, colliderCrounch; // Colisores em pé e abaixado
     public LayerMask whatIsGround; // Indica o que é superficie para o teste da layer Chao
     public LayerMask interacao; // Indica quais objetos sao interagiveis 
+
+
+    //Sitema de armas
+    public GameObject[] weaponAnimations;
+
     public float speed; // Velocidade do personagem
     public float jumpForce; // Força do pulo do personagem
     public bool grounded; // Inicia se o pj está em alguma superfície 
@@ -33,9 +38,10 @@ public class playerScript : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        playerAnimator = GetComponent<Animator>();
-        playerRigidbody = GetComponent<Rigidbody2D>();
-        updateDirecaoVisao();
+        this.playerAnimator = GetComponent<Animator>();
+        this.playerRigidbody = GetComponent<Rigidbody2D>();
+        this.updateDirecaoVisao();
+        this.resetGameObjects(this.weaponAnimations);
     }
 
     //Adicionando comentario teste GIT
@@ -177,7 +183,7 @@ public class playerScript : MonoBehaviour{
     private void interagir(){
         // Castando um Raio de HIT da posição da mão do personagem até a direita Vector3(1, 0, 0)
         RaycastHit2D rayCastHit = Physics2D.Raycast(this.hand.position, this.direcaoVisao,.1f, this.interacao);
-        Debug.DrawRay(this.hand.position, this.direcaoVisao * .1f, Color.red);
+        // Debug.DrawRay(this.hand.position, this.direcaoVisao * .1f, Color.red);
 
         if(rayCastHit) {
             objetoInteracao = rayCastHit.collider.gameObject;
@@ -187,7 +193,22 @@ public class playerScript : MonoBehaviour{
     }
 
     public void setAttack(int attackingValue){
-        this.attacking = attackingValue > 0 ? true : false;
+        this.attacking = attackingValue > 0;
+
+        if(!this.attacking){
+            this.weaponAnimations[2].SetActive(false);
+        }
+    }
+
+    private void activeWeaponAnimation(int idWeaponAnimation){
+        this.resetGameObjects(this.weaponAnimations);
+        this.weaponAnimations[idWeaponAnimation].SetActive(true);
+    }
+
+    private void resetGameObjects(GameObject[] gameObjects){
+        foreach (var gameObject in gameObjects){
+            gameObject.SetActive(false);
+        }
     }
 
 

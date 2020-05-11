@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tagTerreno
   - tagCaixa
+  - tagArma
   layers:
   - Default
   - TransparentFX
