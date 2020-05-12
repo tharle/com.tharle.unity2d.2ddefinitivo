@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class _GameController : MonoBehaviour{
     public int teste;
+    public string[] damageTypes;
 
     // Start is called before the first frame update
     void Start(){

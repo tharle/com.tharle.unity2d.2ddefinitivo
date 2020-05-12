@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerScript : MonoBehaviour{
+public class PlayerScript : MonoBehaviour{
 
     // Variaveis componentes
     private Animator playerAnimator; // Parte de animacao do personagem
