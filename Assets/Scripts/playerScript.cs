@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour{
 
     // Variaveis componentes
+    [Header("Objetos componentes")]
     private Animator playerAnimator; // Parte de animacao do personagem
     private Rigidbody2D playerRigidbody; // Parte física do personagem
     private Vector3 direcaoVisao; // Direcao de visao do personagem
 
 
     // Variaveis de fisica
+    [Header("Variaveis de fisica")]
     private float eixoX, eixoY; // eixos
 
     // Paramêtros publicos
@@ -23,7 +25,7 @@ public class PlayerScript : MonoBehaviour{
     public LayerMask interacao; // Indica quais objetos sao interagiveis 
 
 
-    //Sitema de armas
+    [Header("Sitema de armas")]
     public GameObject[] weaponAnimations;
 
     public float speed; // Velocidade do personagem

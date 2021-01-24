@@ -36,6 +36,10 @@ public class DanoInimigoControle : MonoBehaviour{
     public GameObject barrasVida; // Todas as Barras de vida do personagem
     public Transform barraVida; // Objeto indicador da quantidade de vida
     public GameObject txtDano; // OBjeto que ira exibir o valor do dano tomado
+
+    [Header("Animação")]
+    public int idAnimation; // identificador da animação
+    private Animator inimigoAnimator; // Parte de animacao do personagem
     
     private void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
@@ -47,15 +51,13 @@ public class DanoInimigoControle : MonoBehaviour{
         this.barrasVida.SetActive(false);// Quando o personagem entra na cena, a barra ainda nao é exibida
         this.barraVida.localScale = new Vector3(1, 1, 1); // Reseta a Barra de vida
         this.txtDano.GetComponentInChildren<MeshRenderer>().sortingLayerName = "HUD";
-        // this.animator = GetComponent<Animator>();
-
+        this.inimigoAnimator = GetComponent<Animator>();
+        this.inimigoAnimator.SetInteger("idAnimation", 0); // inicia personagem na animação idle
         // knockBackPosition.localPosition = new Vector3(konckBackX, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
     }
 
     private void Update() {
-        // print("Jogador está a " + (this.isPlayerLeft()? "esquerda" : "direita") + " do inimigo. " );
-
-        // animator.SetBool("grounded", true);
+        this.inimigoAnimator.SetBool("grounded", true);
     }
 
     void FixedUpdate() {
@@ -78,16 +80,15 @@ public class DanoInimigoControle : MonoBehaviour{
             case "tagArma":
                 WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
 
-                // animator.SetTrigger("hit");
+                inimigoAnimator.SetTrigger("hit");
 
                 if(weaponInfo && this.gameController){
                     string damageType = this.gameController.damageTypes[weaponInfo.damageType];
                     float danoTotalArma = Mathf.Round(Random.Range(weaponInfo.damageMin, weaponInfo.damageMax));
-                    print(" DANO DA ARMA RANDOM "+ danoTotalArma);
+                    print(" DANO DA ARMA RANDOM : "+ danoTotalArma);
 
                     // AnimacaoDano(collider); // Animação de dano normal
-                    GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], collider.transform.position, transform.localRotation);
-                    Destroy(fxTemp, 1);
+                    AnimacaoDano(collider);
 
                     danoTotalArma *= this.ajusteDano.Length > weaponInfo.damageType ? this.ajusteDano[weaponInfo.damageType] : 1;
                     print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+damageType+".");
@@ -106,7 +107,7 @@ public class DanoInimigoControle : MonoBehaviour{
     /// <param name="collider">Colisor2D vindo do OnTrigger</param>
     private void AnimacaoDano(Collider2D collider){
         WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
-        GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], collider.transform.position, transform.localRotation);
+        GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], transform.position, transform.localRotation);
         Destroy(fxTemp, 1);
     }
 
@@ -147,8 +148,8 @@ public class DanoInimigoControle : MonoBehaviour{
         // Inimigo morreu
         this.pontosVidaInimigoAtual = 0;
         print("Inimigo morreu.");
-        // this.animator.SetInteger("idAnimation", 3);
-        Destroy(this.gameObject, 2);
+        this.inimigoAnimator.SetInteger("idAnimation", 3); // Muda identificador para 3 (Animação de morte)
+        Destroy(this.gameObject, 2);// Destroi objeto da cena
     }
 
     private bool isDead(){
