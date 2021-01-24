@@ -18,7 +18,7 @@ TagManager:
   - 
   - Chao
   - teste
-  - 
+  - inimigo
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: layDecoracaoPrimeiroPlano
     uniqueID: 4071403411
+    locked: 0
+  - name: HUD
+    uniqueID: 3747771651
     locked: 0
