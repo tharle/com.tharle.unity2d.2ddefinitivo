@@ -44,6 +44,9 @@ public class DanoInimigoControle : MonoBehaviour{
     [Header("Configuração de chão")]
     public Transform groundCheck; // Verifica se o inimigo está pisando no chao
     public LayerMask whaIsGround; // Coleção de camadas que identifica que é chão ou não.
+
+    [Header("Configuração de loot")]
+    public GameObject[] loots;
     
     private void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
@@ -226,11 +229,21 @@ public class DanoInimigoControle : MonoBehaviour{
         this.pontosVidaInimigoAtual = 0;
         print("Inimigo morreu.");
         this.inimigoAnimator.SetInteger("idAnimation", 3); // Muda identificador para 3 (Animação de morte)
-        StartCoroutine("Loot");
+        StartCoroutine("DieAndLoot");
     }
 
     private bool isDead() {
         return this.pontosVidaInimigoAtual <= 0;
+    }
+
+    /// <summary>
+    /// Dropa todo o loot do inimigo
+    /// </summary>
+    private void DroparLoot(){
+        
+        foreach (GameObject loot in this.loots) {
+            GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
+        }
     }
 
     // -------------------------------------------------------
@@ -265,13 +278,19 @@ public class DanoInimigoControle : MonoBehaviour{
     /// Rotina para exibir as aminações de morte e loot
     /// </summary>
     /// <returns></returns>
-    IEnumerator Loot(){
+    IEnumerator DieAndLoot(){
         yield return new WaitForSeconds(1); // Espera um segundo
+        
         GameObject fxMorte = Instantiate(gameController.fxMorte, groundCheck.position, transform.localRotation); // Pega a animação de morte
+        
         yield return new WaitForSeconds(.5f); // Espera mais un segundo
+        
         spriteRenderer.enabled = false;
-        yield return new WaitForSeconds(1f); // Espera mais un segundo
+        
+        yield return new WaitForSeconds(.7f); // Espera mais un segundo
+        
         Destroy(fxMorte); // Destroi animação depois de 1s
         Destroy(this.gameObject);// Destroi objeto da cena
+        DroparLoot(); // Dropa o loot do inimigo
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - tagTerreno
   - tagCaixa
   - tagArma
+  - tagColetavel
   layers:
   - Default
   - TransparentFX
