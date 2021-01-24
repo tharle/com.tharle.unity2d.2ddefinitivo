@@ -40,6 +40,10 @@ public class DanoInimigoControle : MonoBehaviour{
     [Header("Animação")]
     public int idAnimation; // identificador da animação
     private Animator inimigoAnimator; // Parte de animacao do personagem
+
+    [Header("Configuração de chão")]
+    public Transform groundCheck; // Verifica se o inimigo está pisando no chao
+    public LayerMask whaIsGround; // Coleção de camadas que identifica que é chão ou não.
     
     private void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
@@ -52,7 +56,7 @@ public class DanoInimigoControle : MonoBehaviour{
         this.barraVida.localScale = new Vector3(1, 1, 1); // Reseta a Barra de vida
         this.txtDano.GetComponentInChildren<MeshRenderer>().sortingLayerName = "HUD";
         this.inimigoAnimator = GetComponent<Animator>();
-        this.inimigoAnimator.SetInteger("idAnimation", 0); // inicia personagem na animação idle
+        this.inimigoAnimator.SetInteger("idAnimation", idAnimation); // inicia personagem na animação idle
         // knockBackPosition.localPosition = new Vector3(konckBackX, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
     }
 
@@ -131,11 +135,9 @@ public class DanoInimigoControle : MonoBehaviour{
             txtDanoTemp.GetComponent<Rigidbody2D>().AddForce(new Vector2(50 * direcaoVisao, 150));
             Destroy(txtDanoTemp, 0.5f);
 
-            if(this.pontosVidaInimigoAtual <= 0)
-            {
+            if(isDead()) {
                 Morreu();
-            } else 
-            {
+            } else {
                 StartCoroutine("TomandoDanoCorouTine");
                 print("Restam " +this.pontosVidaInimigoAtual+ " ponto(s) de vida do Inimigo.");
                 this.KnockBackPeronagem();
@@ -144,20 +146,7 @@ public class DanoInimigoControle : MonoBehaviour{
         
     }
 
-    private void Morreu(){
-        // Inimigo morreu
-        this.pontosVidaInimigoAtual = 0;
-        print("Inimigo morreu.");
-        this.inimigoAnimator.SetInteger("idAnimation", 3); // Muda identificador para 3 (Animação de morte)
-        Destroy(this.gameObject, 2);// Destroi objeto da cena
-    }
-
-    private bool isDead(){
-        return this.pontosVidaInimigoAtual <= 0;
-    }
-
-    private void KnockBackPeronagem()
-    {
+    private void KnockBackPeronagem() {
         //Clona o objeto inicial e retorna
         //Nesse lógica aqui, é instanciado um objeto com força magnética contrária (repulsão)
         //Assim, tudo que é "RigedBody" é expelido
@@ -232,6 +221,22 @@ public class DanoInimigoControle : MonoBehaviour{
         knockBackPosition.localPosition = new Vector3(this.knockBackPosition.localPosition.x * -1, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
     }
 
+    private void Morreu() {
+        // Inimigo morreu
+        this.pontosVidaInimigoAtual = 0;
+        print("Inimigo morreu.");
+        this.inimigoAnimator.SetInteger("idAnimation", 3); // Muda identificador para 3 (Animação de morte)
+        StartCoroutine("Loot");
+    }
+
+    private bool isDead() {
+        return this.pontosVidaInimigoAtual <= 0;
+    }
+
+    // -------------------------------------------------------
+    // ROTINAS
+    // -------------------------------------------------------
+
     /// <summary>
     /// Rotina para «piscar» o personagem quando ele toma dano
     /// </summary>
@@ -253,5 +258,20 @@ public class DanoInimigoControle : MonoBehaviour{
         this.spriteRenderer.color = personagemCor[0];
         this.tomandoDano = false;
         this.barrasVida.SetActive(false);
+    }
+
+
+    /// <summary>
+    /// Rotina para exibir as aminações de morte e loot
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Loot(){
+        yield return new WaitForSeconds(1); // Espera um segundo
+        GameObject fxMorte = Instantiate(gameController.fxMorte, groundCheck.position, transform.localRotation); // Pega a animação de morte
+        yield return new WaitForSeconds(.5f); // Espera mais un segundo
+        spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(1f); // Espera mais un segundo
+        Destroy(fxMorte); // Destroi animação depois de 1s
+        Destroy(this.gameObject);// Destroi objeto da cena
     }
 }
