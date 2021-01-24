@@ -83,8 +83,11 @@ public class DanoInimigoControle : MonoBehaviour{
                 if(weaponInfo && this.gameController){
                     string damageType = this.gameController.damageTypes[weaponInfo.damageType];
                     float danoTotalArma = Mathf.Round(Random.Range(weaponInfo.damageMin, weaponInfo.damageMax));
-
                     print(" DANO DA ARMA RANDOM "+ danoTotalArma);
+
+                    // AnimacaoDano(collider); // Animação de dano normal
+                    GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], collider.transform.position, transform.localRotation);
+                    Destroy(fxTemp, 1);
 
                     danoTotalArma *= this.ajusteDano.Length > weaponInfo.damageType ? this.ajusteDano[weaponInfo.damageType] : 1;
                     print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+damageType+".");
@@ -95,6 +98,16 @@ public class DanoInimigoControle : MonoBehaviour{
             default:
             break;
         }
+    }
+
+    /// <summary>
+    /// Método que instancia a animação da arma.
+    /// </summary>
+    /// <param name="collider">Colisor2D vindo do OnTrigger</param>
+    private void AnimacaoDano(Collider2D collider){
+        WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
+        GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], collider.transform.position, transform.localRotation);
+        Destroy(fxTemp, 1);
     }
 
     /// <summary>
@@ -112,6 +125,7 @@ public class DanoInimigoControle : MonoBehaviour{
             //Reinicialliza a posicao do texto de dano em resposta a localizacao atual do personagem
             txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x - 0.3f, this.transform.localPosition.y + 0.5f, this.transform.localPosition.z);
             txtDanoTemp.GetComponentInChildren<TextMeshPro>().text = danoRecebido.ToString();
+
             int direcaoVisao = this.isPlayerLeft() ? 1 : -1;
             txtDanoTemp.GetComponent<Rigidbody2D>().AddForce(new Vector2(50 * direcaoVisao, 150));
             Destroy(txtDanoTemp, 0.5f);
