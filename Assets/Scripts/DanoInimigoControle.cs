@@ -286,15 +286,16 @@ public class DanoInimigoControle : MonoBehaviour{
         // Gestão de loot 
         // -------------------------------------------------
         int qntMoedasTotal = 0;
-        
-        foreach (GameObject loot in this.loots) {
-            int quantidadeLoot= Random.Range(1, 10); // Multiplicador de moedas
-            do{
-                GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
-                tempLoot.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200)); // Animação de moeda saltando
-                yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
-                qntMoedasTotal++;
-            } while(--quantidadeLoot > 0);
+        if(loots != null && loots.Length > 0){
+            foreach (GameObject loot in this.loots) {
+                int quantidadeLoot= Random.Range(1, 10); // Multiplicador de moedas
+                do{
+                    GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
+                    tempLoot.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200)); // Animação de moeda saltando
+                    yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
+                    qntMoedasTotal++;
+                } while(--quantidadeLoot > 0);
+            }
         }
         print("Inimigo deixou "+qntMoedasTotal+" moeda" + (qntMoedasTotal > 1? "s":"") + " de ouro" + (qntMoedasTotal > 1? "s":"") + ".");
 

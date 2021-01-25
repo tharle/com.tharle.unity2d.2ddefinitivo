@@ -15,7 +15,7 @@ public class _GameController : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        
+        this.teste = 0;
     }
 
     // Update is called once per frame

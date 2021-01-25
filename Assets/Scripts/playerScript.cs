@@ -112,35 +112,33 @@ public class PlayerScript : MonoBehaviour{
     // FUNÇÕES PARA TRATAR COLISOES
 
     // Ao entrar na colisão
-    private void OnCollisionEnter2D(Collision2D col) {
-        switch(col.gameObject.tag){
-            case "tagColetavel": // Verifica se colide com uma moeda
-                Destroy(col.gameObject);
-                break;
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D col) {
+    //     // evento de colisao
+    // }
 
 
-    // Durante a colisão
-    private void OnCollisionStay2D(Collision2D col) {
-        if(col.gameObject.CompareTag("tagCaixa")) {
-            // print("AI MEU DEUS TÁ COLIDINDO");
-        }
-    }
+    // // Durante a colisão
+    // private void OnCollisionStay2D(Collision2D col) {
+    //     if(col.gameObject.CompareTag("tagCaixa")) {
+    //         // print("AI MEU DEUS TÁ COLIDINDO");
+    //     }
+    // }
 
-    // Ao sair da colisão
-    private void OnCollisionExit2D(Collision2D col) {
-        if(col.gameObject.CompareTag("tagCaixa")) {
-            // print("DESCOLIDIU");
-        }
-    }
+    // // Ao sair da colisão
+    // private void OnCollisionExit2D(Collision2D col) {
+    //     if(col.gameObject.CompareTag("tagCaixa")) {
+    //         // print("DESCOLIDIU");
+    //     }
+    // }
 
     // FUNÇÕES PARA TRATAR Gatilhos
 
     // Ao entrar no Gatilho
     private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.CompareTag("tagCaixa")) {
-            // print("DEU GATILHO");
+        switch(col.gameObject.tag){
+            case "tagColetavel": // Verifica se colide com uma moeda
+                Destroy(col.gameObject);
+                break;
         }
     }
 
