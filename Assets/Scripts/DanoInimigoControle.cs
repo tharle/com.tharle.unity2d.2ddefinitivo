@@ -236,15 +236,6 @@ public class DanoInimigoControle : MonoBehaviour{
         return this.pontosVidaInimigoAtual <= 0;
     }
 
-    /// <summary>
-    /// Dropa todo o loot do inimigo
-    /// </summary>
-    private void DroparLoot(){
-        
-        foreach (GameObject loot in this.loots) {
-            GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
-        }
-    }
 
     // -------------------------------------------------------
     // ROTINAS
@@ -290,7 +281,23 @@ public class DanoInimigoControle : MonoBehaviour{
         yield return new WaitForSeconds(.7f); // Espera mais un segundo
         
         Destroy(fxMorte); // Destroi animação depois de 1s
-        Destroy(this.gameObject);// Destroi objeto da cena
-        DroparLoot(); // Dropa o loot do inimigo
+        
+        // -------------------------------------------------
+        // Gestão de loot 
+        // -------------------------------------------------
+        int qntMoedasTotal = 0;
+        
+        foreach (GameObject loot in this.loots) {
+            int quantidadeLoot= Random.Range(1, 10); // Multiplicador de moedas
+            do{
+                GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
+                tempLoot.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200)); // Animação de moeda saltando
+                yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
+                qntMoedasTotal++;
+            } while(--quantidadeLoot > 0);
+        }
+        print("Inimigo deixou "+qntMoedasTotal+" moeda" + (qntMoedasTotal > 1? "s":"") + " de ouro" + (qntMoedasTotal > 1? "s":"") + ".");
+
+        Destroy(this.gameObject);// Destroi inimigo
     }
 }

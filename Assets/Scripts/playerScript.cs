@@ -113,8 +113,10 @@ public class PlayerScript : MonoBehaviour{
 
     // Ao entrar na colisão
     private void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.CompareTag("tagCaixa")) {
-            // print("COLIDIU");
+        switch(col.gameObject.tag){
+            case "tagColetavel": // Verifica se colide com uma moeda
+                Destroy(col.gameObject);
+                break;
         }
     }
 

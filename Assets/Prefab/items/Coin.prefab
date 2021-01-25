@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5980626827446411879}
   - component: {fileID: 5980626827446411878}
   - component: {fileID: 5980626827446411874}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Coin
   m_TagString: tagColetavel
   m_Icon: {fileID: 0}
