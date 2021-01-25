@@ -333,6 +333,12 @@ Transform:
   m_Father: {fileID: 391492311}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &202516901 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 847111607731698428, guid: 0803006e8d2055344aa9e33474c5daf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 847111607128749096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &210279510
 GameObject:
   m_ObjectHideFlags: 0
@@ -10875,8 +10881,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -523566029
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af2cdf97f178151428be922a7253d379, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14259,12 +14265,12 @@ PrefabInstance:
     - target: {fileID: 847111607731698424, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.999
+      value: -1.855
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698424, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.253
+      value: -0.176
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698424, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
@@ -14319,7 +14325,7 @@ PrefabInstance:
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: whatIsGround.m_Bits
-      value: 1792
+      value: 1280
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
@@ -14370,10 +14376,15 @@ PrefabInstance:
         type: 3}
       propertyPath: colliderCrounch
       value: 
-      objectReference: {fileID: 674856650}
+      objectReference: {fileID: 202516901}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: grounded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
+      propertyPath: attacking
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698427, guid: 0803006e8d2055344aa9e33474c5daf6,
