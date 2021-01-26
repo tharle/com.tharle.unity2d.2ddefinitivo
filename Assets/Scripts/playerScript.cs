@@ -36,6 +36,10 @@ public class PlayerScript : MonoBehaviour{
     public bool grounded; // Inicia se o pj está em alguma superfície 
     public bool attacking; // Indica se o pj está atacando
     public bool lookLeft; //Indica se o personagem tá virado para a esquerda
+
+    [Header("Vida")]
+    public int vidaMax;
+    public int vidaAtual;
     
     // -----------------------------------------------
     // FUNÇÕES DO UNITY
@@ -49,6 +53,7 @@ public class PlayerScript : MonoBehaviour{
         this.playerRigidbody = GetComponent<Rigidbody2D>();
         this.updateDirecaoVisao();
         this.resetGameObjects(this.weaponAnimations);
+        this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
     }
 
     //Adicionando comentario teste GIT
