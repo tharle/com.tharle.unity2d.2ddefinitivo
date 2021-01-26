@@ -54,6 +54,6 @@ public class ChestScript : MonoBehaviour
                 } while(--quantidadeLoot > 0);
             }
         }
-        print("O baú continha deixou "+qntMoedasTotal+" moeda" + (qntMoedasTotal > 1? "s":"") + " de ouro" + (qntMoedasTotal > 1? "s":"") + ".");
+
     }
 }

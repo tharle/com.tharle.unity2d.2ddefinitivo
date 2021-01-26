@@ -60,6 +60,6 @@ TagManager:
   - name: layDecoracaoPrimeiroPlano
     uniqueID: 4071403411
     locked: 0
-  - name: HUD
+  - name: layHUD
     uniqueID: 3747771651
     locked: 0

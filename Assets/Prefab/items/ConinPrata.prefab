@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605f36f8c8541094493efb1c4164e206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 50
+  valor: 5
   tipoMoeda: prata
 --- !u!1 &2515349672860061789
 GameObject:
