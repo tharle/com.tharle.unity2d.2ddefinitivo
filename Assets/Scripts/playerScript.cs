@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour{
 
     // Variaveis componentes
+    [Header("Scripts externos")]
+    private _GameController gameController;
     [Header("Objetos componentes")]
     private Animator playerAnimator; // Parte de animacao do personagem
     private Rigidbody2D playerRigidbody; // Parte física do personagem
     private Vector3 direcaoVisao; // Direcao de visao do personagem
+    
 
 
     // Variaveis de fisica
@@ -40,6 +43,8 @@ public class PlayerScript : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+
         this.playerAnimator = GetComponent<Animator>();
         this.playerRigidbody = GetComponent<Rigidbody2D>();
         this.updateDirecaoVisao();
@@ -137,7 +142,7 @@ public class PlayerScript : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag){
             case "tagColetavel": // Verifica se colide com uma moeda
-                Destroy(col.gameObject);
+                col.gameObject.SendMessage("Coletar", SendMessageOptions.DontRequireReceiver); // Esse segundo parametro evita qualquer erro caso o objeto em questão nao tenha a função
                 break;
         }
     }

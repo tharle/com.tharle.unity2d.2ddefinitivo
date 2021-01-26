@@ -29,7 +29,6 @@ public class ChestScript : MonoBehaviour
             this.spriteRenderer.sprite = sprites[0]; // Fecha ele
         }else{
             this.spriteRenderer.sprite = sprites[1]; // Abre ele
-            this.gameController.teste++;
             if(!empty){
                 StartCoroutine("Loot");
             }

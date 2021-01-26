@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _GameController : MonoBehaviour{
-    [Header("Debug")]
-    public int teste; // Variavel teste nao apagar denovo
-    
+public class _GameController : MonoBehaviour{    
     [Header("Configuração de tipos de danos")]
     public string[] damageTypes;
 
@@ -13,9 +10,12 @@ public class _GameController : MonoBehaviour{
     public GameObject[] fxDano; // Animação de dano
     public GameObject fxMorte; // Animação de morte
 
+    [Header("Armazenamento de itens")]
+    public int qntDinheiro; // Armazena a quantidade de dinheiro
+
     // Start is called before the first frame update
     void Start(){
-        this.teste = 0;
+        
     }
 
     // Update is called once per frame
