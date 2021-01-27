@@ -29,15 +29,6 @@ public class HudScript : MonoBehaviour{
     private void controleBarraVida() {
         float percVida = ((float) playerScript.vidaAtual / (float) playerScript.vidaMax) * 10; // Calcula percentual de vida 0 - 1
 
-        // Representa 0% de vida
-        // if(percVida == 0){
-        //     foreach(Image imgHP in hpBar) {
-        //         imgHP.enabled = false;
-        //     }
-
-        //     return;
-        // }
-
         for(int i = 0, vida = 1; i < hpBar.Length; i++, vida+=2){
             Image imgHP = hpBar[i];
             imgHP.enabled = true;
