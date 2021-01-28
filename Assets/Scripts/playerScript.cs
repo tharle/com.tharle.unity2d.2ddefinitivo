@@ -106,16 +106,7 @@ public class PlayerScript : MonoBehaviour{
             this.idAnimation = 0; // Parado
         }
 
-
-        if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
-            if(objetoInteracao == null){
-                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
-            }else {
-                objetoInteracao.SendMessage("interacao", SendMessageOptions.DontRequireReceiver);
-            }
-        }
-
-        this.controlarEmojiPlayer(objetoInteracao != null);
+        this.Interacao();
 
         if(Input.GetButtonDown("Jump") && grounded && !this.attacking){
             this.playerRigidbody.AddForce(new Vector2(0, this.jumpForce)); // Animação de pulo
@@ -133,12 +124,25 @@ public class PlayerScript : MonoBehaviour{
         
     }
 
+    private void Interacao(){
+         if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
+            if(objetoInteracao == null){
+                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
+            }else {
+                objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
+            }
+        }
+
+        this.controlarEmojiPlayer(objetoInteracao != null);
+    }
+
     private void controlarEmojiPlayer(bool exibirEmoji) {
         //Configuracao de balao
         if(exibirEmoji && this.emoji == null) {
             this.emoji = Instantiate(this.emojiController.emojiAlert, this.transform, false);
         } else if(!exibirEmoji && this.emoji != null) {
-            this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
+            this.emoji.SendMessage("FinalizarEmoji", SendMessageOptions.DontRequireReceiver);
+            // this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
             this.emoji = null; // Perder a referencia
         }
     }
