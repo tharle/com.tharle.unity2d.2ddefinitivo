@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour{
     // Variaveis componentes
     [Header("Scripts externos")]
     private _GameController gameController;
+    private _EmojiController emojiController;
+
     [Header("Objetos componentes")]
     private Animator playerAnimator; // Parte de animacao do personagem
     private Rigidbody2D playerRigidbody; // Parte física do personagem
@@ -40,6 +42,10 @@ public class PlayerScript : MonoBehaviour{
     [Header("Vida")]
     public int vidaMax;
     public int vidaAtual;
+
+    public bool exibirEmoji;
+
+    private GameObject emoji;
     
     // -----------------------------------------------
     // FUNÇÕES DO UNITY
@@ -48,18 +54,22 @@ public class PlayerScript : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+        this.emojiController = FindObjectOfType(typeof(_EmojiController)) as _EmojiController;
 
         this.playerAnimator = GetComponent<Animator>();
         this.playerRigidbody = GetComponent<Rigidbody2D>();
         this.updateDirecaoVisao();
         this.resetGameObjects(this.weaponAnimations);
         this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
+        this.exibirEmoji = false;
     }
 
     //Adicionando comentario teste GIT
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
     void FixedUpdate() {
+        
+        
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.02f, whatIsGround);
         this.playerRigidbody.velocity = new Vector2(this.eixoX * this.speed, this.playerRigidbody.velocity.y);
         
@@ -105,6 +115,8 @@ public class PlayerScript : MonoBehaviour{
             }
         }
 
+        this.controlarEmojiPlayer(objetoInteracao != null);
+
         if(Input.GetButtonDown("Jump") && grounded && !this.attacking){
             this.playerRigidbody.AddForce(new Vector2(0, this.jumpForce)); // Animação de pulo
         }
@@ -117,6 +129,18 @@ public class PlayerScript : MonoBehaviour{
         this.playerAnimator.SetBool("grounded", this.grounded);
         this.playerAnimator.SetInteger("idAnimation", this.idAnimation);
         this.playerAnimator.SetFloat("speedY", playerRigidbody.velocity.y);
+        
+        
+    }
+
+    private void controlarEmojiPlayer(bool exibirEmoji) {
+        //Configuracao de balao
+        if(exibirEmoji && this.emoji == null) {
+            this.emoji = Instantiate(this.emojiController.emojiAlert, this.transform, false);
+        } else if(!exibirEmoji && this.emoji != null) {
+            this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
+            this.emoji = null; // Perder a referencia
+        }
     }
 
     // FUNÇÕES PARA TRATAR COLISOES
