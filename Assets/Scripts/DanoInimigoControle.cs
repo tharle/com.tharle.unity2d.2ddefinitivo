@@ -115,7 +115,10 @@ public class DanoInimigoControle : MonoBehaviour{
     private void AnimacaoDano(Collider2D collider){
         WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
         GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], transform.position, transform.localRotation);
+        print("Antes de destruir AnimacaoDano");
         Destroy(fxTemp, 1);
+        print("Depois de destruir AnimacaoDano");
+        
     }
 
     /// <summary>
