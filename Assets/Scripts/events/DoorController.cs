@@ -9,17 +9,37 @@ public class DoorController : MonoBehaviour {
 
     [Header("Scripts externos")]
     private PlayerScript playerScript;
+    private FadeScript fadeScript;
     
     [Header("Configuração")]
     public Transform destino;
 
     void Start() {
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
+        this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
     }
 
     public void Interacao() {
-        print("O jogador abriu a porta");
-        playerScript.transform.position = destino.position;
+        StartCoroutine("AcionarPorta");
+    }
 
+    IEnumerator AcionarPorta() {
+        print("O jogador abriu a porta");
+
+        this.playerScript.transform.gameObject.SetActive(false); // Esconde personagem
+
+        //Fade In
+        this.fadeScript.StartFadeIn();
+        yield return new WaitWhile(() => this.fadeScript.IsBlackout());
+
+        yield return new WaitForSeconds(.5f); // Da um tempo entre fade In e o Fade out
+
+        //Fade Out
+        this.fadeScript.StartFadeOut();
+
+        this.playerScript.transform.gameObject.SetActive(true); // Exibe personagem
+
+        //Teleportar o personagem pro destido
+        playerScript.transform.position = destino.position;
     }
 }

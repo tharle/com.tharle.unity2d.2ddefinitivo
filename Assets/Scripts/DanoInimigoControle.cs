@@ -144,7 +144,7 @@ public class DanoInimigoControle : MonoBehaviour{
             if(isDead()) {
                 Morreu();
             } else {
-                StartCoroutine("TomandoDanoCorouTine");
+                StartCoroutine("TomandoDano");
                 print("Restam " +this.pontosVidaInimigoAtual+ " ponto(s) de vida do Inimigo.");
                 this.KnockBackPeronagem();
             }
@@ -248,7 +248,7 @@ public class DanoInimigoControle : MonoBehaviour{
     /// Rotina para «piscar» o personagem quando ele toma dano
     /// </summary>
     /// <returns></returns>
-    IEnumerator TomandoDanoCorouTine()
+    IEnumerator TomandoDano()
     {
         this.tomandoDano = true;
         this.barrasVida.SetActive(true);

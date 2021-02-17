@@ -17,9 +17,13 @@ public class _GameController : MonoBehaviour{
     [Header("Elementos UI")]
     public TextMeshProUGUI txtGold;
 
+    [Header("Elementos Fade-In/Fade-Out")]
+    public FadeScript fadeScript;
+
     // Start is called before the first frame update
     void Start(){
-        
+        this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
+        this.fadeScript.StartFadeOut();
     }
 
     // Update is called once per frame
