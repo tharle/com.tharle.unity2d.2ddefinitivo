@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour{
     private Animator playerAnimator; // Parte de animacao do personagem
     private Rigidbody2D playerRigidbody; // Parte física do personagem
     private Vector3 direcaoVisao; // Direcao de visao do personagem
+    private SpriteRenderer playerSpriteRenderer; // Sprites do personagem
     
 
 
@@ -24,7 +25,7 @@ public class PlayerScript : MonoBehaviour{
     public int idAnimation; // identificador da animação
     public Transform groundCheck; //Objeto que verifica colisao com o chao;
     public Transform hand; // Nossa mao
-    public GameObject objetoInteracao;
+    public GameObject objetoInteracao; // Objeto que está interajindo (normalmente é verificado via triggers e camadas)
     public Collider2D colliderStand, colliderCrounch; // Colisores em pé e abaixado
     public LayerMask whatIsGround; // Indica o que é superficie para o teste da layer Chao
     public LayerMask interacao; // Indica quais objetos sao interagiveis 
@@ -58,6 +59,8 @@ public class PlayerScript : MonoBehaviour{
 
         this.playerAnimator = GetComponent<Animator>();
         this.playerRigidbody = GetComponent<Rigidbody2D>();
+        this.playerSpriteRenderer = GetComponent<SpriteRenderer>();
+
         this.updateDirecaoVisao();
         this.resetGameObjects(this.weaponAnimations);
         this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
@@ -199,6 +202,20 @@ public class PlayerScript : MonoBehaviour{
     // -----------------------------------------------
     // FUNÇÕES DO PERSONALISADAS
     // -----------------------------------------------
+
+    /// <summary>
+    ///  Função para mudar o material do personagem e da arma. 
+    ///  Usado para saber se o material do personagem vai ser sensivel a luz ou não. 
+    ///  Nesse exemplo ele é usado ao entrar e sair em uma caverna.
+    /// </summary>
+    /// <param name="novoMaterial"></param>
+    public void SetMaterial(Material novoMaterial){
+        this.playerSpriteRenderer.material = novoMaterial; // Muda material do pernsonagem
+        // Muda o material de todas os efeitos de armas
+        foreach(GameObject weaponAnimmation in this.weaponAnimations) {
+            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
+        }
+    }
 
     private void flipPersonagem(){
         if(!this.attacking){ // Nao girar personagem atacando

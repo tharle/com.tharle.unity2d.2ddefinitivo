@@ -2083,6 +2083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 498756074}
   - component: {fileID: 498756075}
+  - component: {fileID: 498756076}
   m_Layer: 0
   m_Name: pontoLuzTocha3
   m_TagString: Untagged
@@ -2166,6 +2167,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &498756076
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498756073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9f63f155ce40de4cbba679cef783321, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,6 +2279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 536757612}
   - component: {fileID: 536757613}
+  - component: {fileID: 536757614}
   m_Layer: 0
   m_Name: pontoLuzTocha1
   m_TagString: Untagged
@@ -2342,6 +2363,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &536757614
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536757611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9f63f155ce40de4cbba679cef783321, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &574472026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574472027}
   - component: {fileID: 574472028}
+  - component: {fileID: 574472029}
   m_Layer: 0
   m_Name: pontoLuzTocha4
   m_TagString: Untagged
@@ -2435,6 +2476,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &574472029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574472026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9f63f155ce40de4cbba679cef783321, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &589716354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,6 +4911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 962261044}
   - component: {fileID: 962261045}
+  - component: {fileID: 962261046}
   m_Layer: 0
   m_Name: pontoLuzTocha2
   m_TagString: Untagged
@@ -4934,6 +4995,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &962261046
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962261043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9f63f155ce40de4cbba679cef783321, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &966130225
 GameObject:
   m_ObjectHideFlags: 0
@@ -17879,9 +17959,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
+      propertyPath: materialPadrao2D
+      value: 
+      objectReference: {fileID: 2100000, guid: d7ecf5737dfdc8940a5e9c856da5ffe3, type: 2}
+    - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
       propertyPath: whatIsGround.m_Bits
       value: 1280
       objectReference: {fileID: 0}
+    - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
+      propertyPath: materialSenvivelLuz2D
+      value: 
+      objectReference: {fileID: 2100000, guid: 204249d624fc7da4ab8d5c2589931af1, type: 2}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: weaponAnimations.Array.size

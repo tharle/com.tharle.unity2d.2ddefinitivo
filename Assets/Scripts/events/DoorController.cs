@@ -32,11 +32,10 @@ public class DoorController : MonoBehaviour {
     /// Ex: Se o lugar de destino for escuro, então é preciso que o player seja sensivel a luz.
     /// </summary>
     private void controleIluminacaoPlayer(){
-        SpriteRenderer srPlayer = this.playerScript.gameObject.GetComponent<SpriteRenderer>();
         if(this.destinoEscuro){
-            srPlayer.material = materialSenvivelLuz2D;
+             this.playerScript.SetMaterial(materialSenvivelLuz2D);
         } else {
-            srPlayer.material = materialPadrao2D;
+            this.playerScript.SetMaterial(materialPadrao2D);
         }
     }
 
