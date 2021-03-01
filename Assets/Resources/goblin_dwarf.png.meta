@@ -1,73 +1,73 @@
 fileFormatVersion: 2
-guid: c5ced2e21309bd740be3658704603649
+guid: 54d58b66d4cfd654f9519096ea5614a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5108864516334648920
-    second: Barbarian1_0
+      213: 9221252940741045314
+    second: idle_1
   - first:
-      213: 7894597433450948927
-    second: Barbarian1_1
+      213: -8344254983534458486
+    second: idle_2
   - first:
-      213: -7149426255305018647
-    second: Barbarian1_2
+      213: -8857095296843016517
+    second: walk_1
   - first:
-      213: -5185502428929997122
-    second: Barbarian1_3
+      213: 387309278059136077
+    second: walk_2
   - first:
-      213: -5434511126019091241
-    second: Barbarian1_4
+      213: 1548649241921700388
+    second: walk_3
   - first:
-      213: -3063775468671410589
-    second: Barbarian1_5
+      213: -3120246417840872101
+    second: walk_4
   - first:
-      213: -5366906177105649991
-    second: Barbarian1_6
+      213: -2848759835452990792
+    second: walk_5
   - first:
-      213: -2649239290066108497
-    second: Barbarian1_7
+      213: 5833106019922589240
+    second: walk_6
   - first:
-      213: -1606966096686998573
-    second: Barbarian1_8
+      213: 5731812473247986082
+    second: walk_7
   - first:
-      213: 2553762192918487849
-    second: Barbarian1_9
+      213: 7066977499837995705
+    second: walk_8
   - first:
-      213: 451102041876208084
-    second: Barbarian1_10
+      213: -2471025546663283894
+    second: jump_1
   - first:
-      213: 917020437017048720
-    second: Barbarian1_11
+      213: -4429419557497206453
+    second: jump_2
   - first:
-      213: -3206490003738299262
-    second: Barbarian1_12
+      213: 2998586076810649787
+    second: jump_3
   - first:
-      213: 2971488876245394516
-    second: Barbarian1_13
+      213: -7980698178914667043
+    second: jump_4
   - first:
-      213: 295616241678227642
-    second: Barbarian1_14
+      213: -9122776807864278144
+    second: crouch_1
   - first:
-      213: 3042803660290176746
-    second: Barbarian1_15
+      213: 8654302613322797722
+    second: crouch_2
   - first:
-      213: -15094395349688839
-    second: Barbarian1_16
+      213: -4310801945398809485
+    second: atack_1
   - first:
-      213: -210913481236543123
-    second: Barbarian1_17
+      213: -3126734949491719254
+    second: atack_2
   - first:
-      213: -464842401830776344
-    second: Barbarian1_18
+      213: 302482387836154913
+    second: atack_3
   - first:
-      213: -4993086770278306515
-    second: Barbarian1_19
+      213: -8529000223492613893
+    second: hit_1
   - first:
-      213: -5327065787945042815
-    second: Barbarian1_20
+      213: 8850564250001333432
+    second: hit_2
   - first:
-      213: -3162122668130871159
-    second: Barbarian1_21
+      213: 6049351049173672468
+    second: die_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,9 +101,9 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -100
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -181,7 +181,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Barbarian1_0
+      name: idle_1
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a186425acaa919b0800000000000000
-      internalID: -5108864516334648920
+      spriteID: 24c65ec71b878ff70800000000000000
+      internalID: 9221252940741045314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_1
+      name: idle_2
       rect:
         serializedVersion: 2
         x: 240
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f39ed81d98e3f8d60800000000000000
-      internalID: 7894597433450948927
+      spriteID: a89452f5d40433c80800000000000000
+      internalID: -8344254983534458486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_2
+      name: walk_1
       rect:
         serializedVersion: 2
         x: 480
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e271b833b228cc90800000000000000
-      internalID: -7149426255305018647
+      spriteID: bb693e121c6451580800000000000000
+      internalID: -8857095296843016517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_3
+      name: walk_2
       rect:
         serializedVersion: 2
         x: 720
@@ -258,17 +258,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb6c3bdc3056908b0800000000000000
-      internalID: -5185502428929997122
+      spriteID: d448de08cbfff5500800000000000000
+      internalID: 387309278059136077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_4
+      name: walk_3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 961
         y: 784
         width: 240
         height: 240
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d459b59cecb494b0800000000000000
-      internalID: -5434511126019091241
+      spriteID: 422cb6ac748ed7510800000000000000
+      internalID: 1548649241921700388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_5
+      name: walk_4
       rect:
         serializedVersion: 2
         x: 1200
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ed84e91784b75d0800000000000000
-      internalID: -3063775468671410589
+      spriteID: b55e8ec2a68a2b4d0800000000000000
+      internalID: -3120246417840872101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_6
+      name: walk_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9be94ca544be485b0800000000000000
-      internalID: -5366906177105649991
+      spriteID: 8ba9c65e50c2778d0800000000000000
+      internalID: -2848759835452990792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_7
+      name: walk_6
       rect:
         serializedVersion: 2
         x: 1680
@@ -342,18 +342,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faff996e6e20c3bd0800000000000000
-      internalID: -2649239290066108497
+      spriteID: 836bdae150b53f050800000000000000
+      internalID: 5833106019922589240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_8
+      name: walk_7
       rect:
         serializedVersion: 2
         x: 0
-        y: 544
+        y: 545
         width: 240
         height: 240
       alignment: 0
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db10e069d8e2b9e0800000000000000
-      internalID: -1606966096686998573
+      spriteID: 2a17913731d7b8f40800000000000000
+      internalID: 5731812473247986082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_9
+      name: walk_8
       rect:
         serializedVersion: 2
         x: 240
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 923aabd1f29c07320800000000000000
-      internalID: 2553762192918487849
+      spriteID: 9ba9589f792f21260800000000000000
+      internalID: 7066977499837995705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_10
+      name: jump_1
       rect:
         serializedVersion: 2
         x: 480
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d91c73cae2a24600800000000000000
-      internalID: 451102041876208084
+      spriteID: a43383c7b5725bdd0800000000000000
+      internalID: -2471025546663283894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_11
+      name: jump_2
       rect:
         serializedVersion: 2
         x: 720
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 096bc289a39e9bc00800000000000000
-      internalID: 917020437017048720
+      spriteID: b49063a616a8782c0800000000000000
+      internalID: -4429419557497206453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_12
+      name: jump_3
       rect:
         serializedVersion: 2
         x: 960
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 284765f84524083d0800000000000000
-      internalID: -3206490003738299262
+      spriteID: bb02bb0562e1d9920800000000000000
+      internalID: 2998586076810649787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_13
+      name: jump_4
       rect:
         serializedVersion: 2
         x: 1200
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 454a1aaa369dc3920800000000000000
-      internalID: 2971488876245394516
+      spriteID: dd53f223a4dde3190800000000000000
+      internalID: -7980698178914667043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_14
+      name: crouch_1
       rect:
         serializedVersion: 2
         x: 1440
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab81113d76d3a1400800000000000000
-      internalID: 295616241678227642
+      spriteID: 083e31ae3d2656180800000000000000
+      internalID: -9122776807864278144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_15
+      name: crouch_2
       rect:
         serializedVersion: 2
         x: 1680
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae6badcbec53a3a20800000000000000
-      internalID: 3042803660290176746
+      spriteID: a9217d5df524a1870800000000000000
+      internalID: 8654302613322797722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_16
+      name: atack_1
       rect:
         serializedVersion: 2
         x: 0
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fd15173abf5acff0800000000000000
-      internalID: -15094395349688839
+      spriteID: 37ce0736874fc24c0800000000000000
+      internalID: -4310801945398809485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_17
+      name: atack_2
       rect:
         serializedVersion: 2
         x: 240
@@ -552,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d690e886e4fa21df0800000000000000
-      internalID: -210913481236543123
+      spriteID: aa34fbc212b9b94d0800000000000000
+      internalID: -3126734949491719254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_18
+      name: atack_3
       rect:
         serializedVersion: 2
         x: 480
@@ -573,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e156526c4c8c89f0800000000000000
-      internalID: -464842401830776344
+      spriteID: 12439cd0122a23400800000000000000
+      internalID: 302482387836154913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_19
+      name: hit_1
       rect:
         serializedVersion: 2
         x: 720
@@ -594,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2debd4790ef4bab0800000000000000
-      internalID: -4993086770278306515
+      spriteID: bf8de7d3c77e2a980800000000000000
+      internalID: -8529000223492613893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_20
+      name: hit_2
       rect:
         serializedVersion: 2
         x: 960
@@ -615,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18c366ec3e57216b0800000000000000
-      internalID: -5327065787945042815
+      spriteID: 8bcd9170b4583da70800000000000000
+      internalID: 8850564250001333432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Barbarian1_21
+      name: die_1
       rect:
         serializedVersion: 2
         x: 1200
@@ -636,8 +636,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98859dddf22ed14d0800000000000000
-      internalID: -3162122668130871159
+      spriteID: 41222a77abc93f350800000000000000
+      internalID: 6049351049173672468
       vertices: []
       indices: 
       edges: []
