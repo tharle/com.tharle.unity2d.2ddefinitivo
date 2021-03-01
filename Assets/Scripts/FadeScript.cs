@@ -9,8 +9,12 @@ public class FadeScript : MonoBehaviour {
 
     [Header("Imagens e configurações de fade-in/fade-out")]
     public Image fume; // Objeto imagem 
-    public Color[] corTransicao; // [0] cor inicial - [1] cor final
+    public Color[] corTransicao; // [0] cor opaca - [1] cor transparente
     public float step; // Quantidade de transparencia aplicada a cada frame
+
+    private void Start() {
+        this.fume.color = corTransicao[0];
+    }
 
 
     /// <summary>
