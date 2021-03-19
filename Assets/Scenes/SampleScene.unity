@@ -358,6 +358,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2140287261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &187331444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847111607731698405, guid: 0803006e8d2055344aa9e33474c5daf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 847111607128749096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &187331450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187331444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0255f9142ab766478e4a0ecd619709d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesSkins: []
+  spriteSheetName: Barbarian2
+  loadedSpriteSheetName: 
 --- !u!1 &194196149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1601,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5108864516334648920, guid: 70f261691adfbac41bc5a26c519b82cb,
+  m_Sprite: {fileID: 9221252940741045314, guid: 44aab32eff3289c4c8709050bd4aba86,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1699,7 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesSkins: []
-  spriteSheetName: goblin_dwarf
+  spriteSheetName: goblin_1
   loadedSpriteSheetName: 
 --- !u!1 &395771072
 GameObject:
@@ -18141,6 +18162,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 847111607731698406, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 9221252940741045314, guid: 6f8d4717b343b914bbecf9056abd5b8c,
+        type: 3}
     - target: {fileID: 847111607731698424, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: m_RootOrder
