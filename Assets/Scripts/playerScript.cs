@@ -32,6 +32,8 @@ public class PlayerScript : MonoBehaviour{
 
 
     [Header("Sitema de armas")]
+    public int idArma; // Id da arma que será equipada
+    private int idArmaAtual; // Qual é o id da arma que o jogador está em punho
     public GameObject[] weaponAnimations;
 
     public float speed; // Velocidade do personagem
@@ -65,14 +67,13 @@ public class PlayerScript : MonoBehaviour{
         this.resetGameObjects(this.weaponAnimations);
         this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
         this.exibirEmoji = false;
+        this.idArmaAtual = -1;
     }
 
     //Adicionando comentario teste GIT
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
-    void FixedUpdate() {
-        
-        
+    void FixedUpdate() {        
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.02f, whatIsGround);
         this.playerRigidbody.velocity = new Vector2(this.eixoX * this.speed, this.playerRigidbody.velocity.y);
         
@@ -127,27 +128,8 @@ public class PlayerScript : MonoBehaviour{
         
     }
 
-    private void Interacao(){
-         if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
-            if(objetoInteracao == null){
-                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
-            }else {
-                objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
-            }
-        }
-
-        this.controlarEmojiPlayer(objetoInteracao != null);
-    }
-
-    private void controlarEmojiPlayer(bool exibirEmoji) {
-        //Configuracao de balao
-        if(exibirEmoji && this.emoji == null) {
-            this.emoji = Instantiate(this.emojiController.emojiAlert, this.transform, false);
-        } else if(!exibirEmoji && this.emoji != null) {
-            this.emoji.SendMessage("FinalizarEmoji", SendMessageOptions.DontRequireReceiver);
-            // this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
-            this.emoji = null; // Perder a referencia
-        }
+    private void LateUpdate() {
+        carregarArma();
     }
 
     // FUNÇÕES PARA TRATAR COLISOES
@@ -217,6 +199,55 @@ public class PlayerScript : MonoBehaviour{
         }
     }
 
+    /// <summary>
+    /// Seta evento para "atacando"
+    /// </summary>
+    /// <param name="attackingValue">Valor do ataque</param>
+    public void setAttack(int attackingValue){
+        this.attacking = attackingValue > 0;
+
+        if(!this.attacking){
+            this.weaponAnimations[2].SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Seta a arma que será equipada
+    /// </summary>
+    /// <param name="idArma"> identificador da arma</param>
+    public void equiparArma(int idArma){
+        this.idArmaAtual = idArma;
+    }
+
+
+
+    // -----------------------------------------------
+    // FUNÇÕES PRIVADAS
+    // -----------------------------------------------
+    private void Interacao(){
+         if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
+            if(objetoInteracao == null){
+                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
+            }else {
+                objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
+            }
+        }
+
+        this.controlarEmojiPlayer(objetoInteracao != null);
+    }
+
+    private void controlarEmojiPlayer(bool exibirEmoji) {
+        //Configuracao de balao
+        if(exibirEmoji && this.emoji == null) {
+            this.emoji = Instantiate(this.emojiController.emojiAlert, this.transform, false);
+        } else if(!exibirEmoji && this.emoji != null) {
+            this.emoji.SendMessage("FinalizarEmoji", SendMessageOptions.DontRequireReceiver);
+            // this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
+            this.emoji = null; // Perder a referencia
+        }
+    }
+
+
     private void flipPersonagem(){
         if(!this.attacking){ // Nao girar personagem atacando
             this.lookLeft = !this.lookLeft;
@@ -249,14 +280,6 @@ public class PlayerScript : MonoBehaviour{
         }
     }
 
-    public void setAttack(int attackingValue){
-        this.attacking = attackingValue > 0;
-
-        if(!this.attacking){
-            this.weaponAnimations[2].SetActive(false);
-        }
-    }
-
     private void activeWeaponAnimation(int idWeaponAnimation){
         this.resetGameObjects(this.weaponAnimations);
         this.weaponAnimations[idWeaponAnimation].SetActive(true);
@@ -267,6 +290,19 @@ public class PlayerScript : MonoBehaviour{
             gameObject.SetActive(false);
         }
     }
+
+    private  void carregarArma() {
+        if(this.idArmaAtual != this.idArma) {
+            this.idArmaAtual = idArma;
+            this.weaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas1[this.idArmaAtual];
+            this.weaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas2[this.idArmaAtual];
+            this.weaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas3[this.idArmaAtual];
+        }
+    }
+
+    
+
+    
 
 
 }

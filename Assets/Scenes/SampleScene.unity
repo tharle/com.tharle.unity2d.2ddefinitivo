@@ -8276,6 +8276,39 @@ MonoBehaviour:
   - {fileID: 6086970792175568280, guid: beccbdbec3f6551408daaa1399d6831b, type: 3}
   fxMorte: {fileID: 7963147621443036363, guid: 807fc6ab66bc9204da11d90d9457ee35, type: 3}
   qntDinheiro: 0
+  spriteArmas1:
+  - {fileID: 4942803658038726614, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -9004990608046106943, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -4470654044548505675, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -2689349333746839185, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -1183829936002771988, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 1857488987712296977, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -1873774783473440122, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -3702229310380340002, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 7579411005701190920, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 801375890109350175, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  spriteArmas2:
+  - {fileID: 6123003023063038561, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 8289387723579576647, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 788015303910585071, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 1340437603416802206, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -993536727369214721, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -1223835181241114015, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -5292343366637218935, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -1676212896523138592, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 7108768019886350960, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 5558760092411029440, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  spriteArmas3:
+  - {fileID: 4978276593797209138, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -8675077286395491812, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 7441372264213655823, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -841782673843346218, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 6364903689134042001, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 1901863140318548941, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -5370655801033658038, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -2309659259946414841, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: 3699861509399247437, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
+  - {fileID: -5566121243414835775, guid: fbbc84af1b6232247bef4de1baabf289, type: 3}
   txtGold: {fileID: 1739470893}
   fadeScript: {fileID: 0}
 --- !u!4 &1151417987
@@ -18168,6 +18201,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9221252940741045314, guid: 6f8d4717b343b914bbecf9056abd5b8c,
         type: 3}
+    - target: {fileID: 847111607731698406, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 847111607731698424, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
       propertyPath: m_RootOrder
@@ -18232,6 +18270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
+      propertyPath: idArma
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}

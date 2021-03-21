@@ -14,6 +14,11 @@ public class _GameController : MonoBehaviour{
     [Header("Armazenamento de itens")]
     public int qntDinheiro; // Armazena a quantidade de dinheiro
 
+    [Header("Armazenamento de Arnmas")]
+    public Sprite[] spriteArmas1;
+    public Sprite[] spriteArmas2;
+    public Sprite[] spriteArmas3;
+
     [Header("Elementos UI")]
     public TextMeshProUGUI txtGold;
 
