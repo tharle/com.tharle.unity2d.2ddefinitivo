@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: d31eb784b58caf446992711fa7c62f9e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9058646263435166904
+    second: axes_comum_1
+  - first:
+      213: -5595150451416492903
+    second: axes_comum_2
+  - first:
+      213: 5730224165185968979
+    second: axes_comum_3
+  - first:
+      213: -9085598081416772518
+    second: axes_duplo_1
+  - first:
+      213: 4320468674640098592
+    second: axes_duplo_2
+  - first:
+      213: -5390906259854169358
+    second: axes_duplo_3
+  - first:
+      213: 9067743892029143713
+    second: axes_cristal_1
+  - first:
+      213: 1227289876697408536
+    second: axes_cristal_2
+  - first:
+      213: -8790014580074680143
+    second: axes_cristal_3
+  - first:
+      213: -2890425035557485522
+    second: axes_ouro_1
+  - first:
+      213: -8775427630141158014
+    second: axes_ouro_2
+  - first:
+      213: -8947725589018309453
+    second: axes_ouro_3
+  - first:
+      213: 7260433638938588172
+    second: axes_demonio_1
+  - first:
+      213: -5585210020434647682
+    second: axes_demonio_2
+  - first:
+      213: 669956119753904538
+    second: axes_demonio_3
+  - first:
+      213: 6910989547303246055
+    second: Axes_15
+  - first:
+      213: -1266231759115842717
+    second: Axes_16
+  - first:
+      213: -867758451368800743
+    second: Axes_17
+  - first:
+      213: -7403819713292276311
+    second: Axes_18
+  - first:
+      213: 5388686371461123419
+    second: Axes_19
+  - first:
+      213: -6983543446601398268
+    second: Axes_20
+  - first:
+      213: 1082828840027223096
+    second: Axes_21
+  - first:
+      213: 2088988023449679907
+    second: Axes_22
+  - first:
+      213: 9026337078278713831
+    second: Axes_23
+  - first:
+      213: 6782459359670190953
+    second: Axes_24
+  - first:
+      213: -1274951024930739562
+    second: Axes_25
+  - first:
+      213: 2225621644558075238
+    second: Axes_26
+  - first:
+      213: -2250585435655950616
+    second: Axes_27
+  - first:
+      213: 1884397155655169283
+    second: Axes_28
+  - first:
+      213: 6744587898742888760
+    second: Axes_29
+  - first:
+      213: -3832965271371703216
+    second: Axes_30
+  - first:
+      213: 6899809518243338197
+    second: Axes_31
+  - first:
+      213: 7095111485035253014
+    second: Axes_32
+  - first:
+      213: 8556857429282626899
+    second: Axes_33
+  - first:
+      213: -7839010397196867098
+    second: Axes_34
+  - first:
+      213: 1268784021263165967
+    second: Axes_35
+  - first:
+      213: 1299269811695222018
+    second: Axes_36
+  - first:
+      213: 7726349295937080611
+    second: Axes_37
+  - first:
+      213: 558331468464126317
+    second: Axes_38
+  - first:
+      213: 4012176687110781537
+    second: Axes_39
+  - first:
+      213: 6107849432670064531
+    second: Axes_40
+  - first:
+      213: 3039040124666341088
+    second: Axes_41
+  - first:
+      213: -992511353960417661
+    second: Axes_42
+  - first:
+      213: 8620247979956550936
+    second: Axes_43
+  - first:
+      213: 5301222797285756733
+    second: Axes_44
+  - first:
+      213: -6667766599043795575
+    second: Axes_45
+  - first:
+      213: 9160586639095364372
+    second: Axes_46
+  - first:
+      213: 8192898348831758937
+    second: Axes_47
+  - first:
+      213: -2984608489724211607
+    second: Axes_48
+  - first:
+      213: -6859019711525051483
+    second: Axes_49
+  - first:
+      213: 4215949170197455353
+    second: Axes_50
+  - first:
+      213: -2894371303885655233
+    second: Axes_51
+  - first:
+      213: 6634860226544780543
+    second: Axes_52
+  - first:
+      213: -5931517327367322519
+    second: Axes_53
+  - first:
+      213: 7898946976553592075
+    second: Axes_54
+  - first:
+      213: 8979366924697205357
+    second: Axes_55
+  - first:
+      213: 23725883941089998
+    second: Axes_56
+  - first:
+      213: -6698144536499494921
+    second: Axes_57
+  - first:
+      213: -2186407082783745934
+    second: Axes_58
+  - first:
+      213: -2033819836276670944
+    second: Axes_59
+  - first:
+      213: -6042018155047598140
+    second: Axes_60
+  - first:
+      213: 8843951703382374847
+    second: Axes_61
+  - first:
+      213: -7741741583580621850
+    second: Axes_62
+  - first:
+      213: 5858680980231696467
+    second: Axes_63
+  - first:
+      213: 8451884345028768270
+    second: Axes_64
+  - first:
+      213: -4633262054429284032
+    second: Axes_65
+  - first:
+      213: 2343812509368104256
+    second: Axes_66
+  - first:
+      213: 82433475419652188
+    second: Axes_67
+  - first:
+      213: -1181999614188699104
+    second: Axes_68
+  - first:
+      213: -4710092011842090243
+    second: Axes_69
+  - first:
+      213: 3768627852892475527
+    second: Axes_70
+  - first:
+      213: -5257630300464405982
+    second: Axes_71
+  - first:
+      213: 3255081934647918340
+    second: Axes_72
+  - first:
+      213: -2779798408878013294
+    second: Axes_73
+  - first:
+      213: 8556894569869830719
+    second: Axes_74
+  - first:
+      213: -8741910135831887133
+    second: Axes_75
+  - first:
+      213: -6640067790911576693
+    second: Axes_76
+  - first:
+      213: -7742878978542203615
+    second: Axes_77
+  - first:
+      213: -1932343678622750233
+    second: Axes_78
+  - first:
+      213: -1738810857703411219
+    second: Axes_79
+  - first:
+      213: 1988393777302819421
+    second: Axes_80
+  - first:
+      213: 6279807776578667542
+    second: Axes_81
+  - first:
+      213: -5549588947763249415
+    second: Axes_82
+  - first:
+      213: 4095467396573034826
+    second: Axes_83
+  - first:
+      213: -8547231427080875092
+    second: Axes_84
+  - first:
+      213: -5856232714373716881
+    second: Axes_85
+  - first:
+      213: -829203037855824005
+    second: Axes_86
+  - first:
+      213: -7003489459700162695
+    second: Axes_87
+  - first:
+      213: -1294486869853239233
+    second: Axes_88
+  - first:
+      213: 6567393344665837002
+    second: Axes_89
+  - first:
+      213: -9166458499666834054
+    second: Axes_90
+  - first:
+      213: -7455793637666642301
+    second: Axes_91
+  - first:
+      213: -6527420366241900646
+    second: Axes_92
+  - first:
+      213: -2770165664003380910
+    second: Axes_93
+  - first:
+      213: 7678219678621116392
+    second: Axes_94
+  - first:
+      213: 3001959600271636164
+    second: Axes_95
+  - first:
+      213: -6563834075192351375
+    second: Axes_96
+  - first:
+      213: -2071722936283134145
+    second: Axes_97
+  - first:
+      213: 8564970872454390636
+    second: Axes_98
+  - first:
+      213: 1206073809030119170
+    second: Axes_99
+  - first:
+      213: 7642668619547527827
+    second: Axes_100
+  - first:
+      213: 4914533767443911806
+    second: Axes_101
+  - first:
+      213: -4834297956323644015
+    second: Axes_102
+  - first:
+      213: -5183321178015054770
+    second: Axes_103
+  - first:
+      213: -9148176832843799859
+    second: Axes_104
+  - first:
+      213: 8541035390297104
+    second: Axes_105
+  - first:
+      213: 7836485939746365183
+    second: Axes_106
+  - first:
+      213: -5486092337644561459
+    second: Axes_107
+  - first:
+      213: 2868659751015343074
+    second: Axes_108
+  - first:
+      213: 6691066410259722436
+    second: Axes_109
+  - first:
+      213: -7869464410361955026
+    second: Axes_110
+  - first:
+      213: 1760393658231696136
+    second: Axes_111
+  - first:
+      213: -2937244126720013444
+    second: Axes_112
+  - first:
+      213: -6228755254406517718
+    second: Axes_113
+  - first:
+      213: 2399138526756097458
+    second: Axes_114
+  - first:
+      213: 8556221459197153667
+    second: Axes_115
+  - first:
+      213: 4401852361260321427
+    second: Axes_116
+  - first:
+      213: -3348673940698425205
+    second: Axes_117
+  - first:
+      213: 4637710998914454610
+    second: Axes_118
+  - first:
+      213: -6196537355246415402
+    second: Axes_119
+  - first:
+      213: 4526341674332808312
+    second: Axes_120
+  - first:
+      213: 3061137654135648234
+    second: Axes_121
+  - first:
+      213: -2659681290880105829
+    second: Axes_122
+  - first:
+      213: -2337333578500090869
+    second: Axes_123
+  - first:
+      213: -6163355701253902956
+    second: Axes_124
+  - first:
+      213: 5127693097852827697
+    second: Axes_125
+  - first:
+      213: -4904361748195842207
+    second: Axes_126
+  - first:
+      213: -2302337824373690812
+    second: Axes_127
+  - first:
+      213: 2591797775971543893
+    second: Axes_128
+  - first:
+      213: 96408792508875019
+    second: Axes_129
+  - first:
+      213: -675745745509374929
+    second: Axes_130
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: axes_comum_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b409f528c6c6bd70800000000000000
+      internalID: 9058646263435166904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_comum_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994147e0f480a52b0800000000000000
+      internalID: -5595150451416492903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_comum_3
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bd449a488d58f40800000000000000
+      internalID: 5730224165185968979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_duplo_1
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54ce29bea879e180800000000000000
+      internalID: -9085598081416772518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_duplo_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02530276e5365fb30800000000000000
+      internalID: 4320468674640098592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_duplo_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa66f3a157af25b0800000000000000
+      internalID: -5390906259854169358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_cristal_1
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa7d9ed60917dd70800000000000000
+      internalID: 9067743892029143713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_cristal_2
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 784
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8146bf0f3a5380110800000000000000
+      internalID: 1227289876697408536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_cristal_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0f4289f48930680800000000000000
+      internalID: -8790014580074680143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_ouro_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2443b98eb523e7d0800000000000000
+      internalID: -2890425035557485522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_ouro_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dc949801b673680800000000000000
+      internalID: -8775427630141158014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_ouro_3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc04eedbfa43d380800000000000000
+      internalID: -8947725589018309453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_demonio_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c043b3c5ded32c460800000000000000
+      internalID: 7260433638938588172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_demonio_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e756a0004195d72b0800000000000000
+      internalID: -5585210020434647682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axes_demonio_3
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 544
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91d7059a892c4900800000000000000
+      internalID: 669956119753904538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -32,8 +32,12 @@ public class PlayerScript : MonoBehaviour{
 
 
     [Header("Sitema de armas")]
-    public int idArma; // Id da arma que será equipada
-    private int idArmaAtual; // Qual é o id da arma que o jogador está em punho
+    // public int idArma; // Id da arma que será equipada
+    // private int idArmaAtual; // Qual é o id da arma que o jogador está em punho
+
+    public Weapon.Index indexArma; // arma que sera equipada
+
+    public Weapon armaEquipada;
     public GameObject[] weaponAnimations;
 
     public float speed; // Velocidade do personagem
@@ -67,7 +71,7 @@ public class PlayerScript : MonoBehaviour{
         this.resetGameObjects(this.weaponAnimations);
         this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
         this.exibirEmoji = false;
-        this.idArmaAtual = -1;
+        this.indexArma = 0;
     }
 
     //Adicionando comentario teste GIT
@@ -203,7 +207,7 @@ public class PlayerScript : MonoBehaviour{
     /// Seta evento para "atacando"
     /// </summary>
     /// <param name="attackingValue">Valor do ataque</param>
-    public void setAttack(int attackingValue){
+    public void setAttack(int attackingValue){ // TODO mexer nisso depois nas animações para corrigir o nome
         this.attacking = attackingValue > 0;
 
         if(!this.attacking){
@@ -214,9 +218,9 @@ public class PlayerScript : MonoBehaviour{
     /// <summary>
     /// Seta a arma que será equipada
     /// </summary>
-    /// <param name="idArma"> identificador da arma</param>
-    public void equiparArma(int idArma){
-        this.idArmaAtual = idArma;
+    /// <param name="indexArma"> <seealso cref="Weapon.Index"/> da arma</param>
+    public void EquiparArma(Weapon.Index indexArma){
+        this.indexArma = indexArma;
     }
 
 
@@ -292,17 +296,14 @@ public class PlayerScript : MonoBehaviour{
     }
 
     private  void carregarArma() {
-        if(this.idArmaAtual != this.idArma) {
-            this.idArmaAtual = idArma;
-            this.weaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas1[this.idArmaAtual];
-            this.weaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas2[this.idArmaAtual];
-            this.weaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.gameController.spriteArmas3[this.idArmaAtual];
+        
+        if(this.armaEquipada == null || this.indexArma != armaEquipada.index){
+            this.armaEquipada = gameController.weapons[indexArma];
+            this.weaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[0];
+            this.weaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[1];
+            this.weaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[2];
         }
     }
-
     
-
-    
-
 
 }

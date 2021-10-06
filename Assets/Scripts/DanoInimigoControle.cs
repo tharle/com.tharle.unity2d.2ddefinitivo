@@ -12,7 +12,7 @@ public class DanoInimigoControle : MonoBehaviour{
     // private Animator animator; // Controller de animação 
 
     [Header("Configuração de resistências/fraquesas")]
-    public float[] ajusteDano; // sistema de resistencia/fraquesa por tipo de dano
+    private Dictionary<TypeDamage, float> multiplicadorDeDano; // sistema de resistencia/fraquesa por tipo de dano
 
     [Header("Knockback")]
     public GameObject knockBackForce; //Força de repulsao
@@ -61,7 +61,23 @@ public class DanoInimigoControle : MonoBehaviour{
         this.inimigoAnimator = GetComponent<Animator>();
         this.inimigoAnimator.SetInteger("idAnimation", idAnimation); // inicia personagem na animação idle
         // knockBackPosition.localPosition = new Vector3(konckBackX, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
+
+        InitMultiplicadorDeDanos();
     }
+
+    private void InitMultiplicadorDeDanos(){
+        multiplicadorDeDano = new Dictionary<TypeDamage, float>();
+        multiplicadorDeDano[TypeDamage.NORMAL] = 1;
+    }
+
+    public float GetMultiplicadorDeDano(TypeDamage typeDamage){
+        if(multiplicadorDeDano.ContainsKey(typeDamage)){
+            return multiplicadorDeDano[typeDamage];
+        } else {        
+            return multiplicadorDeDano[TypeDamage.NORMAL]; 
+        }
+    }
+    
 
     private void Update() {
         this.inimigoAnimator.SetBool("grounded", true);
@@ -85,20 +101,19 @@ public class DanoInimigoControle : MonoBehaviour{
 
         switch(collider.tag){
             case "tagArma":
-                WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
 
+                Weapon armaEquipada = playerScript.armaEquipada;
                 inimigoAnimator.SetTrigger("hit");
 
-                if(weaponInfo && this.gameController){
-                    string damageType = this.gameController.damageTypes[weaponInfo.damageType];
-                    float danoTotalArma = Mathf.Round(Random.Range(weaponInfo.damageMin, weaponInfo.damageMax));
+                if(armaEquipada != null && this.gameController){
+                    float danoTotalArma = Mathf.Round(Random.Range(armaEquipada.minDamage, armaEquipada.maxDamage));
                     print(" DANO DA ARMA RANDOM : "+ danoTotalArma);
 
                     // AnimacaoDano(collider); // Animação de dano normal
                     AnimacaoDano(collider);
 
-                    danoTotalArma *= this.ajusteDano.Length > weaponInfo.damageType ? this.ajusteDano[weaponInfo.damageType] : 1;
-                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+damageType+".");
+                    danoTotalArma *= this.multiplicadorDeDano.ContainsKey(armaEquipada.typeDamage) ? this.multiplicadorDeDano[armaEquipada.typeDamage] : 1;
+                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+armaEquipada.typeDamage+".");
 
                     DanoVida(danoTotalArma);
                 }
@@ -113,12 +128,14 @@ public class DanoInimigoControle : MonoBehaviour{
     /// </summary>
     /// <param name="collider">Colisor2D vindo do OnTrigger</param>
     private void AnimacaoDano(Collider2D collider){
-        WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
-        GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], transform.position, transform.localRotation);
-        print("Antes de destruir AnimacaoDano");
-        Destroy(fxTemp, 1);
-        print("Depois de destruir AnimacaoDano");
-        
+        Weapon armaEquipada = playerScript.armaEquipada;
+
+        if(armaEquipada != null){
+            GameObject fxTemp = Instantiate(gameController.GetFXDano(armaEquipada.typeDamage), transform.position, transform.localRotation);
+            print("Antes de destruir AnimacaoDano");
+            Destroy(fxTemp, 1);
+            print("Depois de destruir AnimacaoDano");
+        }
     }
 
     /// <summary>
