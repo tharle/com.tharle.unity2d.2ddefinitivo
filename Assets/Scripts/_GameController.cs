@@ -4,8 +4,6 @@ using UnityEngine;
 using TMPro;
 
 public class _GameController : MonoBehaviour{    
-    [Header("Configuração de tipos de danos")]
-
     [Header("Configuração de animações")]
     public GameObject fxMorte; // Animação de morte
     // private Dictionary<TypeDamage, GameObject> fxDano;// Animação de dano
@@ -96,15 +94,5 @@ public class _GameController : MonoBehaviour{
         spriteEspada = new Sprite[]{spriteSwords[27], spriteSwords[28], spriteSwords[29]};
         this.weapons[Weapon.Index.SWORD_ASCALON] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
         
-    }
-
-    public GameObject GetFXDano(TypeDamage typeDamage){
-        // TODO fazer isso -> Instantiate(gameController.GetFXDano(armaEquipada.typeDamage), transform.position, transform.localRotation);
-        switch (typeDamage) {
-            case TypeDamage.NORMAL:
-                return Resources.Load("Prefabs/TxtDano") as GameObject;
-            default:
-                return Resources.Load("Prefabs/TxtDano") as GameObject;
-        }
     }
 }

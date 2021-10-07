@@ -71,7 +71,6 @@ public class PlayerScript : MonoBehaviour{
         this.resetGameObjects(this.weaponAnimations);
         this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
         this.exibirEmoji = false;
-        this.indexArma = 0;
     }
 
     //Adicionando comentario teste GIT

@@ -109,9 +109,6 @@ public class DanoInimigoControle : MonoBehaviour{
                     float danoTotalArma = Mathf.Round(Random.Range(armaEquipada.minDamage, armaEquipada.maxDamage));
                     print(" DANO DA ARMA RANDOM : "+ danoTotalArma);
 
-                    // AnimacaoDano(collider); // Animação de dano normal
-                    AnimacaoDano(collider);
-
                     danoTotalArma *= this.multiplicadorDeDano.ContainsKey(armaEquipada.typeDamage) ? this.multiplicadorDeDano[armaEquipada.typeDamage] : 1;
                     print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+armaEquipada.typeDamage+".");
 
@@ -120,21 +117,6 @@ public class DanoInimigoControle : MonoBehaviour{
             break;
             default:
             break;
-        }
-    }
-
-    /// <summary>
-    /// Método que instancia a animação da arma.
-    /// </summary>
-    /// <param name="collider">Colisor2D vindo do OnTrigger</param>
-    private void AnimacaoDano(Collider2D collider){
-        Weapon armaEquipada = playerScript.armaEquipada;
-
-        if(armaEquipada != null){
-            GameObject fxTemp = Instantiate(gameController.GetFXDano(armaEquipada.typeDamage), transform.position, transform.localRotation);
-            print("Antes de destruir AnimacaoDano");
-            Destroy(fxTemp, 1);
-            print("Depois de destruir AnimacaoDano");
         }
     }
 
@@ -151,7 +133,8 @@ public class DanoInimigoControle : MonoBehaviour{
             // Exibir texto de valor ao receber dano.
             GameObject txtDanoTemp = Instantiate(this.txtDano);
             //Reinicialliza a posicao do texto de dano em resposta a localizacao atual do personagem
-            txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x - 0.3f, this.transform.localPosition.y + 0.5f, this.transform.localPosition.z);
+            // txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x - 0.3f, this.transform.localPosition.y + 0.5f, this.transform.localPosition.z);
+            txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z);
             txtDanoTemp.GetComponentInChildren<TextMeshPro>().text = danoRecebido.ToString();
 
             int direcaoVisao = this.isPlayerLeft() ? 1 : -1;

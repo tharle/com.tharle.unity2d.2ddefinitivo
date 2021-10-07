@@ -19100,6 +19100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
         type: 3}
+      propertyPath: indexArma
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 847111607731698425, guid: 0803006e8d2055344aa9e33474c5daf6,
+        type: 3}
       propertyPath: jumpForce
       value: 200
       objectReference: {fileID: 0}
