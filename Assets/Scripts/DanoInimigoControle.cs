@@ -132,8 +132,6 @@ public class DanoInimigoControle : MonoBehaviour{
             
             // Exibir texto de valor ao receber dano.
             GameObject txtDanoTemp = Instantiate(this.txtDano);
-            //Reinicialliza a posicao do texto de dano em resposta a localizacao atual do personagem
-            // txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x - 0.3f, this.transform.localPosition.y + 0.5f, this.transform.localPosition.z);
             txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z);
             txtDanoTemp.GetComponentInChildren<TextMeshPro>().text = danoRecebido.ToString();
 
