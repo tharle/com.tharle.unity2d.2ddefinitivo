@@ -5,10 +5,16 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour{
 
     // Variaveis componentes
+    [Header("Scripts externos")]
+    private _GameController gameController;
+    private _EmojiController emojiController;
+
     [Header("Objetos componentes")]
     private Animator playerAnimator; // Parte de animacao do personagem
     private Rigidbody2D playerRigidbody; // Parte física do personagem
     private Vector3 direcaoVisao; // Direcao de visao do personagem
+    private SpriteRenderer playerSpriteRenderer; // Sprites do personagem
+    
 
 
     // Variaveis de fisica
@@ -19,13 +25,19 @@ public class PlayerScript : MonoBehaviour{
     public int idAnimation; // identificador da animação
     public Transform groundCheck; //Objeto que verifica colisao com o chao;
     public Transform hand; // Nossa mao
-    public GameObject objetoInteracao;
+    public GameObject objetoInteracao; // Objeto que está interajindo (normalmente é verificado via triggers e camadas)
     public Collider2D colliderStand, colliderCrounch; // Colisores em pé e abaixado
     public LayerMask whatIsGround; // Indica o que é superficie para o teste da layer Chao
     public LayerMask interacao; // Indica quais objetos sao interagiveis 
 
 
     [Header("Sitema de armas")]
+    // public int idArma; // Id da arma que será equipada
+    // private int idArmaAtual; // Qual é o id da arma que o jogador está em punho
+
+    public Weapon.Index indexArma; // arma que sera equipada
+
+    public Weapon armaEquipada;
     public GameObject[] weaponAnimations;
 
     public float speed; // Velocidade do personagem
@@ -33,6 +45,14 @@ public class PlayerScript : MonoBehaviour{
     public bool grounded; // Inicia se o pj está em alguma superfície 
     public bool attacking; // Indica se o pj está atacando
     public bool lookLeft; //Indica se o personagem tá virado para a esquerda
+
+    [Header("Vida")]
+    public int vidaMax;
+    public int vidaAtual;
+
+    public bool exibirEmoji;
+
+    private GameObject emoji;
     
     // -----------------------------------------------
     // FUNÇÕES DO UNITY
@@ -40,16 +60,23 @@ public class PlayerScript : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+        this.emojiController = FindObjectOfType(typeof(_EmojiController)) as _EmojiController;
+
         this.playerAnimator = GetComponent<Animator>();
         this.playerRigidbody = GetComponent<Rigidbody2D>();
+        this.playerSpriteRenderer = GetComponent<SpriteRenderer>();
+
         this.updateDirecaoVisao();
         this.resetGameObjects(this.weaponAnimations);
+        this.vidaAtual = this.vidaMax; // Reseta vida do personagem com a vida max
+        this.exibirEmoji = false;
     }
 
     //Adicionando comentario teste GIT
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
-    void FixedUpdate() {
+    void FixedUpdate() {        
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.02f, whatIsGround);
         this.playerRigidbody.velocity = new Vector2(this.eixoX * this.speed, this.playerRigidbody.velocity.y);
         
@@ -86,14 +113,7 @@ public class PlayerScript : MonoBehaviour{
             this.idAnimation = 0; // Parado
         }
 
-
-        if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
-            if(objetoInteracao == null){
-                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
-            }else {
-                objetoInteracao.SendMessage("interacao", SendMessageOptions.DontRequireReceiver);
-            }
-        }
+        this.Interacao();
 
         if(Input.GetButtonDown("Jump") && grounded && !this.attacking){
             this.playerRigidbody.AddForce(new Vector2(0, this.jumpForce)); // Animação de pulo
@@ -107,6 +127,12 @@ public class PlayerScript : MonoBehaviour{
         this.playerAnimator.SetBool("grounded", this.grounded);
         this.playerAnimator.SetInteger("idAnimation", this.idAnimation);
         this.playerAnimator.SetFloat("speedY", playerRigidbody.velocity.y);
+        
+        
+    }
+
+    private void LateUpdate() {
+        carregarArma();
     }
 
     // FUNÇÕES PARA TRATAR COLISOES
@@ -137,7 +163,7 @@ public class PlayerScript : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D col) {
         switch(col.gameObject.tag){
             case "tagColetavel": // Verifica se colide com uma moeda
-                Destroy(col.gameObject);
+                col.gameObject.SendMessage("Coletar", SendMessageOptions.DontRequireReceiver); // Esse segundo parametro evita qualquer erro caso o objeto em questão nao tenha a função
                 break;
         }
     }
@@ -161,6 +187,69 @@ public class PlayerScript : MonoBehaviour{
     // -----------------------------------------------
     // FUNÇÕES DO PERSONALISADAS
     // -----------------------------------------------
+
+    /// <summary>
+    ///  Função para mudar o material do personagem e da arma. 
+    ///  Usado para saber se o material do personagem vai ser sensivel a luz ou não. 
+    ///  Nesse exemplo ele é usado ao entrar e sair em uma caverna.
+    /// </summary>
+    /// <param name="novoMaterial"></param>
+    public void SetMaterial(Material novoMaterial){
+        this.playerSpriteRenderer.material = novoMaterial; // Muda material do pernsonagem
+        // Muda o material de todas os efeitos de armas
+        foreach(GameObject weaponAnimmation in this.weaponAnimations) {
+            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
+        }
+    }
+
+    /// <summary>
+    /// Seta evento para "atacando"
+    /// </summary>
+    /// <param name="attackingValue">Valor do ataque</param>
+    public void setAttack(int attackingValue){ // TODO mexer nisso depois nas animações para corrigir o nome
+        this.attacking = attackingValue > 0;
+
+        if(!this.attacking){
+            this.weaponAnimations[2].SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Seta a arma que será equipada
+    /// </summary>
+    /// <param name="indexArma"> <seealso cref="Weapon.Index"/> da arma</param>
+    public void EquiparArma(Weapon.Index indexArma){
+        this.indexArma = indexArma;
+    }
+
+
+
+    // -----------------------------------------------
+    // FUNÇÕES PRIVADAS
+    // -----------------------------------------------
+    private void Interacao(){
+         if(Input.GetButtonDown("Fire1") && this.eixoY >= 0 && !this.attacking ){
+            if(objetoInteracao == null){
+                this.playerAnimator.SetTrigger("atack"); // Animação de ataque
+            }else {
+                objetoInteracao.SendMessage("Interacao", SendMessageOptions.DontRequireReceiver);
+            }
+        }
+
+        this.controlarEmojiPlayer(objetoInteracao != null);
+    }
+
+    private void controlarEmojiPlayer(bool exibirEmoji) {
+        //Configuracao de balao
+        if(exibirEmoji && this.emoji == null) {
+            this.emoji = Instantiate(this.emojiController.emojiAlert, this.transform, false);
+        } else if(!exibirEmoji && this.emoji != null) {
+            this.emoji.SendMessage("FinalizarEmoji", SendMessageOptions.DontRequireReceiver);
+            // this.emoji.GetComponent<EmojiAnimationController>().FinalizarEmoji();
+            this.emoji = null; // Perder a referencia
+        }
+    }
+
 
     private void flipPersonagem(){
         if(!this.attacking){ // Nao girar personagem atacando
@@ -194,14 +283,6 @@ public class PlayerScript : MonoBehaviour{
         }
     }
 
-    public void setAttack(int attackingValue){
-        this.attacking = attackingValue > 0;
-
-        if(!this.attacking){
-            this.weaponAnimations[2].SetActive(false);
-        }
-    }
-
     private void activeWeaponAnimation(int idWeaponAnimation){
         this.resetGameObjects(this.weaponAnimations);
         this.weaponAnimations[idWeaponAnimation].SetActive(true);
@@ -213,5 +294,15 @@ public class PlayerScript : MonoBehaviour{
         }
     }
 
+    private  void carregarArma() {
+        
+        if(this.armaEquipada == null || this.indexArma != armaEquipada.index){
+            this.armaEquipada = gameController.weapons[indexArma];
+            this.weaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[0];
+            this.weaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[1];
+            this.weaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[2];
+        }
+    }
+    
 
 }

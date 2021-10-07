@@ -12,7 +12,7 @@ public class DanoInimigoControle : MonoBehaviour{
     // private Animator animator; // Controller de animação 
 
     [Header("Configuração de resistências/fraquesas")]
-    public float[] ajusteDano; // sistema de resistencia/fraquesa por tipo de dano
+    private Dictionary<TypeDamage, float> multiplicadorDeDano; // sistema de resistencia/fraquesa por tipo de dano
 
     [Header("Knockback")]
     public GameObject knockBackForce; //Força de repulsao
@@ -61,7 +61,23 @@ public class DanoInimigoControle : MonoBehaviour{
         this.inimigoAnimator = GetComponent<Animator>();
         this.inimigoAnimator.SetInteger("idAnimation", idAnimation); // inicia personagem na animação idle
         // knockBackPosition.localPosition = new Vector3(konckBackX, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
+
+        InitMultiplicadorDeDanos();
     }
+
+    private void InitMultiplicadorDeDanos(){
+        multiplicadorDeDano = new Dictionary<TypeDamage, float>();
+        multiplicadorDeDano[TypeDamage.NORMAL] = 1;
+    }
+
+    public float GetMultiplicadorDeDano(TypeDamage typeDamage){
+        if(multiplicadorDeDano.ContainsKey(typeDamage)){
+            return multiplicadorDeDano[typeDamage];
+        } else {        
+            return multiplicadorDeDano[TypeDamage.NORMAL]; 
+        }
+    }
+    
 
     private void Update() {
         this.inimigoAnimator.SetBool("grounded", true);
@@ -85,20 +101,16 @@ public class DanoInimigoControle : MonoBehaviour{
 
         switch(collider.tag){
             case "tagArma":
-                WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
 
+                Weapon armaEquipada = playerScript.armaEquipada;
                 inimigoAnimator.SetTrigger("hit");
 
-                if(weaponInfo && this.gameController){
-                    string damageType = this.gameController.damageTypes[weaponInfo.damageType];
-                    float danoTotalArma = Mathf.Round(Random.Range(weaponInfo.damageMin, weaponInfo.damageMax));
+                if(armaEquipada != null && this.gameController){
+                    float danoTotalArma = Mathf.Round(Random.Range(armaEquipada.minDamage, armaEquipada.maxDamage));
                     print(" DANO DA ARMA RANDOM : "+ danoTotalArma);
 
-                    // AnimacaoDano(collider); // Animação de dano normal
-                    AnimacaoDano(collider);
-
-                    danoTotalArma *= this.ajusteDano.Length > weaponInfo.damageType ? this.ajusteDano[weaponInfo.damageType] : 1;
-                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+damageType+".");
+                    danoTotalArma *= this.multiplicadorDeDano.ContainsKey(armaEquipada.typeDamage) ? this.multiplicadorDeDano[armaEquipada.typeDamage] : 1;
+                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+armaEquipada.typeDamage+".");
 
                     DanoVida(danoTotalArma);
                 }
@@ -106,16 +118,6 @@ public class DanoInimigoControle : MonoBehaviour{
             default:
             break;
         }
-    }
-
-    /// <summary>
-    /// Método que instancia a animação da arma.
-    /// </summary>
-    /// <param name="collider">Colisor2D vindo do OnTrigger</param>
-    private void AnimacaoDano(Collider2D collider){
-        WeaponInfo weaponInfo = collider.GetComponent<WeaponInfo>();
-        GameObject fxTemp = Instantiate(gameController.fxDano[weaponInfo.damageType], transform.position, transform.localRotation);
-        Destroy(fxTemp, 1);
     }
 
     /// <summary>
@@ -130,8 +132,7 @@ public class DanoInimigoControle : MonoBehaviour{
             
             // Exibir texto de valor ao receber dano.
             GameObject txtDanoTemp = Instantiate(this.txtDano);
-            //Reinicialliza a posicao do texto de dano em resposta a localizacao atual do personagem
-            txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x - 0.3f, this.transform.localPosition.y + 0.5f, this.transform.localPosition.z);
+            txtDanoTemp.GetComponentInChildren<RectTransform>().transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z);
             txtDanoTemp.GetComponentInChildren<TextMeshPro>().text = danoRecebido.ToString();
 
             int direcaoVisao = this.isPlayerLeft() ? 1 : -1;
@@ -141,7 +142,7 @@ public class DanoInimigoControle : MonoBehaviour{
             if(isDead()) {
                 Morreu();
             } else {
-                StartCoroutine("TomandoDanoCorouTine");
+                StartCoroutine("TomandoDano");
                 print("Restam " +this.pontosVidaInimigoAtual+ " ponto(s) de vida do Inimigo.");
                 this.KnockBackPeronagem();
             }
@@ -245,7 +246,7 @@ public class DanoInimigoControle : MonoBehaviour{
     /// Rotina para «piscar» o personagem quando ele toma dano
     /// </summary>
     /// <returns></returns>
-    IEnumerator TomandoDanoCorouTine()
+    IEnumerator TomandoDano()
     {
         this.tomandoDano = true;
         this.barrasVida.SetActive(true);
@@ -285,7 +286,6 @@ public class DanoInimigoControle : MonoBehaviour{
         // -------------------------------------------------
         // Gestão de loot 
         // -------------------------------------------------
-        int qntMoedasTotal = 0;
         if(loots != null && loots.Length > 0){
             foreach (GameObject loot in this.loots) {
                 int quantidadeLoot= Random.Range(1, 10); // Multiplicador de moedas
@@ -293,11 +293,9 @@ public class DanoInimigoControle : MonoBehaviour{
                     GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
                     tempLoot.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200)); // Animação de moeda saltando
                     yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
-                    qntMoedasTotal++;
                 } while(--quantidadeLoot > 0);
             }
         }
-        print("Inimigo deixou "+qntMoedasTotal+" moeda" + (qntMoedasTotal > 1? "s":"") + " de ouro" + (qntMoedasTotal > 1? "s":"") + ".");
 
         Destroy(this.gameObject);// Destroi inimigo
     }

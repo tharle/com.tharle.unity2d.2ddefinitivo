@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestScript : MonoBehaviour
-{
-    private _GameController gameController;
+public class ChestScript : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
  
     [Header("Animação")]
@@ -15,24 +13,24 @@ public class ChestScript : MonoBehaviour
     public GameObject[] loots;
     private bool empty;
     void Start(){
-        this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.empty = false;
     }
 
     void Update(){
+
+        if(this.empty && this.open) { // Nao tem  interação
+            GetComponent<Collider2D>().enabled = false; // desliga a colisão
+        }
         
     }
 
-    public void interacao(){
-        if(this.open){ // Bau aberto?
+    public void Interacao(){
+        if(this.open && !this.empty){ // Bau aberto?
             this.spriteRenderer.sprite = sprites[0]; // Fecha ele
-        }else{
+        }else if(!this.empty){
             this.spriteRenderer.sprite = sprites[1]; // Abre ele
-            this.gameController.teste++;
-            if(!empty){
-                StartCoroutine("Loot");
-            }
+            StartCoroutine("Loot");
         }
 
         this.open = !this.open; // Seta a variavel o contrario do estado que estava
@@ -55,6 +53,6 @@ public class ChestScript : MonoBehaviour
                 } while(--quantidadeLoot > 0);
             }
         }
-        print("O baú continha deixou "+qntMoedasTotal+" moeda" + (qntMoedasTotal > 1? "s":"") + " de ouro" + (qntMoedasTotal > 1? "s":"") + ".");
+
     }
 }
