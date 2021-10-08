@@ -23,20 +23,20 @@ public class _GameController : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
-        this.fadeScript.StartFadeOut();
-        this.initItens();
+        this.InitItens();
+        DontDestroyOnLoad(this.gameObject); // impede de ser destruido
     }
 
     // Update is called once per frame
     void Update(){
-        txtGold.text = qntDinheiro.ToString("N0");
+        this.txtGold.text = this.qntDinheiro.ToString("N0");
     }
 
-    private void initItens(){
-        this.initSwords();
+    private void InitItens(){
+        this.InitSwords();
     }
 
-    private void initSwords(){
+    private void InitSwords(){
         // Loading swords
         Sprite[] spriteSwords = Resources.LoadAll<Sprite>(Sword.RESOURCE_SPRINT_WEAPON);
         

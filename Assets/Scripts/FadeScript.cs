@@ -14,6 +14,7 @@ public class FadeScript : MonoBehaviour {
 
     private void Start() {
         this.fume.color = corTransicao[0];
+        this.StartFadeOut();
     }
 
 
