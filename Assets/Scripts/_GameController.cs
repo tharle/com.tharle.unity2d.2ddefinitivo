@@ -13,12 +13,6 @@ public class _GameController : MonoBehaviour{
 
     [Header("Armazenamento de Arnmas")]
     public Dictionary<Weapon.Index, Weapon> weapons = new Dictionary<Weapon.Index, Weapon>();
-    // public Sprite[] spriteArmas1;
-    // public Sprite[] spriteArmas2;
-    // public Sprite[] spriteArmas3;
-    // public int[] danoMinimo;
-    // public int[] danoMaximo;
-    // public int[] tipoDeDano;
 
     [Header("Elementos UI")]
     public TextMeshProUGUI txtGold;

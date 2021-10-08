@@ -57,7 +57,7 @@ public class FadeScript : MonoBehaviour {
             this.fume.color = Color.Lerp(corTransicao[0], corTransicao[1], i);
             yield return new WaitForEndOfFrame();
         }
-        
+        yield return new WaitForSeconds(.5f); // Da um tempo entre fade In e o Fade out
     }
 
     IEnumerator FadeOut() {
