@@ -8243,6 +8243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151417987}
   - component: {fileID: 1151417986}
+  - component: {fileID: 1151417988}
   m_Layer: 0
   m_Name: _GameController
   m_TagString: Untagged
@@ -8263,7 +8264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fxMorte: {fileID: 7963147621443036363, guid: 807fc6ab66bc9204da11d90d9457ee35, type: 3}
-  qntDinheiro: 0
   txtGold: {fileID: 1739470893}
   fadeScript: {fileID: 0}
 --- !u!4 &1151417987
@@ -8281,6 +8281,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151417988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151417985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078a31a89cc132e4dbe397420c751926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaAtual: 10
+  vidaMax: 10
+  indexArma: 3
+  qntDinheiro: 0
 --- !u!1 &1151826204
 GameObject:
   m_ObjectHideFlags: 0

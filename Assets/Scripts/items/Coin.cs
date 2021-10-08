@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour {
     [Header("Scripts externos")]
-    private _GameController gameController;
+    private _PlayerInfoController playerInfoController;
 
     [Header("Valores")]
     public int valor;
     public string tipoMoeda;
     
     void Start(){
-        this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+        this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
     }
     
     /// <summary>
     ///  Coleta e armazena o dinheiro, depois destroi o objeto da cena
     /// </summary>
     public void Coletar(){
-        gameController.qntDinheiro += valor; // Coleta a grana
+        playerInfoController.qntDinheiro += valor; // Coleta a grana
         Destroy(this.gameObject); // destroi a moeda
     }
 }

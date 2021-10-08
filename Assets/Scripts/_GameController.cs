@@ -4,12 +4,13 @@ using UnityEngine;
 using TMPro;
 
 public class _GameController : MonoBehaviour{    
+    
+    [Header("Infos atuais do Player")]
+    private _PlayerInfoController playerInfoController;
+
     [Header("Configuração de animações")]
     public GameObject fxMorte; // Animação de morte
     // private Dictionary<TypeDamage, GameObject> fxDano;// Animação de dano
-
-    [Header("Armazenamento de itens")]
-    public int qntDinheiro; // Armazena a quantidade de dinheiro
 
     [Header("Armazenamento de Arnmas")]
     public Dictionary<Weapon.Index, Weapon> weapons = new Dictionary<Weapon.Index, Weapon>();
@@ -23,13 +24,15 @@ public class _GameController : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
+        this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this.InitItens();
+        this.playerInfoController.RestaurarVida();
         DontDestroyOnLoad(this.gameObject); // impede de ser destruido
     }
 
     // Update is called once per frame
     void Update(){
-        this.txtGold.text = this.qntDinheiro.ToString("N0");
+        this.txtGold.text = this.playerInfoController.qntDinheiro.ToString("N0");
     }
 
     private void InitItens(){
