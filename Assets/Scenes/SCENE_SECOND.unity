@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0255f9142ab766478e4a0ecd619709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   spritesSkins: []
   spriteSheetName: Barbarian2
   loadedSpriteSheetName: 

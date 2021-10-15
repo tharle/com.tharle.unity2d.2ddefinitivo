@@ -1,17 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class _PlayerInfoController : MonoBehaviour
 {   
+    [Header("Caracteristicas")]
+    public Personagem.Index indexPersonagem;
 
-    // Vida e energias
+    [Header("Vida e energias")]
     public int vidaAtual;
     public int vidaMax;
 
-    // Itens Equipados
+    [Header("Equipamentos")]
     public Weapon.Index indexArma; // arma equipada
 
-    // Armazenamento de itens e grana
+    [Header("Inventario e grana")]
     public int qntDinheiro; // Armazena a quantidade de dinheiro
 
 
@@ -26,8 +29,13 @@ public class _PlayerInfoController : MonoBehaviour
         this.vidaAtual = this.vidaMax;
     }
 
+    public void CarregarPersonagem(Personagem personagem)
+    {
+        this.vidaMax = personagem.vidaMax;
+    }
+
     // -----------------------------------------------
     // FUNÇÕES PRIVADAS
     // -----------------------------------------------
-    
+
 }

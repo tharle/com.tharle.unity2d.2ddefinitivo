@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0255f9142ab766478e4a0ecd619709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   spritesSkins: []
   spriteSheetName: Barbarian2
   loadedSpriteSheetName: 
@@ -1715,6 +1716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0255f9142ab766478e4a0ecd619709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   spritesSkins: []
   spriteSheetName: goblin_1
   loadedSpriteSheetName: 
@@ -8293,6 +8295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a31a89cc132e4dbe397420c751926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexPersonagem: 0
   vidaAtual: 10
   vidaMax: 10
   indexArma: 3
