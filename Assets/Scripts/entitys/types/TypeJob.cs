@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 public enum TypeJob {
     BARBARIAN,
-    WARRIOR,
-    MAGE,
     CLERIC,
-    ARCHER
+    DWARF,
+    ELF,
+    KNIGHT,
+    MAGE,
+    WARRIOR,
+    WIZZARD,
 }

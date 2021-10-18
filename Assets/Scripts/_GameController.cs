@@ -115,7 +115,43 @@ public class _GameController : MonoBehaviour{
         index = Personagem.Index.WAR_GEORGE_GARE;
         name = "George Gare";
         job = TypeJob.WARRIOR;
-        spritesName = "Barbarian2";
+        spritesName = "Soldier";
+        this.personagens[index] = new Personagem(index, name, job, 20,spritesName);
+
+        index = Personagem.Index.ELF_CATARINA_ELDERT;
+        name = "Catarina Eldert";
+        job = TypeJob.ELF;
+        spritesName = "Elf Female";
+        this.personagens[index] = new Personagem(index, name, job, 10,spritesName);
+
+        index = Personagem.Index.ELF_ALTERIEL_ELDERT;
+        name = "Alteriel Eldert";
+        job = TypeJob.ELF;
+        spritesName = "Elf Male";
+        this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
+
+        index = Personagem.Index.KNI_ROBERTO_ROBALDO;
+        name = "Roberto Robaldo";
+        job = TypeJob.KNIGHT;
+        spritesName = "Knight";
+        this.personagens[index] = new Personagem(index, name, job, 20,spritesName);
+
+        index = Personagem.Index.CLE_MARCELO_ROSSI;
+        name = "Padre Marcelo Rossi";
+        job = TypeJob.CLERIC;
+        spritesName = "Peasant";
+        this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
+
+        index = Personagem.Index.WIZ_FLIX;
+        name = "Flix, the wonder";
+        job = TypeJob.WIZZARD;
+        spritesName = "Wizard 1";
+        this.personagens[index] = new Personagem(index, name, job, 5,spritesName);
+
+        index = Personagem.Index.DWF_TINHO_JADEARM;
+        name = "Tihno Jadearm";
+        job = TypeJob.DWARF;
+        spritesName = "Dwarf 1";
         this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
     }
 

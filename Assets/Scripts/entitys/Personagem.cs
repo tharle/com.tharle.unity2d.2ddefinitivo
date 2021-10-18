@@ -49,6 +49,14 @@ public class Personagem
 
     public enum Index {
         BAR_BORI_BLUECLAWS,
-        WAR_GEORGE_GARE
+        CLE_MARCELO_ROSSI,
+        DWF_TINHO_JADEARM,
+        ELF_ALTERIEL_ELDERT,
+        ELF_CATARINA_ELDERT,
+        KNI_ROBERTO_ROBALDO,
+        WAR_GEORGE_GARE,
+        WIZ_FLIX
+        
+        
     }
 }
