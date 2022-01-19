@@ -64,9 +64,23 @@ public abstract class Weapon : Item {
         AXE,
         BOW,
         MACE,
+        STAFF,
         SWORD
     }
     public enum Index {
+        _NONE_,
+        AXE_WOOD,
+        AXE_DEMON,
+        AXE_GOLD,
+        BOW_WOOD,
+        BOW_SILVER,
+        BOW_GOLD,
+        MACE_WOOD,
+        MACE_GOLD,
+        MACE_ESMERALD,
+        STAFF_ARCANE,
+        STAFF_SAFIRA,
+        STAFF_RUBY,
         SWORD_WOOD,
         SWORD_IRON,
         SWORD_ICE,
