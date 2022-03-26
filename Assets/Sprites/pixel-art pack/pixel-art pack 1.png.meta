@@ -161,6 +161,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -170,8 +172,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -192,9 +194,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -1224,6 +1229,53 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pixel-art pack 1_11: -3362451729044483099
+      pixel-art pack 1_2: 253199676842588850
+      pixel-art pack 1_44: -8308903789131851199
+      pixel-art pack 1_28: 7492949548626109999
+      pixel-art pack 1_9: 28182241878999804
+      pixel-art pack 1_32: -3047004852266882174
+      pixel-art pack 1_13: -6466396878258469575
+      pixel-art pack 1_15: 2264785340174455802
+      pixel-art pack 1_8: 2226029340383611627
+      pixel-art pack 1_18: 515548070000167680
+      pixel-art pack 1_14: 1322792481293722458
+      pixel-art pack 1_17: -2143045260972676450
+      pixel-art pack 1_43: 7201807007711786349
+      pixel-art pack 1_5: -8881913469294495950
+      pixel-art pack 1_39: -6292827060463887356
+      pixel-art pack 1_3: -5025341211696312352
+      pixel-art pack 1_41: 7046337157846154686
+      pixel-art pack 1_24: 4353994146876607266
+      pixel-art pack 1_4: 8251945016810345951
+      pixel-art pack 1_36: -5325838015861310557
+      pixel-art pack 1_20: 2970943915499864879
+      pixel-art pack 1_25: 7517304546971058853
+      pixel-art pack 1_1: 1684452718341944098
+      pixel-art pack 1_40: -2647524636646469594
+      pixel-art pack 1_23: 95094379661699424
+      pixel-art pack 1_29: -5869754705711785563
+      pixel-art pack 1_19: -2367241349411263450
+      pixel-art pack 1_7: 4389764183012259355
+      pixel-art pack 1_12: -3643697285932109849
+      pixel-art pack 1_35: -7254232916910708672
+      pixel-art pack 1_27: -5141125670399995692
+      pixel-art pack 1_16: 5702725696466845671
+      pixel-art pack 1_26: 7154302746438877439
+      pixel-art pack 1_10: 942084558849865153
+      pixel-art pack 1_37: 3316374394517202241
+      pixel-art pack 1_21: -4330479277557143039
+      pixel-art pack 1_33: 8569556663278957883
+      pixel-art pack 1_22: 1944724529459493361
+      pixel-art pack 1_34: -5883133395420697774
+      pixel-art pack 1_42: -7219090655540903356
+      pixel-art pack 1_45: 1581958993016715804
+      pixel-art pack 1_6: -3222351796385843053
+      pixel-art pack 1_31: 6348072010349518518
+      pixel-art pack 1_0: -930238120592379729
+      pixel-art pack 1_30: -7698155683458211969
+      pixel-art pack 1_38: 6790627877736704656
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
