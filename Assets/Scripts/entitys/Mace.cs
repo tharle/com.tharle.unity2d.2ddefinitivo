@@ -6,7 +6,7 @@ public class Mace : Weapon {
     // Start is called before the first frame update
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Maces";
 
-    public Mace(string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(nameItem, typeDamage, minDamage, maxDamage, sprites) {
+    public Mace(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
     }
 
     public override TypeWeapon typeWeapon(){

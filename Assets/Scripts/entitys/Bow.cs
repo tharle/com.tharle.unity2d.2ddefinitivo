@@ -6,7 +6,7 @@ public class Bow : Weapon {
 
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Bows";
 
-    public Bow(string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(nameItem, typeDamage, minDamage, maxDamage, sprites) {
+    public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
     }
 
     public override TypeWeapon typeWeapon(){

@@ -63,7 +63,7 @@ public class _GameController : MonoBehaviour{
         int minDamage = 4;
         int maxDamage = 16;
         Sprite[] spritesAxe = new Sprite[]{allSprites[0], allSprites[1], allSprites[2]};
-        this.weapons[Weapon.Index.AXE_WOOD] = new Axe(nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        this.weapons[Weapon.Index.AXE_WOOD] = new Axe(Weapon.Index.AXE_WOOD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
 
         // Machado de ouro
         nameAxe = "Machado Dourado";
@@ -71,7 +71,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 22;
         maxDamage = 22;
         spritesAxe = new Sprite[]{allSprites[12], allSprites[13], allSprites[14]};
-        this.weapons[Weapon.Index.AXE_GOLD] = new Axe(nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        this.weapons[Weapon.Index.AXE_GOLD] = new Axe(Weapon.Index.AXE_GOLD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
 
         // Machado demoniaco
         nameAxe = "Machado Demoniaco";
@@ -79,7 +79,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 10;
         maxDamage = 35;
         spritesAxe = new Sprite[]{allSprites[6], allSprites[7], allSprites[8]};
-        this.weapons[Weapon.Index.AXE_DEMON] = new Axe(nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        this.weapons[Weapon.Index.AXE_DEMON] = new Axe(Weapon.Index.AXE_DEMON, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
     }
 
     private void InitBows(){
@@ -93,7 +93,7 @@ public class _GameController : MonoBehaviour{
         int minDamage = 6;
         int maxDamage = 14;
         Sprite[] spriteArco = new Sprite[]{spriteBows[0], spriteBows[1], spriteBows[2]};
-        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(Weapon.Index.BOW_WOOD, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
 
         // Arco de ouro
         nameBow = "Arco de prata";
@@ -101,7 +101,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 5;
         maxDamage = 40;
         spriteArco = new Sprite[]{spriteBows[3], spriteBows[4], spriteBows[5]};
-        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(Weapon.Index.BOW_SILVER, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
 
         // Arco de ouro
         nameBow = "Arco de ouro";
@@ -109,7 +109,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 25;
         maxDamage = 25;
         spriteArco = new Sprite[]{spriteBows[6], spriteBows[7], spriteBows[8]};
-        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(Weapon.Index.BOW_GOLD, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
     }
 
     
@@ -124,7 +124,7 @@ public class _GameController : MonoBehaviour{
         int minDamage = 3;
         int maxDamage = 10;
         Sprite[] spritesMaces = new Sprite[]{allSprites[0], allSprites[1], allSprites[2]};
-        this.weapons[Weapon.Index.MACE_WOOD] = new Mace(nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.MACE_WOOD] = new Mace(Weapon.Index.MACE_WOOD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
 
         // Maça dourada
         nameMace = "Maça Dourado";
@@ -132,7 +132,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 18;
         maxDamage = 18;
         spritesMaces = new Sprite[]{allSprites[9], allSprites[10], allSprites[11]};
-        this.weapons[Weapon.Index.MACE_GOLD] = new Mace(nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.MACE_GOLD] = new Mace(Weapon.Index.MACE_GOLD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
 
         // Maça esmeralda
         nameMace = "Maça esmeralda";
@@ -140,7 +140,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 15;
         maxDamage = 40;
         spritesMaces = new Sprite[]{allSprites[12], allSprites[13], allSprites[14]};
-        this.weapons[Weapon.Index.MACE_ESMERALD] = new Mace(nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.MACE_ESMERALD] = new Mace(Weapon.Index.MACE_ESMERALD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
     }
     private void InitStaffs(){
         // Loading Cajados
@@ -153,7 +153,7 @@ public class _GameController : MonoBehaviour{
         int minDamage = 3;
         int maxDamage = 10;
         Sprite[] spritesMaces = new Sprite[]{allSprites[0], allSprites[1], allSprites[2], allSprites[3]};
-        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(Weapon.Index.STAFF_ARCANE, nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
 
         // Cajado safira
         nameStaff = "Cajado de safira";
@@ -161,7 +161,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 18;
         maxDamage = 18;
         spritesMaces = new Sprite[]{allSprites[8], allSprites[9], allSprites[10], allSprites[11]};
-        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(Weapon.Index.STAFF_SAFIRA, nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
 
         // Cajado rubi
         nameStaff = "Cajado de rubi";
@@ -169,7 +169,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 15;
         maxDamage = 40;
         spritesMaces = new Sprite[]{allSprites[12], allSprites[13], allSprites[14], allSprites[15]};
-        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
+        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(Weapon.Index.STAFF_RUBY, nameStaff, typeDamage, minDamage, maxDamage, spritesMaces);
     }
 
     private void InitSwords(){
@@ -183,7 +183,7 @@ public class _GameController : MonoBehaviour{
         int minDamage = 1;
         int maxDamage = 6;
         Sprite[] spriteEspada = new Sprite[]{spriteSwords[0], spriteSwords[1], spriteSwords[2]};
-        this.weapons[Weapon.Index.SWORD_WOOD] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_WOOD] = new Sword(Weapon.Index.SWORD_WOOD, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
 
         // Espada de aço
         nameSword = "Espada de aço";
@@ -191,7 +191,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 4;
         maxDamage = 12;
         spriteEspada = new Sprite[]{spriteSwords[6], spriteSwords[7], spriteSwords[8]};
-        this.weapons[Weapon.Index.SWORD_IRON] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_IRON] = new Sword(Weapon.Index.SWORD_IRON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
 
         // Espada de 
         nameSword = "Espada de Gelo";
@@ -199,7 +199,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 15;
         maxDamage = 27;
         spriteEspada = new Sprite[]{spriteSwords[12], spriteSwords[13], spriteSwords[14]};
-        this.weapons[Weapon.Index.SWORD_ICE] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_ICE] = new Sword(Weapon.Index.SWORD_ICE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
         
         // Espadão
         nameSword = "Espadão";
@@ -207,7 +207,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 5;
         maxDamage = 40;
         spriteEspada = new Sprite[]{spriteSwords[18], spriteSwords[19], spriteSwords[20]};
-        this.weapons[Weapon.Index.SWORD_BIG] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_BIG] = new Sword(Weapon.Index.SWORD_BIG, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
         
         // Espada de 
         nameSword = "Espada de Demoniaca de fogo";
@@ -215,7 +215,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 22;
         maxDamage = 25;
         spriteEspada = new Sprite[]{spriteSwords[24], spriteSwords[25], spriteSwords[26]};
-        this.weapons[Weapon.Index.SWORD_DEMON_FIRE] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_DEMON_FIRE] = new Sword(Weapon.Index.SWORD_DEMON_FIRE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
 
         // Espada de 
         nameSword = "Espada da luz, Ascalon";
@@ -223,7 +223,7 @@ public class _GameController : MonoBehaviour{
         minDamage = 24;
         maxDamage = 24;
         spriteEspada = new Sprite[]{spriteSwords[27], spriteSwords[28], spriteSwords[29]};
-        this.weapons[Weapon.Index.SWORD_ASCALON] = new Sword(nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        this.weapons[Weapon.Index.SWORD_ASCALON] = new Sword(Weapon.Index.SWORD_ASCALON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
         
     }
 

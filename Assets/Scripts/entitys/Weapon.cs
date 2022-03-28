@@ -50,11 +50,32 @@ public abstract class Weapon : Item {
     /// <returns name="TypeWeapon"> O tipo da arma</returns>
     public abstract TypeWeapon typeWeapon();
 
-    public Weapon(string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(nameItem) {
+    public Weapon(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(nameItem) 
+    {
+        this.index = index;
         this.typeDamage = typeDamage;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.sprites = sprites;
+    }
+
+    /// <summary>
+    /// Verifica se a arma é à distancia ou se é de perto
+    /// </summary>
+    public bool IsMelee()
+    {
+        switch (typeWeapon())
+        {
+            case TypeWeapon.AXE:
+            case TypeWeapon.MACE:
+            case TypeWeapon.SWORD:
+                return true;
+            case TypeWeapon.BOW:
+            case TypeWeapon.STAFF:
+                return false;
+            default: 
+             return false;
+        }
     }
 
     /// <summary>

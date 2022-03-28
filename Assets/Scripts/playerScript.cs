@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour{
     private _GameController gameController;
     private _EmojiController emojiController;
     private _PlayerInfoController playerInfoController;
+    private _WeaponController weaponController;
 
     [Header("Objetos componentes")]
     private Animator playerAnimator; // Parte de animacao do personagem
@@ -33,8 +34,6 @@ public class PlayerScript : MonoBehaviour{
 
 
     [Header("Informacoes atuais do player")]
-    public Weapon armaEquipada;
-    public GameObject[] weaponAnimations;
 
     public float speed; // Velocidade do personagem
     public float jumpForce; // Força do pulo do personagem
@@ -57,13 +56,13 @@ public class PlayerScript : MonoBehaviour{
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.emojiController = FindObjectOfType(typeof(_EmojiController)) as _EmojiController;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
+        this.weaponController = FindObjectOfType(typeof(_WeaponController)) as _WeaponController;
 
         this.playerAnimator = GetComponent<Animator>();
         this.playerRigidbody = GetComponent<Rigidbody2D>();
         this.playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
         this.UpdateDirecaoVisao();
-        this.ResetGameObjects(this.weaponAnimations);
         this.exibirEmoji = false;
     }
 
@@ -123,10 +122,6 @@ public class PlayerScript : MonoBehaviour{
         this.playerAnimator.SetFloat("speedY", playerRigidbody.velocity.y);
         
         
-    }
-
-    private void LateUpdate() {
-        CarregarArma();
     }
 
     // FUNÇÕES PARA TRATAR COLISOES
@@ -191,9 +186,7 @@ public class PlayerScript : MonoBehaviour{
     public void SetMaterial(Material novoMaterial){
         this.playerSpriteRenderer.material = novoMaterial; // Muda material do pernsonagem
         // Muda o material de todas os efeitos de armas
-        foreach(GameObject weaponAnimmation in this.weaponAnimations) {
-            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
-        }
+        this.weaponController.SetMaterial(novoMaterial);
     }
 
     /// <summary>
@@ -204,7 +197,7 @@ public class PlayerScript : MonoBehaviour{
         this.attacking = attackingValue > 0;
 
         if(!this.attacking){
-            this.weaponAnimations[2].SetActive(false);
+             this.weaponController.ResetAllWeaponsAnimations();
         }
     }
 
@@ -271,28 +264,6 @@ public class PlayerScript : MonoBehaviour{
             objetoInteracao = rayCastHit.collider.gameObject;
         }else{
             objetoInteracao = null;
-        }
-    }
-
-    private void activeWeaponAnimation(int idWeaponAnimation){
-        this.ResetGameObjects(this.weaponAnimations);
-        this.weaponAnimations[idWeaponAnimation].SetActive(true);
-    }
-
-    private void ResetGameObjects(GameObject[] gameObjects){
-        foreach (var gameObject in gameObjects){
-            gameObject.SetActive(false);
-        }
-    }
-
-    private  void CarregarArma() {
-        
-        if(this.armaEquipada == null || this.playerInfoController.indexArma != this.armaEquipada.index){
-            this.armaEquipada = gameController.weapons[this.playerInfoController.indexArma];
-            print("Carregou arma " + this.armaEquipada.nameItem);
-            this.weaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[0];
-            this.weaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[1];
-            this.weaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[2];
         }
     }
     
