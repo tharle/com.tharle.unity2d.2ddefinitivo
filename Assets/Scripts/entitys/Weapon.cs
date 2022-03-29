@@ -60,25 +60,6 @@ public abstract class Weapon : Item {
     }
 
     /// <summary>
-    /// Verifica se a arma é à distancia ou se é de perto
-    /// </summary>
-    public bool IsMelee()
-    {
-        switch (typeWeapon())
-        {
-            case TypeWeapon.AXE:
-            case TypeWeapon.MACE:
-            case TypeWeapon.SWORD:
-                return true;
-            case TypeWeapon.BOW:
-            case TypeWeapon.STAFF:
-                return false;
-            default: 
-             return false;
-        }
-    }
-
-    /// <summary>
     /// Tipo de item disponivel no sistema
     /// </summary>
     public enum TypeWeapon {
