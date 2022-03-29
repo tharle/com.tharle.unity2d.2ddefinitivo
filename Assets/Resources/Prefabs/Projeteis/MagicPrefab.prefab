@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6396884759485030142}
   - component: {fileID: 4970526624085423677}
   m_Layer: 0
-  m_Name: MagiaPrefab
+  m_Name: MagicPrefab
   m_TagString: tagArma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

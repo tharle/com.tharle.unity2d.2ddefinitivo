@@ -16,10 +16,14 @@ public class _WeaponController : MonoBehaviour
     [Header("Animations atuais da Arma")]
     public GameObject[] WeaponAnimationsMelee;
     public GameObject[] WeaponAnimationsBow;
-
+    public GameObject[] WeaponAnimationsBowArrows;
     public GameObject[] WeaponAnimationsStaff;
 
     public Weapon armaEquipada;
+
+    [Header("Projeteis")]
+    public GameObject ArrowPrefab, MagicPrefab;
+    public Transform ArrowSpawn, MagicSpawn;
     
     void Start()
     {
@@ -49,8 +53,16 @@ public class _WeaponController : MonoBehaviour
     public void SetMaterial(Material novoMaterial)
     {
         // Muda o material de todas os efeitos de armas
-        var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
-        foreach(GameObject weaponAnimmation in WeaponAnimations) {
+        foreach(GameObject weaponAnimmation in WeaponAnimationsMelee) {
+            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
+        }
+        foreach(GameObject weaponAnimmation in WeaponAnimationsBow) {
+            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
+        }
+        foreach(GameObject weaponAnimmation in WeaponAnimationsBowArrows) {
+            weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
+        }
+        foreach(GameObject weaponAnimmation in WeaponAnimationsStaff) {
             weaponAnimmation.GetComponent<SpriteRenderer>().material = novoMaterial;
         }
     }
@@ -65,9 +77,11 @@ public class _WeaponController : MonoBehaviour
             this.armaEquipada = gameController.weapons[this.playerInfoController.indexArma];
             GameObject[] WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
             print($"Carregou Arma : {this.armaEquipada.nameItem} ({this.armaEquipada.index})");
-            WeaponAnimations[0].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[0];
-            WeaponAnimations[1].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[1];
-            WeaponAnimations[2].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[2];
+
+            for (int i = 0; i <  this.armaEquipada.sprites.Length; i++)
+            {
+                WeaponAnimations[i].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[i];    
+            }
         }
     }
 

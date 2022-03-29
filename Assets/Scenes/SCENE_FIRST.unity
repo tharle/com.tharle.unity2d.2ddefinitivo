@@ -645,6 +645,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &220543906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3536667020454669792, guid: 556782ec09793ea488b8c397d30832e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9003983769221613155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &248505885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1515,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &381387688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9003983768668572575, guid: 556782ec09793ea488b8c397d30832e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9003983769221613155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &391492308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,6 +4184,12 @@ Transform:
   m_Father: {fileID: 391492311}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &711817472 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9003983769011867482, guid: 556782ec09793ea488b8c397d30832e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9003983769221613155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &719682652
 GameObject:
   m_ObjectHideFlags: 0
@@ -8344,10 +8362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a31a89cc132e4dbe397420c751926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexPersonagem: 3
+  indexPersonagem: 7
   vidaAtual: 10
   vidaMax: 10
-  indexArma: 14
+  indexArma: 10
   qntDinheiro: 0
 --- !u!1 &1151826204
 GameObject:
@@ -11870,6 +11888,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1338930335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9003983769303528813, guid: 556782ec09793ea488b8c397d30832e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9003983769221613155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364023283
 GameObject:
   m_ObjectHideFlags: 0
@@ -17577,7 +17601,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4817657, y: 1}
+    m_SensorSize: {x: 2.3416507, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19424,6 +19448,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3536667020454669792, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Flecha1
+      objectReference: {fileID: 0}
     - target: {fileID: 6565858924174843771, guid: 556782ec09793ea488b8c397d30832e1,
         type: 3}
       propertyPath: m_Name
@@ -19511,6 +19540,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
         type: 3}
+      propertyPath: ArrowSpawn
+      value: 
+      objectReference: {fileID: 711817472}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: MagicSpawn
+      value: 
+      objectReference: {fileID: 1338930335}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: ArrowPrefab
+      value: 
+      objectReference: {fileID: 3808396023952208547, guid: 6d0f8dc0fb641254a8b819a845884a00,
+        type: 3}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: MagicPrefab
+      value: 
+      objectReference: {fileID: 3459393939973604996, guid: 4ef89a0ff47829e438239dcf07c809b4,
+        type: 3}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
       propertyPath: WAStaff.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -19529,6 +19580,26 @@ PrefabInstance:
       propertyPath: WAStaff.Array.data[2]
       value: 
       objectReference: {fileID: 2061520672}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: WeaponAnimationsStaff.Array.data[1]
+      value: 
+      objectReference: {fileID: 1785062346}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: WeaponAnimationsBowArrows.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: WeaponAnimationsBowArrows.Array.data[0]
+      value: 
+      objectReference: {fileID: 220543906}
+    - target: {fileID: 9003983767889873431, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: WeaponAnimationsBowArrows.Array.data[1]
+      value: 
+      objectReference: {fileID: 381387688}
     - target: {fileID: 9003983768205511702, guid: 556782ec09793ea488b8c397d30832e1,
         type: 3}
       propertyPath: m_Name
@@ -19554,10 +19625,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponAnimationMelee1
       objectReference: {fileID: 0}
+    - target: {fileID: 9003983768668572575, guid: 556782ec09793ea488b8c397d30832e1,
+        type: 3}
+      propertyPath: m_Name
+      value: Flecha2
+      objectReference: {fileID: 0}
     - target: {fileID: 9003983769185375731, guid: 556782ec09793ea488b8c397d30832e1,
         type: 3}
       propertyPath: m_Name
       value: WeaponAnimationStaff1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7277028650514702663, guid: 556782ec09793ea488b8c397d30832e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 556782ec09793ea488b8c397d30832e1, type: 3}
