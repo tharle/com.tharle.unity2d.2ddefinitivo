@@ -28,7 +28,7 @@ AnimationClip:
     - time: 0.2857143
       value: {fileID: 302482387836154913, guid: 6f8d4717b343b914bbecf9056abd5b8c,
         type: 3}
-    - time: 0.42857143
+    - time: 0.5714286
       value: {fileID: 9221252940741045314, guid: 6f8d4717b343b914bbecf9056abd5b8c,
         type: 3}
     attribute: m_Sprite
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5714286
+    m_StopTime: 0.71428573
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -106,6 +106,13 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 2
+    messageOptions: 0
+  - time: 0.42857143
+    functionName: activeWeaponAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 3
     messageOptions: 0
   - time: 0.5714286
     functionName: setAttack

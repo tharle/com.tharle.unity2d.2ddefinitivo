@@ -103,10 +103,14 @@ public class _WeaponController : MonoBehaviour
         var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
         this.ResetAllGameObjects(WeaponAnimations);
         WeaponAnimations[idWeaponAnimation].SetActive(true);
-        if(idWeaponAnimation == 2)
+        if(idWeaponAnimation == 2 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.BOW)
         {
-            if(armaEquipada.typeWeapon() == Weapon.TypeWeapon.BOW) TrowArrow();
-            if(armaEquipada.typeWeapon() == Weapon.TypeWeapon.STAFF) TrowMagic();
+            TrowArrow();
+        }
+
+        if(idWeaponAnimation == 3 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.STAFF)
+        {
+            TrowMagic();
         }
     }
 
@@ -134,5 +138,9 @@ public class _WeaponController : MonoBehaviour
     {
         var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
         ResetAllGameObjects(WeaponAnimations);
+    }
+
+    public float GetIdAnimationWeapon(){
+        return armaEquipada != null? armaEquipada.IdAnimationWeapon : 0f;
     }
 }

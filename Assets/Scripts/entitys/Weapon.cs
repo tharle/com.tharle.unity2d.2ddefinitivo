@@ -40,6 +40,20 @@ public abstract class Weapon : Item {
         get;
     }
 
+    public float IdAnimationWeapon {
+       get {
+            switch (typeWeapon())
+            {
+                case TypeWeapon.BOW:
+                    return 1;
+                case TypeWeapon.STAFF:
+                    return 2;
+                default:
+                    return 0;
+            }
+       }
+    }
+
     /// <summary>
     /// Tipo de item, que pode variar desde 
     /// <seealso cref="TypeWeapon.AXE">machados</seealso>,  

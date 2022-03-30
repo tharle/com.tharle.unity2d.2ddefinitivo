@@ -120,6 +120,9 @@ public class PlayerScript : MonoBehaviour{
         this.playerAnimator.SetBool("grounded", this.grounded);
         this.playerAnimator.SetInteger("idAnimation", this.idAnimation);
         this.playerAnimator.SetFloat("speedY", playerRigidbody.velocity.y);
+
+        //Animação da arma
+        this.playerAnimator.SetFloat("IdAnimationWeapon", this.weaponController.GetIdAnimationWeapon());
         
         
     }
