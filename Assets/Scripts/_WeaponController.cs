@@ -103,28 +103,31 @@ public class _WeaponController : MonoBehaviour
         var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
         this.ResetAllGameObjects(WeaponAnimations);
         WeaponAnimations[idWeaponAnimation].SetActive(true);
-        if(idWeaponAnimation == 2 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.BOW)
-        {
-            TrowArrow();
-        }
+        // if(idWeaponAnimation == 2 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.BOW)
+        // {
+        //     TrowArrow();
+        // }
 
-        if(idWeaponAnimation == 3 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.STAFF)
-        {
-            TrowMagic();
-        }
+        // if(idWeaponAnimation == 3 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.STAFF)
+        // {
+        //     TrowMagic();
+        // }
     }
 
     private void TrowArrow()
     {
 
-        // GameObject tempArrow = Instantiate (this.Arrow, hand.position, hand.localRotation);
-        // tempArrow.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200));
         print($"Trow some Arrow!!!");
+        GameObject tempArrow = Instantiate (this.ArrowPrefab, this.ArrowSpawn.position, this.ArrowSpawn.localRotation);
+        tempArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
+
     }
 
     private void TrowMagic()
     {
         print($"Trow some magic!!!");
+        GameObject tempMagic = Instantiate (this.MagicPrefab, this.MagicSpawn.position, this.MagicSpawn.localRotation);
+        tempMagic.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
     }
 
     private void ResetAllGameObjects(GameObject[] gameObjects)
