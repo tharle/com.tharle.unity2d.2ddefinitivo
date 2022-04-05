@@ -5,8 +5,12 @@ using UnityEngine;
 public class Bow : Weapon {
 
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Bows";
+    public const string RESOURCE_SPRINT_ARROW="Weapons/Arrow";
 
-    public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+    public Sprite ArrowSprite;
+
+    public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite ArrowSprite) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+        this.ArrowSprite = ArrowSprite;
     }
 
     public override TypeWeapon typeWeapon(){

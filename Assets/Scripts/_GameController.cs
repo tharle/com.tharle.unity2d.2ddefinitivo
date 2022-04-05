@@ -93,7 +93,8 @@ public class _GameController : MonoBehaviour{
         int minDamage = 6;
         int maxDamage = 14;
         Sprite[] spriteArco = new Sprite[]{spriteBows[0], spriteBows[1], spriteBows[2]};
-        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(Weapon.Index.BOW_WOOD, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        Sprite arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow");
+        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(Weapon.Index.BOW_WOOD, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
 
         // Arco de ouro
         nameBow = "Arco de prata";
@@ -101,7 +102,8 @@ public class _GameController : MonoBehaviour{
         minDamage = 5;
         maxDamage = 40;
         spriteArco = new Sprite[]{spriteBows[3], spriteBows[4], spriteBows[5]};
-        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(Weapon.Index.BOW_SILVER, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow_silver");
+        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(Weapon.Index.BOW_SILVER, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
 
         // Arco de ouro
         nameBow = "Arco de ouro";
@@ -109,7 +111,8 @@ public class _GameController : MonoBehaviour{
         minDamage = 25;
         maxDamage = 25;
         spriteArco = new Sprite[]{spriteBows[6], spriteBows[7], spriteBows[8]};
-        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(Weapon.Index.BOW_GOLD, nameBow, typeDamage, minDamage, maxDamage, spriteArco);
+        arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow_gold");
+        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(Weapon.Index.BOW_GOLD, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
     }
 
     
