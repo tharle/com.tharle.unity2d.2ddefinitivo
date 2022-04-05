@@ -29,6 +29,7 @@ public class _WeaponController : MonoBehaviour
     {
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
+        this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
         this.ResetAllGameObjects(WeaponAnimationsMelee);        
         this.ResetAllGameObjects(WeaponAnimationsBow);        
         this.ResetAllGameObjects(WeaponAnimationsStaff);        
@@ -103,31 +104,22 @@ public class _WeaponController : MonoBehaviour
         var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
         this.ResetAllGameObjects(WeaponAnimations);
         WeaponAnimations[idWeaponAnimation].SetActive(true);
-        // if(idWeaponAnimation == 2 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.BOW)
-        // {
-        //     TrowArrow();
-        // }
-
-        // if(idWeaponAnimation == 3 && armaEquipada.typeWeapon() == Weapon.TypeWeapon.STAFF)
-        // {
-        //     TrowMagic();
-        // }
     }
 
     private void TrowArrow()
     {
-
         print($"Trow some Arrow!!!");
         GameObject tempArrow = Instantiate (this.ArrowPrefab, this.ArrowSpawn.position, this.ArrowSpawn.localRotation);
-        tempArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(5, 0);
-
+        var velocity = this.playerScript.lookLeft ? -5 : 5;
+        tempArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
     }
 
     private void TrowMagic()
     {
         print($"Trow some magic!!!");
         GameObject tempMagic = Instantiate (this.MagicPrefab, this.MagicSpawn.position, this.MagicSpawn.localRotation);
-        tempMagic.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
+        var velocity = this.playerScript.lookLeft ? -3 : 3;
+        tempMagic.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
     }
 
     private void ResetAllGameObjects(GameObject[] gameObjects)

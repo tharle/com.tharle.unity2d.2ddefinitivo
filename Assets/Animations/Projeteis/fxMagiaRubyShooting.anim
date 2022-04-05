@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fxMagia
+  m_Name: fxMagiaRubyShooting
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 0139ae4278911134fb88aeb869d1526c, type: 3}
+      value: {fileID: 21300000, guid: a0d3027ebc54ba44bb3ea5bb6bdeef8e, type: 3}
     - time: 0.14285715
-      value: {fileID: 21300000, guid: 9d875656f85a496458731a69c80f46cc, type: 3}
+      value: {fileID: 21300000, guid: 9008683e3acde454596eac44c91d1c7a, type: 3}
     - time: 0.2857143
-      value: {fileID: 21300000, guid: 293ad2a904ecf1c48bc09cb4f1d07b2d, type: 3}
+      value: {fileID: 21300000, guid: 5a4eb8d45f6bdf344abee9fdee54b9d6, type: 3}
     - time: 0.42857143
-      value: {fileID: 21300000, guid: a91b74a486d80d347a9d762d68a8627a, type: 3}
+      value: {fileID: 21300000, guid: ec0ba1bfa1253ab4ea99e3df1002f2f4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 0139ae4278911134fb88aeb869d1526c, type: 3}
-    - {fileID: 21300000, guid: 9d875656f85a496458731a69c80f46cc, type: 3}
-    - {fileID: 21300000, guid: 293ad2a904ecf1c48bc09cb4f1d07b2d, type: 3}
-    - {fileID: 21300000, guid: a91b74a486d80d347a9d762d68a8627a, type: 3}
+    - {fileID: 21300000, guid: a0d3027ebc54ba44bb3ea5bb6bdeef8e, type: 3}
+    - {fileID: 21300000, guid: 9008683e3acde454596eac44c91d1c7a, type: 3}
+    - {fileID: 21300000, guid: 5a4eb8d45f6bdf344abee9fdee54b9d6, type: 3}
+    - {fileID: 21300000, guid: ec0ba1bfa1253ab4ea99e3df1002f2f4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

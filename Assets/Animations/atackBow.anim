@@ -107,7 +107,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
-  - time: 0.5714286
+  - time: 0.2857143
     functionName: TrowArrow
     data: 
     objectReferenceParameter: {fileID: 0}
