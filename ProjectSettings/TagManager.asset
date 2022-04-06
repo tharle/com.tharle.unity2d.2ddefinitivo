@@ -8,6 +8,7 @@ TagManager:
   - tagCaixa
   - tagArma
   - tagColetavel
+  - tagInimigo
   layers:
   - Default
   - TransparentFX

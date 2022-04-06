@@ -22,9 +22,20 @@ public class ArrowProjectilController : MonoBehaviour
         Destroy(this.gameObject, _weaponController.armaEquipada.LifeTimeProjetil);
     }
     
-    private void LateUpdate() 
+    void LateUpdate() 
     {
         LoadArrowAnimation(_weaponController.armaEquipada);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) 
+    {
+        switch(collider.tag){
+            case "tagInimigo":
+                Destroy(this.gameObject);
+            break;
+            default:
+            break;
+        }
     }
 
     private void LoadArrowAnimation(Weapon weaponEqipada)

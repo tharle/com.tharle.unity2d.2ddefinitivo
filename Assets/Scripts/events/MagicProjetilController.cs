@@ -16,34 +16,36 @@ public class MagicProjetilController : MonoBehaviour
     {
         _weaponController = FindObjectOfType(typeof (_WeaponController)) as _WeaponController;
         _animator = GetComponent<Animator>();
-        var idAnimationProjectil = GetIdAnimationProjectil(_weaponController.armaEquipada);
-        _animator.SetInteger("IdAnimationProjectil", idAnimationProjectil);
-        
-        StartCoroutine(TimerForDestroyMagicProjetil(_weaponController.armaEquipada.LifeTimeProjetil));
+        ShotMagicProjetil(_weaponController.armaEquipada);
+        StartCoroutine(TimerForDestroyMagicProjetil(_weaponController.armaEquipada));
     }
 
-    private int GetIdAnimationProjectil(Weapon weaponEquipada)
+    void OnTriggerEnter2D(Collider2D collider) 
     {
-        switch (weaponEquipada.index)
-        {
-            case Weapon.Index.STAFF_RUBY:
-                return 1;
-            case Weapon.Index.STAFF_SAFIRA:
-                return 2;
+        switch(collider.tag){
+            case "tagInimigo":
+                DestroyMagicProjetil(_weaponController.armaEquipada);
+            break;
             default:
-                return 0;
+            break;
         }
     }
 
-    private void DestroyMagicProjetil()
+    private void ShotMagicProjetil(Weapon weapon)
     {
-        print($"Play animation ----> Destroy_{_weaponController.armaEquipada.index}");
-        _animator.Play($"Destroy_{_weaponController.armaEquipada.index}");
+        _animator.Play($"SHOT_{weapon.index}");
     }
 
-    IEnumerator TimerForDestroyMagicProjetil(float waitForSeconds)
+    private void DestroyMagicProjetil(Weapon weapon)
     {
-        yield return new WaitForSeconds(waitForSeconds);
-        DestroyMagicProjetil();
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);// Stop Object
+        _animator.Play($"DESTROY_{weapon.index}"); // Play animation for destroy
+        Destroy (gameObject, _animator.GetCurrentAnimatorStateInfo(0).length);  // then detroy it
+    }
+
+    IEnumerator TimerForDestroyMagicProjetil(Weapon weapon)
+    {   
+        yield return new WaitForSeconds(weapon.LifeTimeProjetil);
+        DestroyMagicProjetil(weapon);
     }
 }
