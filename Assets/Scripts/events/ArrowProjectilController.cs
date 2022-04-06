@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowProjectilController : MonoBehaviour
 {
     [Header("Objetos internos")]
+    private Animator _animator; // Parte de animacao
     private _WeaponController _weaponController;
     private SpriteRenderer _spriteRenderer;
 
@@ -15,7 +16,10 @@ public class ArrowProjectilController : MonoBehaviour
     {
         _weaponController = FindObjectOfType(typeof (_WeaponController)) as _WeaponController;
         _spriteRenderer = FindObjectOfType(typeof (SpriteRenderer)) as SpriteRenderer;
+        _animator = GetComponent<Animator>();
         LoadArrowAnimation(_weaponController.armaEquipada);
+
+        Destroy(this.gameObject, _weaponController.armaEquipada.LifeTimeProjetil);
     }
     
     private void LateUpdate() 

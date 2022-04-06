@@ -7,7 +7,8 @@ public class Staff : Weapon {
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Staffs";
     public const string RESOURCE_SPRINT_MAGIC="Weapons/Wizard Attack VFX";
 
-    public Staff(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+    public Staff(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, float LifeTimeProjetil) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+        this.LifeTimeProjetil = LifeTimeProjetil;
     }
 
     public override TypeWeapon typeWeapon(){

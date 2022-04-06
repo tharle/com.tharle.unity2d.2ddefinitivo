@@ -8,7 +8,7 @@ public class MagicProjetilController : MonoBehaviour
     
     [Header("Objetos internos")]
     private _WeaponController _weaponController;
-    private Animator _animator; // Parte de animacao do personagem
+    private Animator _animator; // Parte de animacao
 
 
     // Start is called before the first frame update
@@ -18,6 +18,8 @@ public class MagicProjetilController : MonoBehaviour
         _animator = GetComponent<Animator>();
         var idAnimationProjectil = GetIdAnimationProjectil(_weaponController.armaEquipada);
         _animator.SetInteger("IdAnimationProjectil", idAnimationProjectil);
+        
+        StartCoroutine(TimerForDestroyMagicProjetil(_weaponController.armaEquipada.LifeTimeProjetil));
     }
 
     private int GetIdAnimationProjectil(Weapon weaponEquipada)
@@ -31,5 +33,17 @@ public class MagicProjetilController : MonoBehaviour
             default:
                 return 0;
         }
+    }
+
+    private void DestroyMagicProjetil()
+    {
+        print($"Play animation ----> Destroy_{_weaponController.armaEquipada.index}");
+        _animator.Play($"Destroy_{_weaponController.armaEquipada.index}");
+    }
+
+    IEnumerator TimerForDestroyMagicProjetil(float waitForSeconds)
+    {
+        yield return new WaitForSeconds(waitForSeconds);
+        DestroyMagicProjetil();
     }
 }

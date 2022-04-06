@@ -155,16 +155,18 @@ public class _GameController : MonoBehaviour{
         TypeDamage typeDamage = TypeDamage.ARCANE;
         int minDamage = 3;
         int maxDamage = 10;
+        float lifeTimeProjetil = 1.8f;
         Sprite[] spritesStaffs = new Sprite[]{allSprites[0], allSprites[1], allSprites[2], allSprites[3]};
-        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(Weapon.Index.STAFF_ARCANE, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs);
+        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(Weapon.Index.STAFF_ARCANE, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
 
         // Cajado safira
         nameStaff = "Cajado de safira";
         typeDamage = TypeDamage.ICE;
         minDamage = 18;
         maxDamage = 18;
+        lifeTimeProjetil = 1.4f;
         spritesStaffs = new Sprite[]{allSprites[8], allSprites[9], allSprites[10], allSprites[11]};
-        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(Weapon.Index.STAFF_SAFIRA, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs);
+        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(Weapon.Index.STAFF_SAFIRA, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
 
         // Cajado rubi
         nameStaff = "Cajado de rubi";
@@ -172,7 +174,8 @@ public class _GameController : MonoBehaviour{
         minDamage = 15;
         maxDamage = 40;
         spritesStaffs = new Sprite[]{allSprites[12], allSprites[13], allSprites[14], allSprites[15]};
-        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(Weapon.Index.STAFF_RUBY, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs);
+        lifeTimeProjetil = .8f;
+        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(Weapon.Index.STAFF_RUBY, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
     }
 
     private void InitSwords(){

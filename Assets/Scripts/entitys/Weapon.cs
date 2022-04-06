@@ -40,6 +40,11 @@ public abstract class Weapon : Item {
         get;
     }
 
+    /// <summary>
+    /// Tempo de duracao do objeto em segundos do projetil (quando existir)
+    /// </summary>
+    public float LifeTimeProjetil = 60f;
+
     public float IdAnimationWeapon {
        get {
             switch (typeWeapon())
