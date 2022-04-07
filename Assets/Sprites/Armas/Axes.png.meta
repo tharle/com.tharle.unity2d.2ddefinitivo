@@ -416,6 +416,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -424,9 +426,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -447,9 +449,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -828,6 +833,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      axes_comum_1: 9058646263435166904
+      axes_duplo_1: -9085598081416772518
+      axes_ouro_1: -2890425035557485522
+      axes_demonio_3: 669956119753904538
+      axes_ouro_2: -8775427630141158014
+      axes_cristal_3: -8790014580074680143
+      axes_ouro_3: -8947725589018309453
+      axes_comum_3: 5730224165185968979
+      axes_duplo_3: -5390906259854169358
+      axes_cristal_2: 1227289876697408536
+      axes_cristal_1: 9067743892029143713
+      axes_demonio_2: -5585210020434647682
+      axes_comum_2: -5595150451416492903
+      axes_duplo_2: 4320468674640098592
+      axes_demonio_1: 7260433638938588172
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

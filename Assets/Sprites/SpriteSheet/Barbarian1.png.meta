@@ -90,6 +90,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -99,8 +100,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -652,6 +653,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Barbarian1_8: -1606966096686998573
+      Barbarian1_5: -3063775468671410589
+      Barbarian1_1: 7894597433450948927
+      Barbarian1_0: -5108864516334648920
+      Barbarian1_2: -7149426255305018647
+      Barbarian1_16: -15094395349688839
+      Barbarian1_3: -5185502428929997122
+      Barbarian1_7: -2649239290066108497
+      Barbarian1_19: -4993086770278306515
+      Barbarian1_11: 917020437017048720
+      Barbarian1_20: -5327065787945042815
+      Barbarian1_14: 295616241678227642
+      Barbarian1_18: -464842401830776344
+      Barbarian1_17: -210913481236543123
+      Barbarian1_10: 451102041876208084
+      Barbarian1_12: -3206490003738299262
+      Barbarian1_13: 2971488876245394516
+      Barbarian1_15: 3042803660290176746
+      Barbarian1_9: 2553762192918487849
+      Barbarian1_21: -3162122668130871159
+      Barbarian1_4: -5434511126019091241
+      Barbarian1_6: -5366906177105649991
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

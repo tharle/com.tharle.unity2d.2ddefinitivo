@@ -50,8 +50,6 @@ public class DoorController : MonoBehaviour {
         
         controleIluminacaoPlayer();
 
-        yield return new WaitForSeconds(.5f); // Da um tempo entre fade In e o Fade out
-
         //Fade Out
         this.fadeScript.StartFadeOut();
 

@@ -7,6 +7,7 @@ public class HudScript : MonoBehaviour{
 
     [Header("Scripts externos")]
     private PlayerScript playerScript;
+    private _PlayerInfoController playerInfoController;
 
     [Header("Configuração de Barra de Vida")]
     public Image[] hpBar; // Barra de vida no canto
@@ -16,6 +17,7 @@ public class HudScript : MonoBehaviour{
     // Start is called before the first frame update
     void Start() {
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
+        this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class HudScript : MonoBehaviour{
     ///  Método que calcula e controla a Barra de vida UI
     /// </summary>
     private void controleBarraVida() {
-        float percVida = ((float) playerScript.vidaAtual / (float) playerScript.vidaMax) * 10; // Calcula percentual de vida 0 - 1
+        float percVida = ((float) playerInfoController.VidaAtual / (float) playerInfoController.VidaMax) * 10; // Calcula percentual de vida 0 - 1
 
         for(int i = 0, vida = 1; i < hpBar.Length; i++, vida+=2){
             Image imgHP = hpBar[i];

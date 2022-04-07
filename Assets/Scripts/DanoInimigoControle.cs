@@ -9,6 +9,8 @@ public class DanoInimigoControle : MonoBehaviour{
     private Vector3 direcaoVisao; // Direcao de visao do inimigo
     private SpriteRenderer spriteRenderer; //Sprite do personagem
     private PlayerScript playerScript; // Script do personagem principal
+
+    private _WeaponController weaponController;// Controle da arma equipada
     // private Animator animator; // Controller de animação 
 
     [Header("Configuração de resistências/fraquesas")]
@@ -51,6 +53,7 @@ public class DanoInimigoControle : MonoBehaviour{
     private void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
+        this.weaponController = FindObjectOfType(typeof(_WeaponController)) as _WeaponController;
         this.attacking = false;
         this.pontosVidaInimigoAtual = this.pontosVidaInimigoMax;
         this.spriteRenderer = GetComponent<SpriteRenderer>();
@@ -102,7 +105,7 @@ public class DanoInimigoControle : MonoBehaviour{
         switch(collider.tag){
             case "tagArma":
 
-                Weapon armaEquipada = playerScript.armaEquipada;
+                Weapon armaEquipada = weaponController.armaEquipada;
                 inimigoAnimator.SetTrigger("hit");
 
                 if(armaEquipada != null && this.gameController){

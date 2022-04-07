@@ -509,6 +509,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -518,8 +520,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -540,9 +542,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -4008,6 +4013,169 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pixel-art pack 1 objetos_115: 824525971409539137
+      pixel-art pack 1 objetos_160: -4422141986259101781
+      pixel-art pack 1 objetos_21: 3192481006957989845
+      pixel-art pack 1 objetos_96: 5842544899766306537
+      pixel-art pack 1 objetos_93: -7858760019189958758
+      pixel-art pack 1 objetos_48: 4710170692027665034
+      pixel-art pack 1 objetos_43: 7515064073941397102
+      pixel-art pack 1 objetos_141: -7253493090510679562
+      pixel-art pack 1 objetos_50: 4048150408206783384
+      pixel-art pack 1 objetos_45: -178222388912398768
+      pixel-art pack 1 objetos_87: -8301172878354989371
+      pixel-art pack 1 objetos_111: -557467321240550343
+      pixel-art pack 1 objetos_1: 142732377999977526
+      pixel-art pack 1 objetos_51: -1173130218140178866
+      pixel-art pack 1 objetos_150: -9183686599806168505
+      pixel-art pack 1 objetos_155: -6643530597660829928
+      pixel-art pack 1 objetos_133: 2869756296180430934
+      pixel-art pack 1 objetos_130: 281492507382615329
+      pixel-art pack 1 objetos_34: 8222048280747689677
+      pixel-art pack 1 objetos_35: 8328011649751384152
+      pixel-art pack 1 objetos_75: -1180017813187015702
+      pixel-art pack 1 objetos_47: 6242298789330868445
+      pixel-art pack 1 objetos_91: 1888525739683358894
+      pixel-art pack 1 objetos_7: 3447003740918957256
+      pixel-art pack 1 objetos_156: -93714013302217622
+      pixel-art pack 1 objetos_57: 3161188455354340887
+      pixel-art pack 1 objetos_103: 9002321065609311259
+      pixel-art pack 1 objetos_121: 1629508909307700227
+      pixel-art pack 1 objetos_109: -3585985581132411212
+      pixel-art pack 1 objetos_127: 9199786327564221425
+      pixel-art pack 1 objetos_137: -6367184404775552731
+      pixel-art pack 1 objetos_85: -5211437450034199263
+      pixel-art pack 1 objetos_46: -83857198122670422
+      pixel-art pack 1 objetos_31: -6417797538276595108
+      pixel-art pack 1 objetos_95: 1512555485581716550
+      pixel-art pack 1 objetos_119: 5416790646968594986
+      pixel-art pack 1 objetos_118: 4343673024184672061
+      pixel-art pack 1 objetos_29: 96855133932046894
+      pixel-art pack 1 objetos_55: 1067684188900576203
+      pixel-art pack 1 objetos_8: -7306946067789205503
+      pixel-art pack 1 objetos_71: 6958358907653515813
+      pixel-art pack 1 objetos_92: 3312629379554694930
+      pixel-art pack 1 objetos_88: -5891182984492867470
+      pixel-art pack 1 objetos_42: -4411253734596053268
+      pixel-art pack 1 objetos_158: -3935337790874532788
+      pixel-art pack 1 objetos_124: -3797170926654763837
+      pixel-art pack 1 objetos_61: 2918617734113035647
+      pixel-art pack 1 objetos_64: 2174730390893091762
+      pixel-art pack 1 objetos_123: -738167401546059241
+      pixel-art pack 1 objetos_6: -5961469644639732606
+      pixel-art pack 1 objetos_17: 8017718824773685502
+      pixel-art pack 1 objetos_125: 8023491236453146768
+      pixel-art pack 1 objetos_39: -2406574165842551194
+      pixel-art pack 1 objetos_146: 8053911120602816000
+      pixel-art pack 1 objetos_159: 4677064330250656155
+      pixel-art pack 1 objetos_49: 5487425599096321776
+      pixel-art pack 1 objetos_147: 3079028522141904210
+      pixel-art pack 1 objetos_24: -5161057266257786542
+      pixel-art pack 1 objetos_14: -4132525053689845911
+      pixel-art pack 1 objetos_157: 85066474704262347
+      pixel-art pack 1 objetos_77: 1631956254376142361
+      pixel-art pack 1 objetos_100: 8542233317240149728
+      pixel-art pack 1 objetos_9: 2197022188469962435
+      pixel-art pack 1 objetos_79: -1756354739858233588
+      pixel-art pack 1 objetos_107: -6230302569509723887
+      pixel-art pack 1 objetos_97: -1904110530512101451
+      pixel-art pack 1 objetos_143: -3786137008142260563
+      pixel-art pack 1 objetos_106: -2557030651904621011
+      pixel-art pack 1 objetos_144: 1201483014963988457
+      pixel-art pack 1 objetos_84: 4290165228184980527
+      pixel-art pack 1 objetos_38: 8139243893353656289
+      pixel-art pack 1 objetos_154: -163957999605090758
+      pixel-art pack 1 objetos_139: -8585630440520170855
+      pixel-art pack 1 objetos_16: -3236080175647024937
+      pixel-art pack 1 objetos_66: -3567259013230679004
+      pixel-art pack 1 objetos_22: -1984390160028748615
+      pixel-art pack 1 objetos_27: 2787259879122612264
+      pixel-art pack 1 objetos_63: 4811614854219231789
+      pixel-art pack 1 objetos_23: -5834588958914281794
+      pixel-art pack 1 objetos_122: 8660198577303945756
+      pixel-art pack 1 objetos_33: -6709529834550362028
+      pixel-art pack 1 objetos_104: 7708492778696000339
+      pixel-art pack 1 objetos_90: -1438317278122533764
+      pixel-art pack 1 objetos_28: -4484389145692952597
+      pixel-art pack 1 objetos_117: 499066922166902200
+      pixel-art pack 1 objetos_153: 7496691435735516816
+      pixel-art pack 1 objetos_129: -8695378499159026585
+      pixel-art pack 1 objetos_86: 5090510020448663716
+      pixel-art pack 1 objetos_112: 6798918431511987569
+      pixel-art pack 1 objetos_126: 6172195391128274665
+      pixel-art pack 1 objetos_18: 8804627984965084900
+      pixel-art pack 1 objetos_2: 5717607831258577804
+      pixel-art pack 1 objetos_0: 8605500175652702339
+      pixel-art pack 1 objetos_72: 6838357510703356736
+      pixel-art pack 1 objetos_83: 4482987978132612382
+      pixel-art pack 1 objetos_114: 1694198663202820024
+      pixel-art pack 1 objetos_56: -3075327549331276760
+      pixel-art pack 1 objetos_4: 1326757350670761039
+      pixel-art pack 1 objetos_13: -618841625454590165
+      pixel-art pack 1 objetos_151: 3002161482368720040
+      pixel-art pack 1 objetos_76: 3463136908549909197
+      pixel-art pack 1 objetos_145: -8753717591728918
+      pixel-art pack 1 objetos_148: -5592624779749660697
+      pixel-art pack 1 objetos_59: 1925077711051330482
+      pixel-art pack 1 objetos_108: -44216598893889641
+      pixel-art pack 1 objetos_149: 5794045333862630600
+      pixel-art pack 1 objetos_74: -1769376465041749948
+      pixel-art pack 1 objetos_131: 1339566222105378107
+      pixel-art pack 1 objetos_136: 2097247117283867590
+      pixel-art pack 1 objetos_53: 2340394663411479558
+      pixel-art pack 1 objetos_37: -1532341988914370878
+      pixel-art pack 1 objetos_40: 960623616193229099
+      pixel-art pack 1 objetos_81: -8544749990308526794
+      pixel-art pack 1 objetos_142: -687192495650556295
+      pixel-art pack 1 objetos_80: -4645333378286326069
+      pixel-art pack 1 objetos_58: 6644560201186189391
+      pixel-art pack 1 objetos_120: 7714890970106473354
+      pixel-art pack 1 objetos_132: 8725182911087061955
+      pixel-art pack 1 objetos_30: -4664569498842728927
+      pixel-art pack 1 objetos_44: -3140546378555183922
+      pixel-art pack 1 objetos_70: -1897838102048170503
+      pixel-art pack 1 objetos_68: -1841232034740077527
+      pixel-art pack 1 objetos_20: -6373834333359881316
+      pixel-art pack 1 objetos_99: -8512079574869174546
+      pixel-art pack 1 objetos_116: -7012923067978096180
+      pixel-art pack 1 objetos_19: 4391231208878329462
+      pixel-art pack 1 objetos_134: 7823663515454128944
+      pixel-art pack 1 objetos_15: -6045423084743067407
+      pixel-art pack 1 objetos_32: -4505579130064376517
+      pixel-art pack 1 objetos_52: 6336374697634703207
+      pixel-art pack 1 objetos_67: -8229773423266519515
+      pixel-art pack 1 objetos_89: -7192559925690677580
+      pixel-art pack 1 objetos_69: -3281897222349200637
+      pixel-art pack 1 objetos_138: -3668119157546141913
+      pixel-art pack 1 objetos_36: 4401445888826745824
+      pixel-art pack 1 objetos_65: -6645084274713164636
+      pixel-art pack 1 objetos_73: 5012803475316090420
+      pixel-art pack 1 objetos_3: -7380035975068661391
+      pixel-art pack 1 objetos_78: -6878445948809884305
+      pixel-art pack 1 objetos_62: -7824800423026703382
+      pixel-art pack 1 objetos_152: -4048794853801693477
+      pixel-art pack 1 objetos_135: -3826234179030992221
+      pixel-art pack 1 objetos_102: 8763394570712321994
+      pixel-art pack 1 objetos_26: -3105921690163516560
+      pixel-art pack 1 objetos_161: -5332194803381938680
+      pixel-art pack 1 objetos_101: 2670321369457062591
+      pixel-art pack 1 objetos_105: 1656342297919469728
+      pixel-art pack 1 objetos_54: -6667789467305708243
+      pixel-art pack 1 objetos_98: -5738162225130080463
+      pixel-art pack 1 objetos_110: 3356951020699291164
+      pixel-art pack 1 objetos_82: 5604209357125983370
+      pixel-art pack 1 objetos_41: -2590016682324139114
+      pixel-art pack 1 objetos_5: -3757058315151214332
+      pixel-art pack 1 objetos_25: -7264836459424183650
+      pixel-art pack 1 objetos_11: 8894918238085429159
+      pixel-art pack 1 objetos_60: 2901995547478037689
+      pixel-art pack 1 objetos_113: -382035648266750020
+      pixel-art pack 1 objetos_140: -240115310770176224
+      pixel-art pack 1 objetos_128: 8742324725262353153
+      pixel-art pack 1 objetos_10: 1779984348798437589
+      pixel-art pack 1 objetos_12: 6911906845137513001
+      pixel-art pack 1 objetos_94: -1865476540853326782
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
