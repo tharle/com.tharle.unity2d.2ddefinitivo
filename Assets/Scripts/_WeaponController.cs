@@ -110,7 +110,16 @@ public class _WeaponController : MonoBehaviour
     {
         print($"Trow some Arrow!!!");
         GameObject tempArrow = Instantiate (this.ArrowPrefab, this.ArrowSpawn.position, this.ArrowSpawn.localRotation);
-        var velocity = this.playerScript.lookLeft ? -5 : 5;
+        var velocity = 5;
+
+        if (this.playerScript.lookLeft){// Flip arrow
+            tempArrow.transform.localScale = new Vector3(
+                tempArrow.transform.localScale.x * -1, 
+                tempArrow.transform.localScale.y,
+                tempArrow.transform.localScale.z
+            );
+            velocity *= -1;
+        }
         tempArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0);
     }
 
