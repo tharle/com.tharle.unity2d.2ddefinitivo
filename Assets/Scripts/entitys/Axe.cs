@@ -7,6 +7,7 @@ public class Axe : Weapon {
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Axes";
 
     public Axe(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+        TypeJobsAllowned = new TypeJob[]{TypeJob.BARBARIAN, TypeJob.WARRIOR, TypeJob.DWARF};
     }
 
     public override TypeWeapon typeWeapon(){

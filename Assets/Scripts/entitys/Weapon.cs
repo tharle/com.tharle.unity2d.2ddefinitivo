@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public abstract class Weapon : Item {
@@ -59,6 +60,8 @@ public abstract class Weapon : Item {
        }
     }
 
+    public TypeJob[] TypeJobsAllowned = new TypeJob[]{};
+
     /// <summary>
     /// Tipo de item, que pode variar desde 
     /// <seealso cref="TypeWeapon.AXE">machados</seealso>,  
@@ -76,6 +79,13 @@ public abstract class Weapon : Item {
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.sprites = sprites;
+    }
+
+    public bool IsAllowJobUseWeapon(TypeJob job){
+
+        if(TypeJobsAllowned.Length <= 0) return true;
+
+        return Array.Exists<TypeJob>(TypeJobsAllowned, typeJob => typeJob == job);
     }
 
     /// <summary>

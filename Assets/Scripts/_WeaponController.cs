@@ -75,6 +75,8 @@ public class _WeaponController : MonoBehaviour
     {
 
         if(this.armaEquipada == null || this.playerInfoController.indexArma != this.armaEquipada.index){
+            // TODO pode existir um caso que ele "recarregue" uma arma sem a necessidade
+            gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida arma selecionada com a personagem ja selecionada
             this.armaEquipada = gameController.weapons[this.playerInfoController.indexArma];
             GameObject[] WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
             print($"Carregou Arma : {this.armaEquipada.nameItem} ({this.armaEquipada.index})");

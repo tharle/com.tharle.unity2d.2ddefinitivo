@@ -8,8 +8,8 @@ public class _PlayerInfoController : MonoBehaviour
     public Personagem.Index indexPersonagem;
 
     [Header("Vida e energias")]
-    public int vidaAtual;
-    public int vidaMax;
+    public int VidaAtual;
+    public int VidaMax;
 
     [Header("Equipamentos")]
     public Weapon.Index indexArma; // arma equipada
@@ -25,13 +25,13 @@ public class _PlayerInfoController : MonoBehaviour
     /// Reseta a barra de vida atual do personagem para a vida máxima. 
     /// </summary>
     public void RestaurarVida() {
-        print("Restaura a vida: "+vidaAtual+" ----> "+vidaMax);
-        this.vidaAtual = this.vidaMax;
+        print("Restaura a vida: "+VidaAtual+" ----> "+VidaMax);
+        this.VidaAtual = this.VidaMax;
     }
 
     public void CarregarPersonagem(Personagem personagem)
     {
-        this.vidaMax = personagem.vidaMax;
+        this.VidaMax = personagem.VidaMax;
     }
 
     // -----------------------------------------------

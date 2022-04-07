@@ -34,14 +34,36 @@ public class _GameController : MonoBehaviour{
         DontDestroyOnLoad(this.gameObject); // impede de ser destruido
     }
 
+    // Update is called once per frame
+    void Update(){
+        this.txtGold.text = this.playerInfoController.qntDinheiro.ToString("N0");
+    }
+
     void CarregarPersonagem(){
         Personagem personagem = BuscarPersonagem(playerInfoController.indexPersonagem);
         this.playerInfoController.CarregarPersonagem(personagem);
     }
 
-    // Update is called once per frame
-    void Update(){
-        this.txtGold.text = this.playerInfoController.qntDinheiro.ToString("N0");
+    /// <summary>
+    /// Valida se a arma seleciona faz sentido com o TypeJob do personagem:
+    /// Se sim: Não faz nada
+    /// Se não: Troca pra arma WeaponStarter dp TypeJob
+    /// </summary>
+    public void ValidarPersonagemEArmaEquipada()
+    {
+        Personagem personagem = BuscarPersonagem(playerInfoController.indexPersonagem);
+        Weapon armaEquipada = this.weapons[this.playerInfoController.indexArma];
+
+        print("VALIDANDO ARMA EQUIPADA");
+        
+        if(personagem == null || armaEquipada == null) return;
+        print($" Quantidade de jobos possiveis -> {armaEquipada.TypeJobsAllowned.Length}");
+        if(!armaEquipada.IsAllowJobUseWeapon(personagem.Job))
+        {
+            print($"O personagem {personagem.Nome} não pode usar o item equipado {armaEquipada.index}");
+            print($"Mudando para {personagem.IndexWeaponStarter}");
+            playerInfoController.indexArma = personagem.IndexWeaponStarter;
+        }
     }
 
     private void InitItens(){
@@ -240,49 +262,57 @@ public class _GameController : MonoBehaviour{
         string name = "Bori Blueclaws";
         TypeJob job = TypeJob.BARBARIAN;
         string spritesName = "Barbarian1";
-        this.personagens[index] = new Personagem(index, name, job, 25, spritesName);
+        Weapon.Index weaponStarter = Weapon.Index.MACE_WOOD;
+        this.personagens[index] = new Personagem(index, name, job, 25, weaponStarter, spritesName);
 
         index = Personagem.Index.WAR_GEORGE_GARE;
         name = "George Gare";
         job = TypeJob.WARRIOR;
+        weaponStarter = Weapon.Index.SWORD_WOOD;
         spritesName = "Soldier";
-        this.personagens[index] = new Personagem(index, name, job, 20,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 20, weaponStarter, spritesName);
 
         index = Personagem.Index.ELF_CATARINA_ELDERT;
         name = "Catarina Eldert";
         job = TypeJob.ELF;
+        weaponStarter = Weapon.Index.BOW_WOOD;
         spritesName = "Elf Female";
-        this.personagens[index] = new Personagem(index, name, job, 10,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 10, weaponStarter,spritesName);
 
         index = Personagem.Index.ELF_ALTERIEL_ELDERT;
         name = "Alteriel Eldert";
         job = TypeJob.ELF;
+        weaponStarter = Weapon.Index.BOW_WOOD;
         spritesName = "Elf Male";
-        this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 15, weaponStarter,spritesName);
 
         index = Personagem.Index.KNI_ROBERTO_ROBALDO;
         name = "Roberto Robaldo";
         job = TypeJob.KNIGHT;
+        weaponStarter = Weapon.Index.SWORD_IRON;
         spritesName = "Knight";
-        this.personagens[index] = new Personagem(index, name, job, 20,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 20, weaponStarter,spritesName);
 
         index = Personagem.Index.CLE_MARCELO_ROSSI;
         name = "Padre Marcelo Rossi";
         job = TypeJob.CLERIC;
+        weaponStarter = Weapon.Index.MACE_WOOD;
         spritesName = "Peasant";
-        this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 15, weaponStarter,spritesName);
 
         index = Personagem.Index.WIZ_FLIX;
         name = "Flix, the wonder";
         job = TypeJob.WIZZARD;
+        weaponStarter = Weapon.Index.STAFF_ARCANE;
         spritesName = "Wizard 1";
-        this.personagens[index] = new Personagem(index, name, job, 5,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 5, weaponStarter,spritesName);
 
         index = Personagem.Index.DWF_TINHO_JADEARM;
         name = "Tihno Jadearm";
         job = TypeJob.DWARF;
+        weaponStarter = Weapon.Index.AXE_WOOD;
         spritesName = "Dwarf 1";
-        this.personagens[index] = new Personagem(index, name, job, 15,spritesName);
+        this.personagens[index] = new Personagem(index, name, job, 15, weaponStarter,spritesName);
     }
 
     /// <summary>

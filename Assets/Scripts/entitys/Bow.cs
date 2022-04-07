@@ -12,6 +12,7 @@ public class Bow : Weapon {
     public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite ArrowSprite) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
         this.ArrowSprite = ArrowSprite;
         this.LifeTimeProjetil = 2.5f;
+        TypeJobsAllowned = new TypeJob[]{TypeJob.ELF};
     }
 
     public override TypeWeapon typeWeapon(){

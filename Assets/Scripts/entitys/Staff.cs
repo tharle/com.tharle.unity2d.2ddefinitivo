@@ -9,6 +9,7 @@ public class Staff : Weapon {
 
     public Staff(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, float LifeTimeProjetil) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
         this.LifeTimeProjetil = LifeTimeProjetil;
+        TypeJobsAllowned = new TypeJob[]{TypeJob.WIZZARD};
     }
 
     public override TypeWeapon typeWeapon(){

@@ -14,37 +14,42 @@ public class Personagem
     /// <summary>
     /// Nome do personagem
     /// </summary>
-    public string nome {
+    public string Nome {
         get;
     }
 
     /// <summary>
     /// Vida maxima
     /// </summary>
-    public int vidaMax {
+    public int VidaMax {
         get;
     }
     
     /// <summary>
     /// <seealso cref="TypeJob">tipo de trabalho</seealso> do personagem.
     /// </summary>
-    public TypeJob job {
+    public TypeJob Job {
         get;
     }
     
     /// <summary>
     /// Nome das sprites de animação.
     /// </summary>
-    public string spritesName {
+    public string SpritesName {
         get;
     }
 
-    public Personagem(Index index, string nome, TypeJob job, int vidaMax, string spritesname){
+    public Weapon.Index IndexWeaponStarter {
+        get;
+    }
+
+    public Personagem(Index index, string nome, TypeJob job, int vidaMax, Weapon.Index weaponStarter, string spritesname){
         this.index = index;
-        this.nome = nome;
-        this.job = job;
-        this.vidaMax = vidaMax;
-        this.spritesName = spritesname;
+        this.Nome = nome;
+        this.Job = job;
+        this.VidaMax = vidaMax;
+        this.IndexWeaponStarter = weaponStarter;
+        this.SpritesName = spritesname;
     }
 
     public enum Index {

@@ -7,6 +7,7 @@ public class Sword : Weapon {
     
     // TODO Arrumar para perminir index
     public Sword(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites){
+        TypeJobsAllowned = new TypeJob[]{TypeJob.KNIGHT, TypeJob.WARRIOR};
     }
 
     public override TypeWeapon typeWeapon() {

@@ -29,7 +29,7 @@ public class HudScript : MonoBehaviour{
     ///  Método que calcula e controla a Barra de vida UI
     /// </summary>
     private void controleBarraVida() {
-        float percVida = ((float) playerInfoController.vidaAtual / (float) playerInfoController.vidaMax) * 10; // Calcula percentual de vida 0 - 1
+        float percVida = ((float) playerInfoController.VidaAtual / (float) playerInfoController.VidaMax) * 10; // Calcula percentual de vida 0 - 1
 
         for(int i = 0, vida = 1; i < hpBar.Length; i++, vida+=2){
             Image imgHP = hpBar[i];

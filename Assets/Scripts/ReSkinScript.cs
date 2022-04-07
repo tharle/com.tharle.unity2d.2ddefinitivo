@@ -31,8 +31,9 @@ public class ReSkinScript : MonoBehaviour {
     void LateUpdate() { 
         if(isPlayer){
             Personagem personagemSelecionado = this.gameController.BuscarPersonagem(this.playerInfoController.indexPersonagem);
-            if(personagemSelecionado != null && spriteSheetName != personagemSelecionado.spritesName){
+            if(personagemSelecionado != null && spriteSheetName != personagemSelecionado.SpritesName){
                 this.LoadSpriteSheetPersonagem(personagemSelecionado);
+                gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida personagem selecionado com a arma ja selecionada
             }
         }else if(this.loadedSpriteSheetName != spriteSheetName) { // Se foi mudado o nome da skins
             this.LoadSpriteSheet();
@@ -51,7 +52,7 @@ public class ReSkinScript : MonoBehaviour {
     /// Função que carrega todas as sprintes no spritesSkins a partir do personagem selecionado
     /// </summary>
     private void LoadSpriteSheetPersonagem(Personagem personagemSelecionado) {
-        this.spriteSheetName = personagemSelecionado.spritesName; // Carrega as sprints do persnagem
+        this.spriteSheetName = personagemSelecionado.SpritesName; // Carrega as sprints do persnagem
         LoadSpriteSheet();
     }
 
