@@ -43,7 +43,7 @@ public class MudarCenaController : MonoBehaviour
 
         if(cenaDestino == TypeScene.SCENE_TITLE)
         {
-            DestroyImmediate(_gameController.gameObject);
+            Destroy(_gameController.gameObject, 1f);
         }
 
         SceneManager.LoadScene(cenaDestino.ToString());     

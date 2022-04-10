@@ -35,6 +35,7 @@ public class ReSkinScript : MonoBehaviour {
             if(personagemSelecionado != null && spriteSheetName != personagemSelecionado.SpritesName){
                 this.LoadSpriteSheetPersonagem(personagemSelecionado);
                 gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida personagem selecionado com a arma ja selecionada
+                this.LoadPlayerInfos(personagemSelecionado);
             }
         }else if(this.loadedSpriteSheetName != spriteSheetName) { // Se foi mudado o nome da skins
             this.LoadSpriteSheet();
@@ -66,5 +67,9 @@ public class ReSkinScript : MonoBehaviour {
         
         this.spriteSheetMap = this.spritesSkins.ToDictionary(spriteSkin => spriteSkin.name, spriteSkin => spriteSkin); // Indexa as sprints pelo nome da ação
         this.loadedSpriteSheetName = this.spriteSheetName;
+    }
+
+    private void LoadPlayerInfos(Personagem personagem){
+        this.playerInfoController.CarregarPersonagemInfos(personagem, true);
     }
 }

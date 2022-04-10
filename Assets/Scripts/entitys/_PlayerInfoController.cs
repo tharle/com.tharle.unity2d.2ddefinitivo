@@ -49,9 +49,10 @@ public class _PlayerInfoController : MonoBehaviour
         this.VidaAtual = this.VidaMax;
     }
 
-    public void CarregarPersonagemInfos(Personagem personagem)
+    public void CarregarPersonagemInfos(Personagem personagem, bool carregarVida)
     {
         this.VidaMax = personagem.VidaMax;
+        this.VidaAtual = carregarVida ? this.VidaMax : this.VidaAtual;
     }
 
     // -----------------------------------------------

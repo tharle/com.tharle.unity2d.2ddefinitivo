@@ -24,18 +24,12 @@ public class _GameController : MonoBehaviour{
         this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
-        this.playerInfoController.RestaurarVida();
         DontDestroyOnLoad(this.gameObject); // impede de ser destruido
     }
 
     // Update is called once per frame
     void Update(){
         this.txtGold.text = this.playerInfoController.qntDinheiro.ToString("N0");
-    }
-
-    void CarregarPersonagem(){
-        Personagem personagem = _dataBase.BuscarPersonagem(playerInfoController.indexPersonagem);
-        this.playerInfoController.CarregarPersonagemInfos(personagem);
     }
 
     /// <summary>
