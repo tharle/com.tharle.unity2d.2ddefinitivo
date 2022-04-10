@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq; // import para alterar os estados de animações
+using System.Linq;
 
 public class ReSkinScript : MonoBehaviour {
 
     [Header("Objetos internos")]
     private SpriteRenderer spriteRenderer;
     private _GameController  gameController;
-
     private _PlayerInfoController playerInfoController;
+    private _DataBaseController _dataBase;
 
     [Header("Skins")]
     public bool isPlayer;
@@ -24,13 +24,14 @@ public class ReSkinScript : MonoBehaviour {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.gameController = FindObjectOfType(typeof (_GameController)) as _GameController;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
+        this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
         this.LoadSpriteSheet();
     }
 
     // Update is called once per frame
     void LateUpdate() { 
         if(isPlayer){
-            Personagem personagemSelecionado = this.gameController.BuscarPersonagem(this.playerInfoController.indexPersonagem);
+            Personagem personagemSelecionado = _dataBase.BuscarPersonagem(this.playerInfoController.indexPersonagem);
             if(personagemSelecionado != null && spriteSheetName != personagemSelecionado.SpritesName){
                 this.LoadSpriteSheetPersonagem(personagemSelecionado);
                 gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida personagem selecionado com a arma ja selecionada

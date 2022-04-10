@@ -10,6 +10,7 @@ public class _WeaponController : MonoBehaviour
     private _GameController gameController;
 
     private PlayerScript playerScript;
+    private _DataBaseController _dataBase;
 
     // [Header("Projeteis")]
 
@@ -30,9 +31,10 @@ public class _WeaponController : MonoBehaviour
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
-        this.ResetAllGameObjects(WeaponAnimationsMelee);        
-        this.ResetAllGameObjects(WeaponAnimationsBow);        
-        this.ResetAllGameObjects(WeaponAnimationsStaff);        
+        this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
+        this.ResetAllGameObjects(WeaponAnimationsMelee);
+        this.ResetAllGameObjects(WeaponAnimationsBow);
+        this.ResetAllGameObjects(WeaponAnimationsStaff);
     }
 
     // Update is called once per frame
@@ -73,11 +75,10 @@ public class _WeaponController : MonoBehaviour
     /// </summary>
     private void CarregarArma() 
     {
-
         if(this.armaEquipada == null || this.playerInfoController.indexArma != this.armaEquipada.index){
             // TODO pode existir um caso que ele "recarregue" uma arma sem a necessidade
             gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida arma selecionada com a personagem ja selecionada
-            this.armaEquipada = gameController.weapons[this.playerInfoController.indexArma];
+            this.armaEquipada = _dataBase.BuscarArma(this.playerInfoController.indexArma);
             GameObject[] WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
             print($"Carregou Arma : {this.armaEquipada.nameItem} ({this.armaEquipada.index})");
 

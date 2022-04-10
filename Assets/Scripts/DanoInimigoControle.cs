@@ -217,6 +217,9 @@ public class DanoInimigoControle : MonoBehaviour{
     }
 
     private bool isPlayerLeft(){
+        if(playerScript == null) print("PLAYER ESTA NULO");
+        if(playerScript.transform == null) print("PLAYER TRANSFOR ESTA NULO");
+        if(playerScript.transform.position == null) print("PLAYER TRANSFOR POSITION ESTA NULO");
         return this.playerScript.transform.position.x < this.transform.position.x;
     }
 

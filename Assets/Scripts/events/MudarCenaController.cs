@@ -8,6 +8,7 @@ public class MudarCenaController : MonoBehaviour
 
     [Header("Scripts externos")]
     private FadeScript fade;
+    private _GameController _gameController;
 
     /// <summary>
     ///  <seealso cref="TypeScene"> Cenas </seealso> nas quais o jogador será transportado
@@ -17,24 +18,34 @@ public class MudarCenaController : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         this.fade = FindObjectOfType(typeof(FadeScript)) as FadeScript;
+        this._gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() 
+    {
         
     }
 
-    public void Interacao(){
+    public void Interacao()
+    {
         StartCoroutine("MudarCena");
     }
 
 
-    IEnumerator MudarCena() {
+    IEnumerator MudarCena() 
+    {
         //Fade In
         this.fade.StartFadeIn();
         yield return new WaitWhile(() => this.fade.IsBlackout());
         //Fade Out
         this.fade.StartFadeOut();
-        SceneManager.LoadScene(cenaDestino.ToString());        
+
+        if(cenaDestino == TypeScene.SCENE_TITLE)
+        {
+            DestroyImmediate(_gameController.gameObject);
+        }
+
+        SceneManager.LoadScene(cenaDestino.ToString());     
     }
 }

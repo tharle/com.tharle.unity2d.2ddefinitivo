@@ -17,6 +17,26 @@ public class _PlayerInfoController : MonoBehaviour
     [Header("Inventario e grana")]
     public int qntDinheiro; // Armazena a quantidade de dinheiro
 
+    private void Start() 
+    {
+        // Load Personagem Selecionado na tela de titulo
+        CarregarPersonagem();
+            
+    }
+
+     private void CarregarPersonagem()
+    {
+        string personagemIndexString = PlayerPrefs.GetString(PlayerPrefsConst.PERSONAGEM_INDEX);
+        Personagem.Index indexPersonagemTemp;
+        if (Enum.TryParse(personagemIndexString, out indexPersonagemTemp))
+        {
+            indexPersonagem = indexPersonagemTemp;
+            indexArma = Weapon.Index._NONE_; // Forca carregar arma padrao
+        }
+
+    }
+
+
 
     // -----------------------------------------------
     // FUNÇÕES PUBLICAS
@@ -29,7 +49,7 @@ public class _PlayerInfoController : MonoBehaviour
         this.VidaAtual = this.VidaMax;
     }
 
-    public void CarregarPersonagem(Personagem personagem)
+    public void CarregarPersonagemInfos(Personagem personagem)
     {
         this.VidaMax = personagem.VidaMax;
     }
