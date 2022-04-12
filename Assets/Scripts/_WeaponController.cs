@@ -32,9 +32,7 @@ public class _WeaponController : MonoBehaviour
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
         this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
-        this.ResetAllGameObjects(WeaponAnimationsMelee);
-        this.ResetAllGameObjects(WeaponAnimationsBow);
-        this.ResetAllGameObjects(WeaponAnimationsStaff);
+        ResetAllWeaponsAnimations();
     }
 
     // Update is called once per frame
@@ -141,11 +139,20 @@ public class _WeaponController : MonoBehaviour
         }
     }
 
-    public void ResetAllWeaponsAnimations()
+    public void ResetWeaponsAnimationsForEqupedWeapon()
     {
         var WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
         ResetAllGameObjects(WeaponAnimations);
     }
+
+    public void ResetAllWeaponsAnimations()
+    {
+        this.ResetAllGameObjects(WeaponAnimationsMelee);
+        this.ResetAllGameObjects(WeaponAnimationsBow);
+        this.ResetAllGameObjects(WeaponAnimationsStaff);
+    }
+
+    
 
     public float GetIdAnimationWeapon(){
         return armaEquipada != null? armaEquipada.IdAnimationWeapon : 0f;

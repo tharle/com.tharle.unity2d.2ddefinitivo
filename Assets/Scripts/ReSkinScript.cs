@@ -10,6 +10,8 @@ public class ReSkinScript : MonoBehaviour {
     private _GameController  gameController;
     private _PlayerInfoController playerInfoController;
     private _DataBaseController _dataBase;
+    private _WeaponController _weaponController;
+    private PlayerScript _playerScript;
 
     [Header("Skins")]
     public bool isPlayer;
@@ -25,6 +27,8 @@ public class ReSkinScript : MonoBehaviour {
         this.gameController = FindObjectOfType(typeof (_GameController)) as _GameController;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
+        this._weaponController = FindObjectOfType(typeof(_WeaponController)) as _WeaponController;
+        this._playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
         this.LoadSpriteSheet();
     }
 
@@ -55,7 +59,10 @@ public class ReSkinScript : MonoBehaviour {
     /// </summary>
     private void LoadSpriteSheetPersonagem(Personagem personagemSelecionado) {
         this.spriteSheetName = personagemSelecionado.SpritesName; // Carrega as sprints do persnagem
-        LoadSpriteSheet();
+        LoadSpriteSheet(); // Carrega as sprites do persnagem
+        _weaponController.ResetAllWeaponsAnimations();// Resta todas as animacoes de armas
+        _playerScript.RestAnimationPlayer();// Seta animacao do player pra idle
+
     }
 
 

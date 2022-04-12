@@ -4,11 +4,19 @@ using UnityEngine;
 using TMPro;
 using System;
 
+public enum GameState 
+{
+    GAME_PLAY,
+    PAUSE
+    
+}
+
 public class _GameController : MonoBehaviour{    
     
     [Header("Infos atuais do Player")]
     private _PlayerInfoController playerInfoController;
     private _DataBaseController _dataBase;
+
 
     [Header("Configuração de animações")]
     public GameObject fxMorte; // Animação de morte
@@ -19,17 +27,28 @@ public class _GameController : MonoBehaviour{
     [Header("Elementos Fade-In/Fade-Out")]
     public FadeScript fadeScript;
 
+    [Header("Pause/Menus")]
+    private PauseMenuScript _pauseMenuScript;
+
+    public GameState CurrentState;
+
     // Start is called before the first frame update
     void Start(){
         this.fadeScript = FindObjectOfType(typeof(FadeScript)) as FadeScript;
         this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
         DontDestroyOnLoad(this.gameObject); // impede de ser destruido
+        PauseResumeGame();
     }
 
     // Update is called once per frame
     void Update(){
         this.txtGold.text = this.playerInfoController.qntDinheiro.ToString("N0");
+        PauseResumeGame(); // Carrega o menu
+    }
+
+    void LateUpdate() {
+        OnInputMenu(); // Verifica se a tecla de abrir menu foi acionada
     }
 
     /// <summary>
@@ -51,6 +70,28 @@ public class _GameController : MonoBehaviour{
             print($"O personagem {personagem.Nome} não pode usar o item equipado {armaEquipada?.index}");
             print($"Mudando para {personagem.IndexWeaponStarter}");
             playerInfoController.indexArma = personagem.IndexWeaponStarter;
+        }
+    }
+
+    private void PauseResumeGame()
+    {
+        switch (CurrentState)
+        {
+            case GameState.PAUSE:
+                Time.timeScale = 0;
+                break;
+            case GameState.GAME_PLAY:
+            default:
+                Time.timeScale = 1;
+                break;
+        }
+    }
+
+    private void OnInputMenu()
+    {
+        if(Input.GetButtonDown("Cancel"))
+        {
+            CurrentState = CurrentState == GameState.PAUSE ? GameState.GAME_PLAY : GameState.PAUSE;
         }
     }
 }

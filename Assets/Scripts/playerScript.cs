@@ -69,7 +69,9 @@ public class PlayerScript : MonoBehaviour{
     //Adicionando comentario teste GIT
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
-    void FixedUpdate() {        
+    void FixedUpdate() {  
+        if(gameController.CurrentState == GameState.PAUSE) return;
+
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.02f, whatIsGround);
         this.playerRigidbody.velocity = new Vector2(this.eixoX * this.speed, this.playerRigidbody.velocity.y);
         
@@ -86,6 +88,8 @@ public class PlayerScript : MonoBehaviour{
 
     // Update is called once per frame, taxa de atualização mais rápida
     void Update() {
+        if(gameController.CurrentState == GameState.PAUSE) return;
+
         this.eixoX = Input.GetAxisRaw("Horizontal");
         this.eixoY = Input.GetAxisRaw("Vertical");
 
@@ -200,7 +204,7 @@ public class PlayerScript : MonoBehaviour{
         this.attacking = attackingValue > 0;
 
         if(!this.attacking){
-             this.weaponController.ResetAllWeaponsAnimations();
+             this.weaponController.ResetWeaponsAnimationsForEqupedWeapon();
         }
     }
 
@@ -268,6 +272,12 @@ public class PlayerScript : MonoBehaviour{
         }else{
             objetoInteracao = null;
         }
+    }
+
+    public void RestAnimationPlayer()
+    {
+        playerAnimator.Play("Idle");
+        this.attacking = false;
     }
     
 
