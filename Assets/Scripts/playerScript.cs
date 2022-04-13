@@ -70,7 +70,7 @@ public class PlayerScript : MonoBehaviour{
 
     //Mesma coisa que o update, porém ele tem uma taxa de atualização fixa de 0.02s (taxa de atualização física)
     void FixedUpdate() {  
-        if(gameController.CurrentState == GameState.PAUSE) return;
+        if(gameController.CurrentGameState != GameState.GAME_PLAY) return;
 
         grounded = Physics2D.OverlapCircle(groundCheck.position, 0.02f, whatIsGround);
         this.playerRigidbody.velocity = new Vector2(this.eixoX * this.speed, this.playerRigidbody.velocity.y);
@@ -88,7 +88,7 @@ public class PlayerScript : MonoBehaviour{
 
     // Update is called once per frame, taxa de atualização mais rápida
     void Update() {
-        if(gameController.CurrentState == GameState.PAUSE) return;
+        if(gameController.CurrentGameState != GameState.GAME_PLAY) return;
 
         this.eixoX = Input.GetAxisRaw("Horizontal");
         this.eixoY = Input.GetAxisRaw("Vertical");

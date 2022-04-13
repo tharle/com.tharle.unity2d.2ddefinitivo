@@ -16,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - UIObjects
   - 
   - Chao
   - interacao
@@ -63,4 +63,7 @@ TagManager:
     locked: 0
   - name: layHUD
     uniqueID: 3747771651
+    locked: 0
+  - name: layMenu
+    uniqueID: 501306983
     locked: 0

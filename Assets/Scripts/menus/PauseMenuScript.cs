@@ -5,22 +5,54 @@ using UnityEngine;
 public class PauseMenuScript : MonoBehaviour
 {
 
-    private GameObject _panelMenuHud;
+    [Header("Paineis disponiveis")]
+    public GameObject panelMenu;
+    public GameObject panelItens;
+
+    [Header("Variaveis para salvar status anterior")]
+    private GameState _oldGameState;
+
+    [Header("Objetos externos")]
     private _GameController _gameController;
 
     private void Start()
     {
-        _panelMenuHud = this.transform.GetChild(0).gameObject;
         _gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
-        
+        panelMenu.SetActive(false);
+        panelItens.SetActive(false);
     }
 
     void Update(){
-        VeriftActiveMenuPause();
+        VerifyGameState();
     }
 
-    public void VeriftActiveMenuPause()
+    private void VerifyGameState()
     {
-        this._panelMenuHud.SetActive(_gameController.CurrentState == GameState.PAUSE);
+        if(_oldGameState == _gameController.CurrentGameState) return;
+        
+        _oldGameState = _gameController.CurrentGameState;
+
+        this.panelMenu.SetActive(_gameController.CurrentGameState == GameState.PAUSE_MENU); // Abre o menu principal
+        this.panelItens.SetActive(_gameController.CurrentGameState == GameState.PAUSE_ITENS); // Abre o menu de inventario
+    }
+
+    public void OnClickCancelButton()
+    {
+        _gameController.CallCloseEvent();
+    }
+
+    public void onClickMenuItens()
+    {
+        _gameController.CurrentGameState = GameState.PAUSE_ITENS;
+    }
+
+    public void onClickMenuOptions()
+    {
+        _gameController.CurrentGameState = GameState.GAME_PLAY;
+    }
+
+    public void onClickMenuStatus()
+    {
+        _gameController.CurrentGameState = GameState.GAME_PLAY;
     }
 }

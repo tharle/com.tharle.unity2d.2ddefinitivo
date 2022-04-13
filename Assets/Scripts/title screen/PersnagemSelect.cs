@@ -16,7 +16,6 @@ public class PersnagemSelect : MonoBehaviour
     public Personagem.Index personagemIndex;
     private Color selectColor = Color.green;
     private Color unSelectColor = Color.gray;
-    private TMPro.TextMeshProUGUI textMesh;
     private Personagem personagem;
     private Image image;
     private Dictionary<string, Sprite> spriteSheetMap;
@@ -29,22 +28,15 @@ public class PersnagemSelect : MonoBehaviour
         _titleSelect = FindObjectOfType(typeof(TitleSelectScript)) as TitleSelectScript;
         personagem = _dataBase.BuscarPersonagem(personagemIndex);
         image = GetComponent<Image> ();
-        textMesh = GetComponentInChildren<TMPro.TextMeshProUGUI>();
 
         LoadText();
         LoadSpriteSheet();
         LoadSpriteImage();
     }
 
-    private void LateUpdate() 
-    {
-        // Change the color of text if is selected or not
-        textMesh.color = personagemIndex == _titleSelect.personagemIndex? selectColor : unSelectColor;
-    }
-
     public void LoadText()
     {
-        textMesh.text = personagem.Nome;
+     //   textMesh.text = personagem.Nome;
     }
 
     public void LoadSpriteImage()

@@ -7,7 +7,10 @@ using System;
 public enum GameState 
 {
     GAME_PLAY,
-    PAUSE
+    PAUSE_MENU,
+    PAUSE_ITENS,
+    PAUSE_OPTIONS,
+    PAUSE_STATUS
     
 }
 
@@ -29,8 +32,7 @@ public class _GameController : MonoBehaviour{
 
     [Header("Pause/Menus")]
     private PauseMenuScript _pauseMenuScript;
-
-    public GameState CurrentState;
+    public GameState CurrentGameState;
 
     // Start is called before the first frame update
     void Start(){
@@ -75,23 +77,39 @@ public class _GameController : MonoBehaviour{
 
     private void PauseResumeGame()
     {
-        switch (CurrentState)
+        switch (CurrentGameState)
         {
-            case GameState.PAUSE:
-                Time.timeScale = 0;
-                break;
             case GameState.GAME_PLAY:
-            default:
                 Time.timeScale = 1;
+                break;
+            default: // Pause stuffs
+                Time.timeScale = 0;
                 break;
         }
     }
 
     private void OnInputMenu()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if(Input.GetButtonDown("Cancel")) CallCloseEvent();
+    }
+
+    public void CallCloseEvent()
+    {
+        switch (CurrentGameState)
         {
-            CurrentState = CurrentState == GameState.PAUSE ? GameState.GAME_PLAY : GameState.PAUSE;
+            case GameState.GAME_PLAY:
+                CurrentGameState = GameState.PAUSE_MENU;
+                break;
+            case GameState.PAUSE_ITENS:
+            case GameState.PAUSE_OPTIONS:
+            case GameState.PAUSE_STATUS:
+                CurrentGameState = GameState.PAUSE_MENU;
+                break;
+            case GameState.PAUSE_MENU:
+            default:
+                CurrentGameState = GameState.GAME_PLAY;
+                break;
+            
         }
     }
 }
