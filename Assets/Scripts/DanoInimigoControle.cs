@@ -23,6 +23,7 @@ public class DanoInimigoControle : MonoBehaviour{
     
     [Header("Variaveis de fisica")]
     private float eixoX, eixoY; // eixos
+    private Rigidbody2D _rigidBody;
     
     [Header("Combate")]
     public bool attacking;
@@ -49,19 +50,26 @@ public class DanoInimigoControle : MonoBehaviour{
 
     [Header("Configuração de loot")]
     public GameObject[] loots;
+
+    private void Awake()
+    {
+        this.inimigoAnimator = GetComponent<Animator>();
+        this._rigidBody = GetComponent<Rigidbody2D>();
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     
     private void Start(){
         this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
         this.weaponController = FindObjectOfType(typeof(_WeaponController)) as _WeaponController;
+        this.txtDano.GetComponentInChildren<MeshRenderer>().sortingLayerName = "HUD";
+        
+        
         this.attacking = false;
         this.pontosVidaInimigoAtual = this.pontosVidaInimigoMax;
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.spriteRenderer.color = this.personagemCor[0];
         this.barrasVida.SetActive(false);// Quando o personagem entra na cena, a barra ainda nao é exibida
         this.barraVida.localScale = new Vector3(1, 1, 1); // Reseta a Barra de vida
-        this.txtDano.GetComponentInChildren<MeshRenderer>().sortingLayerName = "HUD";
-        this.inimigoAnimator = GetComponent<Animator>();
         this.inimigoAnimator.SetInteger("idAnimation", idAnimation); // inicia personagem na animação idle
         // knockBackPosition.localPosition = new Vector3(konckBackX, knockBackPosition.localPosition .y, knockBackPosition.localPosition.z);
 
@@ -235,6 +243,9 @@ public class DanoInimigoControle : MonoBehaviour{
         // Inimigo morreu
         this.pontosVidaInimigoAtual = 0;
         print("Inimigo morreu.");
+        // _rigidBody.bodyType = RigidbodyType2D.Static; // Remove colision with RigidBody
+        this.gameObject.tag = "Untagged";
+        
         this.inimigoAnimator.SetInteger("idAnimation", 3); // Muda identificador para 3 (Animação de morte)
         StartCoroutine("DieAndLoot");
     }

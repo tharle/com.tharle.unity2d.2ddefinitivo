@@ -9237,7 +9237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a31a89cc132e4dbe397420c751926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexPersonagem: 3
+  indexPersonagem: 7
   VidaAtual: 0
   VidaMax: 0
   indexArma: 6
