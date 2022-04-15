@@ -1,25 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
-
-    [Header("Paineis disponiveis")]
-    public GameObject panelMenu;
-    public GameObject panelItens;
-
     [Header("Variaveis para salvar status anterior")]
     private GameState _oldGameState;
 
     [Header("Objetos externos")]
     private _GameController _gameController;
 
+    [Header("Paineis disponiveis")]
+    public GameObject PanelMenu;
+    public GameObject PanelItens;
+
+    [Header("Primeiro Elemento de Cada painel")]
+    public Button FirstPanelMenuButton;
+    public Button FirstPanelItensButton;
+
     private void Start()
     {
         _gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
-        panelMenu.SetActive(false);
-        panelItens.SetActive(false);
+        PanelMenu.SetActive(false);
+        PanelItens.SetActive(false);
     }
 
     void Update(){
@@ -32,8 +36,16 @@ public class PauseMenuScript : MonoBehaviour
         
         _oldGameState = _gameController.CurrentGameState;
 
-        this.panelMenu.SetActive(_gameController.CurrentGameState == GameState.PAUSE_MENU); // Abre o menu principal
-        this.panelItens.SetActive(_gameController.CurrentGameState == GameState.PAUSE_ITENS); // Abre o menu de inventario
+    
+        this.PanelMenu.SetActive(_gameController.CurrentGameState == GameState.PAUSE_MENU); // Abre o menu principal
+        this.PanelItens.SetActive(_gameController.CurrentGameState == GameState.PAUSE_ITENS ); // Abre o inventario
+        SelectFirstButton();
+    }
+
+    private void SelectFirstButton()
+    {
+        if(_gameController.CurrentGameState == GameState.PAUSE_MENU ) FirstPanelMenuButton.Select();
+        if(_gameController.CurrentGameState == GameState.PAUSE_ITENS ) FirstPanelItensButton.Select();
     }
 
     public void OnClickCancelButton()

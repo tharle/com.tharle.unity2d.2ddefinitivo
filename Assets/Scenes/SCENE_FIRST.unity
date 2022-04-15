@@ -4272,7 +4272,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8396226, g: 0.7895372, b: 0.13861692, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12812,8 +12812,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b156b69dfbee24092e2a6abe4af7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelMenu: {fileID: 446885250}
-  panelItens: {fileID: 646006485}
+  PanelMenu: {fileID: 446885250}
+  PanelItens: {fileID: 646006485}
+  FirstPanelMenuButton: {fileID: 615396663}
+  FirstPanelItensButton: {fileID: 2045402594}
 --- !u!1 &1322807454
 GameObject:
   m_ObjectHideFlags: 0
@@ -15403,7 +15405,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8396226, g: 0.7895372, b: 0.13861692, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -19910,7 +19912,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8396226, g: 0.7895372, b: 0.13861692, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -20345,7 +20347,7 @@ GameObject:
   - component: {fileID: 2045402595}
   - component: {fileID: 2045402594}
   m_Layer: 6
-  m_Name: btnFecharPauseMenu
+  m_Name: btnFecharItensMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
