@@ -838,6 +838,46 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_Name
@@ -1134,6 +1174,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -2610,6 +2690,46 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_Name
@@ -2892,6 +3012,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -5445,6 +5605,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -8212,6 +8412,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -18236,6 +18476,46 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_Name
@@ -21688,6 +21968,46 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_Name
@@ -21951,6 +22271,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -23296,6 +23656,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_Mode
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1309358305}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectSlotMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _InventarioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736803, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}

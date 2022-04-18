@@ -9,6 +9,7 @@ public class _InventarioController : MonoBehaviour
 
     [Header("Controladores Externos")]
     private _DataBaseController _dataBaseController;
+    private _PlayerInfoController _playerInfoController;
 
     [Header("Referencias Objetos do Menu")]
     public Button[] Slots;
@@ -30,6 +31,7 @@ public class _InventarioController : MonoBehaviour
     void Start()
     {
         _dataBaseController = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
+        _playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         IsLoadAllSlots = true;
         IsLoadAllMisc = true;
         Itens = new Item[10];
@@ -89,5 +91,23 @@ public class _InventarioController : MonoBehaviour
         quantityStr = quantity < 10 ? "0":"";
         quantityStr += quantity.ToString();
         return quantityStr;
+    }
+
+    /// <summary>
+    /// Equipa a arma selecionada
+    /// </summary>
+    /// <param name="posSlot">Poisção em qual foi selecionado a arma</param>
+    public void SelectSlotMenu(int posSlot)
+    {
+        var item = Itens[posSlot];
+
+        if(item == null) return;
+
+        if(item is Weapon) EquipeWeapon(item as Weapon);
+    }
+
+    private void EquipeWeapon(Weapon weapon)
+    {
+        _playerInfoController.indexArma = weapon.index;
     }
 }
