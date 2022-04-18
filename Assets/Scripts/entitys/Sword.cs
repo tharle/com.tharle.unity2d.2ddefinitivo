@@ -6,7 +6,7 @@ public class Sword : Weapon {
     public const string RESOURCE_SPRINT_WEAPON="Weapons/W_Swords";
     
     // TODO Arrumar para perminir index
-    public Sword(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites){
+    public Sword(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite iconItemSprite) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites, iconItemSprite){
         TypeJobsAllowned = new TypeJob[]{TypeJob.KNIGHT, TypeJob.WARRIOR};
     }
 

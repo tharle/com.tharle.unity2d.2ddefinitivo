@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class Weapon : Item {
 
+    public const string RESOURCE_SPRINT_ICON="Icons/icons_weapons";
+
     /// <summary>
     /// <seealso cref="Index">Index</seealso> da arma.
     /// </summary>
@@ -72,7 +74,7 @@ public abstract class Weapon : Item {
     /// <returns name="TypeWeapon"> O tipo da arma</returns>
     public abstract TypeWeapon typeWeapon();
 
-    public Weapon(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites) : base(nameItem) 
+    public Weapon(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite iconItemSprite) : base(nameItem, iconItemSprite) 
     {
         this.index = index;
         this.typeDamage = typeDamage;

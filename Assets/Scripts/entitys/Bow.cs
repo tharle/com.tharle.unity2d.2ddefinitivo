@@ -9,7 +9,7 @@ public class Bow : Weapon {
 
     public Sprite ArrowSprite;
 
-    public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite ArrowSprite) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites) {
+    public Bow(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite iconItemSprite, Sprite ArrowSprite) : base(index, nameItem, typeDamage, minDamage, maxDamage, sprites, iconItemSprite) {
         this.ArrowSprite = ArrowSprite;
         this.LifeTimeProjetil = 2.5f;
         TypeJobsAllowned = new TypeJob[]{TypeJob.ELF};

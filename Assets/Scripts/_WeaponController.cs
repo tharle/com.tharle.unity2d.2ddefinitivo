@@ -78,7 +78,7 @@ public class _WeaponController : MonoBehaviour
             gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida arma selecionada com a personagem ja selecionada
             this.armaEquipada = _dataBase.BuscarArma(this.playerInfoController.indexArma);
             GameObject[] WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
-            print($"Carregou Arma : {this.armaEquipada.nameItem} ({this.armaEquipada.index})");
+            print($"Carregou Arma : {this.armaEquipada.NameItem} ({this.armaEquipada.index})");
 
             for (int i = 0; i <  this.armaEquipada.sprites.Length; i++)
             {

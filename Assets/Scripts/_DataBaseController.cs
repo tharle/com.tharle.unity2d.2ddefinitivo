@@ -14,26 +14,28 @@ public class _DataBaseController: MonoBehaviour
         this.InitJobs();
         
         //Load Weapons
-        this.InitAxes();
-        this.InitBows();
-        this.InitMaces();
-        this.InitStaffs();
-        this.InitSwords();
+        Sprite[] allIconsSprites = Resources.LoadAll<Sprite>(Weapon.RESOURCE_SPRINT_ICON);
+        this.InitAxes(allIconsSprites);
+        this.InitBows(allIconsSprites);
+        this.InitMaces(allIconsSprites);
+        this.InitStaffs(allIconsSprites);
+        this.InitSwords(allIconsSprites);
         // DontDestroyOnLoad(this.gameObject); // impede de ser destruido
     }
 
-    private void InitAxes(){
+    private void InitAxes(Sprite[] allIconsSprites){
         // Loading Axe
         // TODO corrigir isso para nao fazer carregar as sprites de inicio
         Sprite[] allSprites = Resources.LoadAll<Sprite>(Axe.RESOURCE_SPRINT_WEAPON);
         
         // Machado de madeira
-        string nameAxe = "Machado de madeira";
+        string nameAxe = "Machado de Madeira";
         TypeDamage typeDamage = TypeDamage.NORMAL;
         int minDamage = 4;
         int maxDamage = 16;
         Sprite[] spritesAxe = new Sprite[]{allSprites[0], allSprites[1], allSprites[2]};
-        this.weapons[Weapon.Index.AXE_WOOD] = new Axe(Weapon.Index.AXE_WOOD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        Sprite spriteIcon = allIconsSprites[10];
+        this.weapons[Weapon.Index.AXE_WOOD] = new Axe(Weapon.Index.AXE_WOOD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe, spriteIcon);
 
         // Machado de ouro
         nameAxe = "Machado Dourado";
@@ -41,7 +43,8 @@ public class _DataBaseController: MonoBehaviour
         minDamage = 22;
         maxDamage = 22;
         spritesAxe = new Sprite[]{allSprites[12], allSprites[13], allSprites[14]};
-        this.weapons[Weapon.Index.AXE_GOLD] = new Axe(Weapon.Index.AXE_GOLD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        spriteIcon = allIconsSprites[13];
+        this.weapons[Weapon.Index.AXE_GOLD] = new Axe(Weapon.Index.AXE_GOLD, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe, spriteIcon);
 
         // Machado demoniaco
         nameAxe = "Machado Demoniaco";
@@ -49,125 +52,137 @@ public class _DataBaseController: MonoBehaviour
         minDamage = 10;
         maxDamage = 35;
         spritesAxe = new Sprite[]{allSprites[6], allSprites[7], allSprites[8]};
-        this.weapons[Weapon.Index.AXE_DEMON] = new Axe(Weapon.Index.AXE_DEMON, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe);
+        spriteIcon = allIconsSprites[14];
+        this.weapons[Weapon.Index.AXE_DEMON] = new Axe(Weapon.Index.AXE_DEMON, nameAxe, typeDamage, minDamage, maxDamage, spritesAxe, spriteIcon);
     }
 
-    private void InitBows(){
+    private void InitBows(Sprite[] allIconsSprites){
         // Loading Bows
         // TODO corrigir isso para nao fazer carregar as sprites de inicio
         Sprite[] spriteBows = Resources.LoadAll<Sprite>(Bow.RESOURCE_SPRINT_WEAPON);
         
         // Arco de madeira
-        string nameBow = "Arco de madeira";
+        string nameBow = "Arco de Madeira";
         TypeDamage typeDamage = TypeDamage.NORMAL;
         int minDamage = 6;
         int maxDamage = 14;
         Sprite[] spriteArco = new Sprite[]{spriteBows[0], spriteBows[1], spriteBows[2]};
         Sprite arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow");
-        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(Weapon.Index.BOW_WOOD, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
+        Sprite spriteIcon = allIconsSprites[15];
+        this.weapons[Weapon.Index.BOW_WOOD] = new Bow(Weapon.Index.BOW_WOOD, nameBow, typeDamage, minDamage, maxDamage, spriteArco, spriteIcon, arrowSprite);
 
         // Arco de ouro
-        nameBow = "Arco de prata";
+        nameBow = "Arco de Prata";
         typeDamage = TypeDamage.HOLY;
         minDamage = 5;
         maxDamage = 40;
         spriteArco = new Sprite[]{spriteBows[3], spriteBows[4], spriteBows[5]};
         arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow_silver");
-        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(Weapon.Index.BOW_SILVER, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
+        spriteIcon = allIconsSprites[16];
+        this.weapons[Weapon.Index.BOW_SILVER] = new Bow(Weapon.Index.BOW_SILVER, nameBow, typeDamage, minDamage, maxDamage, spriteArco, spriteIcon, arrowSprite);
 
         // Arco de ouro
-        nameBow = "Arco de ouro";
+        nameBow = "Arco de Ouro";
         typeDamage = TypeDamage.NORMAL;
         minDamage = 25;
         maxDamage = 25;
         spriteArco = new Sprite[]{spriteBows[6], spriteBows[7], spriteBows[8]};
         arrowSprite = Resources.Load<Sprite>($"{Bow.RESOURCE_SPRINT_ARROW}/arrow_gold");
-        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(Weapon.Index.BOW_GOLD, nameBow, typeDamage, minDamage, maxDamage, spriteArco, arrowSprite);
+        spriteIcon = allIconsSprites[17];
+        this.weapons[Weapon.Index.BOW_GOLD] = new Bow(Weapon.Index.BOW_GOLD, nameBow, typeDamage, minDamage, maxDamage, spriteArco,spriteIcon, arrowSprite);
     }
 
     
-    private void InitMaces(){
-        // Loading Maças
+    private void InitMaces(Sprite[] allIconsSprites){
+        // Loading Macas
         // TODO corrigir isso para nao fazer carregar as sprites de inicio
         Sprite[] allSprites = Resources.LoadAll<Sprite>(Mace.RESOURCE_SPRINT_WEAPON);
         
         // Machado de madeira
-        string nameMace = "Maça de madeira";
+        string nameMace = "Maca de Madeira";
         TypeDamage typeDamage = TypeDamage.HOLY;
         int minDamage = 3;
         int maxDamage = 10;
         Sprite[] spritesMaces = new Sprite[]{allSprites[0], allSprites[1], allSprites[2]};
-        this.weapons[Weapon.Index.MACE_WOOD] = new Mace(Weapon.Index.MACE_WOOD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        Sprite spriteIcon = allIconsSprites[23];
+        this.weapons[Weapon.Index.MACE_WOOD] = new Mace(Weapon.Index.MACE_WOOD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces, spriteIcon);
 
-        // Maça dourada
-        nameMace = "Maça Dourado";
+        // Maca dourada
+        nameMace = "Maca Dourado";
         typeDamage = TypeDamage.HOLY;
         minDamage = 18;
         maxDamage = 18;
         spritesMaces = new Sprite[]{allSprites[9], allSprites[10], allSprites[11]};
-        this.weapons[Weapon.Index.MACE_GOLD] = new Mace(Weapon.Index.MACE_GOLD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        spriteIcon = allIconsSprites[26];
+        this.weapons[Weapon.Index.MACE_GOLD] = new Mace(Weapon.Index.MACE_GOLD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces, spriteIcon);
 
-        // Maça esmeralda
-        nameMace = "Maça esmeralda";
+        // Maca esmeralda
+        nameMace = "Maca Esmeralda";
         typeDamage = TypeDamage.HOLY;
         minDamage = 15;
         maxDamage = 40;
         spritesMaces = new Sprite[]{allSprites[12], allSprites[13], allSprites[14]};
-        this.weapons[Weapon.Index.MACE_ESMERALD] = new Mace(Weapon.Index.MACE_ESMERALD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces);
+        spriteIcon = allIconsSprites[27];
+        this.weapons[Weapon.Index.MACE_ESMERALD] = new Mace(Weapon.Index.MACE_ESMERALD, nameMace, typeDamage, minDamage, maxDamage, spritesMaces, spriteIcon);
     }
-    private void InitStaffs(){
+    private void InitStaffs(Sprite[] allIconsSprites){
         // Loading Cajados
         // TODO corrigir isso para nao fazer carregar as sprites de inicio
         Sprite[] allSprites = Resources.LoadAll<Sprite>(Staff.RESOURCE_SPRINT_WEAPON);
-        
+
         // Cajado de madeira
-        string nameStaff = "Cajado quartzo";
+        string nameStaff = "Cajado Quartzo";
         TypeDamage typeDamage = TypeDamage.ARCANE;
         int minDamage = 3;
         int maxDamage = 10;
         float lifeTimeProjetil = 1.8f;
         Sprite[] spritesStaffs = new Sprite[]{allSprites[0], allSprites[1], allSprites[2], allSprites[3]};
-        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(Weapon.Index.STAFF_ARCANE, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
+        Sprite spriteIcon = allIconsSprites[28];
+        this.weapons[Weapon.Index.STAFF_ARCANE] = new Staff(Weapon.Index.STAFF_ARCANE, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, spriteIcon, lifeTimeProjetil);
 
         // Cajado safira
-        nameStaff = "Cajado de safira";
+        nameStaff = "Cajado de Safira";
         typeDamage = TypeDamage.ICE;
         minDamage = 18;
         maxDamage = 18;
         lifeTimeProjetil = 1.4f;
         spritesStaffs = new Sprite[]{allSprites[8], allSprites[9], allSprites[10], allSprites[11]};
-        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(Weapon.Index.STAFF_SAFIRA, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
+        spriteIcon = allIconsSprites[30];
+        this.weapons[Weapon.Index.STAFF_SAFIRA] = new Staff(Weapon.Index.STAFF_SAFIRA, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, spriteIcon, lifeTimeProjetil);
 
         // Cajado rubi
-        nameStaff = "Cajado de rubi";
+        nameStaff = "Cajado de Rubi";
         typeDamage = TypeDamage.FIRE;
         minDamage = 15;
         maxDamage = 40;
         spritesStaffs = new Sprite[]{allSprites[12], allSprites[13], allSprites[14], allSprites[15]};
         lifeTimeProjetil = .8f;
-        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(Weapon.Index.STAFF_RUBY, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, lifeTimeProjetil);
+        spriteIcon = allIconsSprites[31];
+        this.weapons[Weapon.Index.STAFF_RUBY] = new Staff(Weapon.Index.STAFF_RUBY, nameStaff, typeDamage, minDamage, maxDamage, spritesStaffs, spriteIcon, lifeTimeProjetil);
     }
 
-    private void InitSwords(){
+    private void InitSwords(Sprite[] allIconsSprites){
         // Loading swords
         // TODO corrigir isso para nao fazer carregar as sprites de inicio
         Sprite[] spriteSwords = Resources.LoadAll<Sprite>(Sword.RESOURCE_SPRINT_WEAPON);
         
         // Espada de normal
-        string nameSword = "Espada de madeira";
+        string nameSword = "Espada de Madeira";
         TypeDamage typeDamage = TypeDamage.NORMAL;
         int minDamage = 1;
         int maxDamage = 6;
         Sprite[] spriteEspada = new Sprite[]{spriteSwords[0], spriteSwords[1], spriteSwords[2]};
-        this.weapons[Weapon.Index.SWORD_WOOD] = new Sword(Weapon.Index.SWORD_WOOD, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        Sprite spriteIcon = allIconsSprites[0];
+        this.weapons[Weapon.Index.SWORD_WOOD] = new Sword(Weapon.Index.SWORD_WOOD, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
 
-        // Espada de aço
-        nameSword = "Espada de aço";
+        // Espada de aco
+        nameSword = "Espada de Aco";
         typeDamage = TypeDamage.NORMAL;
         minDamage = 4;
         maxDamage = 12;
         spriteEspada = new Sprite[]{spriteSwords[6], spriteSwords[7], spriteSwords[8]};
-        this.weapons[Weapon.Index.SWORD_IRON] = new Sword(Weapon.Index.SWORD_IRON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        spriteIcon = allIconsSprites[2];
+        this.weapons[Weapon.Index.SWORD_IRON] = new Sword(Weapon.Index.SWORD_IRON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
 
         // Espada de 
         nameSword = "Espada de Gelo";
@@ -175,31 +190,35 @@ public class _DataBaseController: MonoBehaviour
         minDamage = 15;
         maxDamage = 27;
         spriteEspada = new Sprite[]{spriteSwords[12], spriteSwords[13], spriteSwords[14]};
-        this.weapons[Weapon.Index.SWORD_ICE] = new Sword(Weapon.Index.SWORD_ICE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        spriteIcon = allIconsSprites[4];
+        this.weapons[Weapon.Index.SWORD_ICE] = new Sword(Weapon.Index.SWORD_ICE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
         
         // Espadão
-        nameSword = "Espadão";
+        nameSword = "Espadaum";
         typeDamage = TypeDamage.NORMAL;
         minDamage = 5;
         maxDamage = 40;
         spriteEspada = new Sprite[]{spriteSwords[18], spriteSwords[19], spriteSwords[20]};
-        this.weapons[Weapon.Index.SWORD_BIG] = new Sword(Weapon.Index.SWORD_BIG, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        spriteIcon = allIconsSprites[6];
+        this.weapons[Weapon.Index.SWORD_BIG] = new Sword(Weapon.Index.SWORD_BIG, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
         
         // Espada de 
-        nameSword = "Espada de Demoniaca de fogo";
+        nameSword = "Espada de Demoniaca de Fogo";
         typeDamage = TypeDamage.FIRE;
         minDamage = 22;
         maxDamage = 25;
         spriteEspada = new Sprite[]{spriteSwords[24], spriteSwords[25], spriteSwords[26]};
-        this.weapons[Weapon.Index.SWORD_DEMON_FIRE] = new Sword(Weapon.Index.SWORD_DEMON_FIRE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        spriteIcon = allIconsSprites[8];
+        this.weapons[Weapon.Index.SWORD_DEMON_FIRE] = new Sword(Weapon.Index.SWORD_DEMON_FIRE, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
 
         // Espada de 
-        nameSword = "Espada da luz, Ascalon";
+        nameSword = "Espada da Luz, Ascalon";
         typeDamage = TypeDamage.HOLY;
         minDamage = 24;
         maxDamage = 24;
         spriteEspada = new Sprite[]{spriteSwords[27], spriteSwords[28], spriteSwords[29]};
-        this.weapons[Weapon.Index.SWORD_ASCALON] = new Sword(Weapon.Index.SWORD_ASCALON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada);
+        spriteIcon = allIconsSprites[9];
+        this.weapons[Weapon.Index.SWORD_ASCALON] = new Sword(Weapon.Index.SWORD_ASCALON, nameSword, typeDamage, minDamage, maxDamage, spriteEspada, spriteIcon);
         
     }
 

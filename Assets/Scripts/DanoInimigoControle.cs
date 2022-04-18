@@ -309,8 +309,8 @@ public class DanoInimigoControle : MonoBehaviour{
                 do{
                     GameObject tempLoot = Instantiate(loot, groundCheck.position, transform.localRotation);
                     tempLoot.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-10,10) * 10, 200)); // Animação de moeda saltando
-                    yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
                 } while(--quantidadeLoot > 0);
+                yield return new WaitForSeconds(.1f); // Da um tempinho de uma antes de começar a outra
             }
         }
 
