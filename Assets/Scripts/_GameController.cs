@@ -71,7 +71,7 @@ public class _GameController : MonoBehaviour{
         {
             print($"O personagem {personagem.Nome} não pode usar o item equipado {armaEquipada?.index}");
             print($"Mudando para {personagem.IndexWeaponStarter}");
-            playerInfoController.indexArma = personagem.IndexWeaponStarter;
+            playerInfoController.SelectWeapon(personagem.IndexWeaponStarter);
         }
     }
 

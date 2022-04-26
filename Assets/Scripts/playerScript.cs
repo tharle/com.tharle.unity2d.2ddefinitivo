@@ -213,7 +213,7 @@ public class PlayerScript : MonoBehaviour{
     /// </summary>
     /// <param name="indexArma"> <seealso cref="Weapon.Index"/> da arma</param>
     public void EquiparArma(Weapon.Index indexArma){
-        this.playerInfoController.indexArma = indexArma;
+        this.playerInfoController.SelectWeapon(indexArma);
     }
 
     // -----------------------------------------------

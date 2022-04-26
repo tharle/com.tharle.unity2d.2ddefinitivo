@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class _PlayerInfoController : MonoBehaviour
 {   
+    [Header("Scripts externos")]
+    private _InventarioController _inventarioController;
+
     [Header("Caracteristicas")]
     public Personagem.Index indexPersonagem;
 
@@ -13,18 +16,25 @@ public class _PlayerInfoController : MonoBehaviour
 
     [Header("Equipamentos")]
     public Weapon.Index indexArma; // arma equipada
+    private Weapon.Index _indexArmaSelected;
 
     [Header("Inventario e grana")]
     public int qntDinheiro; // Armazena a quantidade de dinheiro
 
     private void Start() 
     {
+        this._inventarioController = FindObjectOfType(typeof(_InventarioController)) as _InventarioController;
         // Load Personagem Selecionado na tela de titulo
         CarregarPersonagem();
             
     }
 
-     private void CarregarPersonagem()
+    private void Update()
+    {
+        if(indexArma != _indexArmaSelected) SelectWeapon(indexArma);
+    }
+
+    private void CarregarPersonagem()
     {
         string personagemIndexString = PlayerPrefs.GetString(PlayerPrefsConst.PERSONAGEM_INDEX);
         Personagem.Index indexPersonagemTemp;
@@ -36,6 +46,12 @@ public class _PlayerInfoController : MonoBehaviour
 
     }
 
+    public void SelectWeapon(Weapon.Index indexWeapon) 
+    {
+        indexArma = indexWeapon;
+        _indexArmaSelected = indexWeapon;
+        this._inventarioController.WeaponChanged();
+    }
 
 
     // -----------------------------------------------
