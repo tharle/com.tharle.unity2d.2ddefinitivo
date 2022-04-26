@@ -17,8 +17,27 @@ public abstract class Weapon : Item {
     /// <summary>
     /// Tipo de dano vinculado a arma, variando de:  normal, corte, perfuração até danos magicos como: fogo, gelo, escuridão etc.
     /// </summary>
-    public TypeDamage typeDamage {
+    public TypeDamage TypeDamage {
         get;
+    }
+
+    public string TypeDamageName {
+        get {
+            switch(TypeDamage) 
+            {
+                case TypeDamage.ARCANE:
+                    return "Arcano";
+                case TypeDamage.FIRE:
+                    return "Fogo";
+                case TypeDamage.ICE:
+                    return "Gelo";
+                case TypeDamage.HOLY:
+                    return "Sagrado";
+                case TypeDamage.NORMAL:
+                default:
+                    return "Normal";
+            }
+        }
     }
 
     /// <summary>
@@ -77,7 +96,7 @@ public abstract class Weapon : Item {
     public Weapon(Index index, string nameItem, TypeDamage typeDamage, int minDamage, int maxDamage, Sprite[] sprites, Sprite iconItemSprite) : base(nameItem, iconItemSprite) 
     {
         this.index = index;
-        this.typeDamage = typeDamage;
+        this.TypeDamage = typeDamage;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.sprites = sprites;

@@ -120,8 +120,8 @@ public class DanoInimigoControle : MonoBehaviour{
                     float danoTotalArma = Mathf.Round(Random.Range(armaEquipada.minDamage, armaEquipada.maxDamage));
                     print(" DANO DA ARMA RANDOM : "+ danoTotalArma);
 
-                    danoTotalArma *= this.multiplicadorDeDano.ContainsKey(armaEquipada.typeDamage) ? this.multiplicadorDeDano[armaEquipada.typeDamage] : 1;
-                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+armaEquipada.typeDamage+".");
+                    danoTotalArma *= this.multiplicadorDeDano.ContainsKey(armaEquipada.TypeDamage) ? this.multiplicadorDeDano[armaEquipada.TypeDamage] : 1;
+                    print("Inimigo tomou "+ danoTotalArma + " de dano do tipo "+armaEquipada.TypeDamage+".");
 
                     DanoVida(danoTotalArma);
                 }
