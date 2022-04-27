@@ -6,8 +6,8 @@ public class _WeaponController : MonoBehaviour
 {
 
     [Header("Infos atuais do Player")]
-    private _PlayerInfoController playerInfoController;
-    private _GameController gameController;
+    private _PlayerInfoController _playerInfoController;
+    private _GameController _gameController;
 
     private PlayerScript playerScript;
     private _DataBaseController _dataBase;
@@ -19,8 +19,8 @@ public class _WeaponController : MonoBehaviour
     public GameObject[] WeaponAnimationsBow;
     public GameObject[] WeaponAnimationsBowArrows;
     public GameObject[] WeaponAnimationsStaff;
-
     public Weapon armaEquipada;
+    public int ReloadFromSlotInventory;
 
     [Header("Projeteis")]
     public GameObject ArrowPrefab, MagicPrefab;
@@ -28,10 +28,11 @@ public class _WeaponController : MonoBehaviour
     
     void Start()
     {
-        this.gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
-        this.playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
+        this._gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+        this._playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         this.playerScript = FindObjectOfType(typeof(PlayerScript)) as PlayerScript;
         this._dataBase = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
+        this.ReloadFromSlotInventory = -1;
         ResetAllWeaponsAnimations();
     }
 
@@ -73,10 +74,11 @@ public class _WeaponController : MonoBehaviour
     /// </summary>
     private void CarregarArma() 
     {
-        if(this.armaEquipada == null || this.playerInfoController.indexArma != this.armaEquipada.index){
+        if(this.armaEquipada == null || this._playerInfoController.indexArma != this.armaEquipada.index || ReloadFromSlotInventory != -1){
             // TODO pode existir um caso que ele "recarregue" uma arma sem a necessidade
-            gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida arma selecionada com a personagem ja selecionada
-            this.armaEquipada = _dataBase.BuscarArma(this.playerInfoController.indexArma);
+            _gameController.ValidarPersonagemEArmaEquipada(); // verifica e valida arma selecionada com a personagem ja selecionada
+            CarregarArmaInventario();
+
             GameObject[] WeaponAnimations = GetWeaponAnimations(this.armaEquipada.typeWeapon());
             print($"Carregou Arma : {this.armaEquipada.NameItem} ({this.armaEquipada.index})");
 
@@ -84,6 +86,23 @@ public class _WeaponController : MonoBehaviour
             {
                 WeaponAnimations[i].GetComponent<SpriteRenderer>().sprite = this.armaEquipada.sprites[i];    
             }
+        }
+    }
+
+    private void CarregarArmaInventario()
+    {
+        if(ReloadFromSlotInventory != -1)
+        {
+            var item = _playerInfoController.GetItemSlot(ReloadFromSlotInventory);
+            if (item != null && item is Weapon) 
+            {
+                this.armaEquipada =  item as Weapon;
+                this._playerInfoController.indexArma = armaEquipada.index; // Fix para impedir de recarregar arma anterior
+            }
+            ReloadFromSlotInventory = -1;
+        } else 
+        {
+            this.armaEquipada = _dataBase.BuscarArma(this._playerInfoController.indexArma); // TODO change for search from inventory insted
         }
     }
 

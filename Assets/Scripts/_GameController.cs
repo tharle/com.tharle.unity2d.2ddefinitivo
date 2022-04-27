@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-using System;
 
 public enum GameState 
 {
@@ -10,7 +7,8 @@ public enum GameState
     PAUSE_MENU,
     PAUSE_ITENS,
     PAUSE_OPTIONS,
-    PAUSE_STATUS
+    PAUSE_STATUS,
+    PAUSE_WEAPON_INFO
     
 }
 
@@ -19,7 +17,6 @@ public class _GameController : MonoBehaviour{
     [Header("Infos atuais do Player")]
     private _PlayerInfoController playerInfoController;
     private _DataBaseController _dataBase;
-
 
     [Header("Configuração de animações")]
     public GameObject fxMorte; // Animação de morte
@@ -33,6 +30,7 @@ public class _GameController : MonoBehaviour{
     [Header("Pause/Menus")]
     private PauseMenuScript _pauseMenuScript;
     public GameState CurrentGameState;
+    public int PosSlotSelected;
 
     // Start is called before the first frame update
     void Start(){
@@ -52,6 +50,8 @@ public class _GameController : MonoBehaviour{
     void LateUpdate() {
         OnInputMenu(); // Verifica se a tecla de abrir menu foi acionada
     }
+
+   
 
     /// <summary>
     /// Valida se a arma seleciona faz sentido com o TypeJob do personagem:
@@ -104,6 +104,9 @@ public class _GameController : MonoBehaviour{
             case GameState.PAUSE_OPTIONS:
             case GameState.PAUSE_STATUS:
                 CurrentGameState = GameState.PAUSE_MENU;
+                break;
+            case GameState.PAUSE_WEAPON_INFO:
+                CurrentGameState = GameState.PAUSE_ITENS;
                 break;
             case GameState.PAUSE_MENU:
             default:

@@ -10,10 +10,12 @@ public class PauseMenuScript : MonoBehaviour
 
     [Header("Objetos externos")]
     private _GameController _gameController;
+    private WeaponMenuScript _weaponMenuScript;
 
     [Header("Paineis disponiveis")]
     public GameObject PanelMenu;
     public GameObject PanelItens;
+    public GameObject PanelWeaponInfo;
 
     [Header("Primeiro Elemento de Cada painel")]
     public Button FirstPanelMenuButton;
@@ -22,8 +24,10 @@ public class PauseMenuScript : MonoBehaviour
     private void Start()
     {
         _gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
+        _weaponMenuScript = FindObjectOfType(typeof(WeaponMenuScript)) as WeaponMenuScript;
         PanelMenu.SetActive(false);
         PanelItens.SetActive(false);
+        PanelWeaponInfo.SetActive(false);
     }
 
     void Update(){
@@ -39,6 +43,9 @@ public class PauseMenuScript : MonoBehaviour
     
         this.PanelMenu.SetActive(_gameController.CurrentGameState == GameState.PAUSE_MENU); // Abre o menu principal
         this.PanelItens.SetActive(_gameController.CurrentGameState == GameState.PAUSE_ITENS ); // Abre o inventario
+        this.PanelWeaponInfo.SetActive(_gameController.CurrentGameState == GameState.PAUSE_WEAPON_INFO); // Abre info adicionais da arma
+        if(_gameController.CurrentGameState == GameState.PAUSE_WEAPON_INFO) _weaponMenuScript.ForceReloadWeaponInfos = true; // Força o carregamento das informações da arma
+
         SelectFirstButton();
     }
 
@@ -66,5 +73,11 @@ public class PauseMenuScript : MonoBehaviour
     public void onClickMenuStatus()
     {
         _gameController.CurrentGameState = GameState.GAME_PLAY;
+    }
+
+     public void OnSelectSlotMenuWeapon(int posSlot)
+    {
+        _gameController.PosSlotSelected = posSlot;
+        _gameController.CurrentGameState = GameState.PAUSE_WEAPON_INFO;
     }
 }

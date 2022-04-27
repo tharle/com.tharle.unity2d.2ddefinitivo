@@ -67,6 +67,8 @@ public abstract class Weapon : Item {
     /// </summary>
     public float LifeTimeProjetil = 60f;
 
+    public int UpgradeQnty = 0;
+
     public float IdAnimationWeapon {
        get {
             switch (typeWeapon())

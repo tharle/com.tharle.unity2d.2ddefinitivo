@@ -3,55 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Linq;
 
 public class _InventarioController : MonoBehaviour
 {
 
     [Header("Controladores Externos")]
-    private _DataBaseController _dataBaseController;
     private _PlayerInfoController _playerInfoController;
+    private _GameController _gameController;
 
     [Header("Referencias Objetos do Menu")]
     public Button[] Slots;
     public TextMeshProUGUI TxtQntPotionHP;
     public TextMeshProUGUI TxtQntPotionMP;
     public TextMeshProUGUI TxtQntArrow;
-    
-    [Header("Infos dos objetos")]
-    public List<Item> Itens;
-    public int QntPotionHp;
-    public int QntPotionMP;
-    public int QntArrows;
 
     [Header("Precisa atualizar")]
     public bool IsLoadAllSlots;
-    public bool IsLoadAllMisc;
+
+    [Header("Infos dos objetos")]
+    private int _qntPotionHp;
+    private int _qntPotionMP;
+    private int _qntArrows;
 
     // Start is called before the first frame update
     void Start()
     {
-        _dataBaseController = FindObjectOfType(typeof(_DataBaseController)) as _DataBaseController;
+        _gameController = FindObjectOfType(typeof(_GameController)) as _GameController;
         _playerInfoController = FindObjectOfType(typeof(_PlayerInfoController)) as _PlayerInfoController;
         IsLoadAllSlots = true;
-        IsLoadAllMisc = true;
-        Itens = new List<Item>();
-        MockItens();
     }
 
     private void Update() 
     {
-        if(IsLoadAllMisc) LoadMisc();
+        LoadMisc();
         if(IsLoadAllSlots) LoadSlots();
-    }
-
-    private void MockItens() // TODO erase-me 
-    {   
-        Itens.Add(_dataBaseController.BuscarArma(Weapon.Index.AXE_WOOD));
-        Itens.Add(_dataBaseController.BuscarArma(Weapon.Index.BOW_WOOD));
-        Itens.Add(_dataBaseController.BuscarArma(Weapon.Index.MACE_WOOD));
-        Itens.Add(_dataBaseController.BuscarArma(Weapon.Index.STAFF_ARCANE));
-        Itens.Add(_dataBaseController.BuscarArma(Weapon.Index.SWORD_WOOD));
     }
 
     private void LoadSlots()
@@ -68,7 +53,7 @@ public class _InventarioController : MonoBehaviour
         var slot = Slots[posSlot];
         var imageSlot = slot.transform.GetChild(0).GetComponent<Image>();
         var txtSlot = slot.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        var item = Itens.Count() > posSlot ?  Itens.ElementAt(posSlot) : null;
+        var item = _playerInfoController.GetItensCount() > posSlot ?  _playerInfoController.GetItemSlot(posSlot) : null;
 
         if(item != null) 
         {
@@ -94,10 +79,23 @@ public class _InventarioController : MonoBehaviour
 
     private void LoadMisc()
     {
-        TxtQntPotionHP.SetText($"x{FormatQuantityText(QntPotionHp)}");
-        TxtQntPotionMP.SetText($"x{FormatQuantityText(QntPotionMP)}");
-        TxtQntArrow.SetText($"x{FormatQuantityText(QntArrows)}");
-        IsLoadAllMisc = false;
+        if(_qntPotionHp != _playerInfoController.QntPotionHp) 
+        {
+            _qntPotionHp = _playerInfoController.QntPotionHp;
+            TxtQntPotionHP.SetText($"x{FormatQuantityText(_qntPotionHp)}");
+        }
+
+        if(_qntPotionMP != _playerInfoController.QntPotionMP) 
+        {
+            _qntPotionMP = _playerInfoController.QntPotionMP;
+            TxtQntPotionMP.SetText($"x{FormatQuantityText(_qntPotionMP)}");
+        }
+
+        if(_qntArrows != _playerInfoController.QntArrows) 
+        {
+            _qntArrows = _playerInfoController.QntArrows;
+            TxtQntArrow.SetText($"x{FormatQuantityText(_qntArrows)}");
+        }
     }
 
     private string FormatQuantityText(int quantity)
@@ -108,22 +106,19 @@ public class _InventarioController : MonoBehaviour
         return quantityStr;
     }
 
-    /// <summary>
-    /// Equipa a arma selecionada
-    /// </summary>
-    /// <param name="posSlot">Poisção em qual foi selecionado a arma</param>
+    
     public void SelectSlotMenu(int posSlot)
-    {
-        var item = Itens[posSlot];
+    {}
+    //     var item = Itens[posSlot];
 
-        if(item == null) return;
+    //     if(item == null) return;
 
-        if(item is Weapon) _playerInfoController.SelectWeapon((item as Weapon).index);
+    //     if(item is Weapon) _playerInfoController.SelectWeapon((item as Weapon).index);
 
-        IsLoadAllSlots = true; // Force Load all slots
+    //     IsLoadAllSlots = true; // Force Load all slots
 
-        // TODO add validation for select weapon vs caracter selected
-    }
+    //     // TODO add validation for select weapon vs caracter selected
+    // }
 
     public void WeaponChanged()
     {

@@ -1143,7 +1143,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1152,12 +1152,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -1693,7 +1693,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1702,12 +1702,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -2510,12 +2510,12 @@ GameObject:
   - component: {fileID: 373918086}
   - component: {fileID: 373918085}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &373918084
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3225,12 +3225,12 @@ GameObject:
   - component: {fileID: 484671588}
   - component: {fileID: 484671587}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &484671586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3438,7 +3438,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3447,12 +3447,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -3839,7 +3839,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3848,12 +3848,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -6164,12 +6164,12 @@ GameObject:
   - component: {fileID: 601478331}
   - component: {fileID: 601478330}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &601478329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6628,7 +6628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &659989769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6663,7 +6663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.74509805}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7069,7 +7069,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -7078,12 +7078,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -7940,12 +7940,12 @@ GameObject:
   - component: {fileID: 873698422}
   - component: {fileID: 873698421}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873698420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8581,12 +8581,12 @@ GameObject:
   - component: {fileID: 949909566}
   - component: {fileID: 949909565}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &949909564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10461,7 +10461,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -10470,12 +10470,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -12828,6 +12828,7 @@ MonoBehaviour:
   txtGold: {fileID: 1739470893}
   fadeScript: {fileID: 0}
   CurrentGameState: 0
+  PosSlotSelected: 0
 --- !u!4 &1151417987
 Transform:
   m_ObjectHideFlags: 0
@@ -12861,6 +12862,9 @@ MonoBehaviour:
   VidaMax: 0
   indexArma: 6
   qntDinheiro: 0
+  QntPotionHp: 33
+  QntPotionMP: 21
+  QntArrows: 53
 --- !u!1 &1151826204
 GameObject:
   m_ObjectHideFlags: 0
@@ -16801,6 +16805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 446885250}
   PanelItens: {fileID: 646006485}
+  PanelWeaponInfo: {fileID: 659989768}
   FirstPanelMenuButton: {fileID: 615396663}
   FirstPanelItensButton: {fileID: 2045402594}
 --- !u!114 &1309358305
@@ -16829,11 +16834,7 @@ MonoBehaviour:
   TxtQntPotionHP: {fileID: 513620872}
   TxtQntPotionMP: {fileID: 1247703483}
   TxtQntArrow: {fileID: 1198136962}
-  QntPotionHp: 0
-  QntPotionMP: 0
-  QntArrows: 0
   IsLoadAllSlots: 0
-  IsLoadAllMisc: 0
 --- !u!114 &1309358306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16846,7 +16847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a38231905450b41a70100a90e17b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponIndex: 13
   TxtWeaponName: {fileID: 1064812660}
   TxtTypeDamage: {fileID: 1549123480}
   TxtDamageMin: {fileID: 2129049370}
@@ -16854,6 +16854,17 @@ MonoBehaviour:
   TxtDamageMinCompare: {fileID: 255607074}
   TxtDamageMaxCompare: {fileID: 193938565}
   ImgWeapon: {fileID: 295851758}
+  UpgradeBar:
+  - {fileID: 1426263464}
+  - {fileID: 949909563}
+  - {fileID: 601478328}
+  - {fileID: 484671585}
+  - {fileID: 873698419}
+  - {fileID: 1579712174}
+  - {fileID: 2018918487}
+  - {fileID: 2109054335}
+  - {fileID: 2041377674}
+  - {fileID: 373918083}
 --- !u!1 &1322807454
 GameObject:
   m_ObjectHideFlags: 0
@@ -19233,12 +19244,12 @@ GameObject:
   - component: {fileID: 1426263467}
   - component: {fileID: 1426263466}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1426263465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20461,12 +20472,12 @@ GameObject:
   - component: {fileID: 1579712177}
   - component: {fileID: 1579712176}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1579712175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21626,7 +21637,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -21635,12 +21646,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -25331,7 +25342,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25340,12 +25351,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -25635,7 +25646,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25644,12 +25655,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
@@ -25923,12 +25934,12 @@ GameObject:
   - component: {fileID: 2018918490}
   - component: {fileID: 2018918489}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018918488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26154,12 +26165,12 @@ GameObject:
   - component: {fileID: 2041377677}
   - component: {fileID: 2041377676}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2041377675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27012,12 +27023,12 @@ GameObject:
   - component: {fileID: 2109054338}
   - component: {fileID: 2109054337}
   m_Layer: 5
-  m_Name: ImgProgressWeaponInfoFill
+  m_Name: ImgProgressWeaponInfoFill7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2109054336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27733,7 +27744,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1309358305}
+      objectReference: {fileID: 1309358304}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -27742,12 +27753,12 @@ PrefabInstance:
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSlotMenu
+      value: OnSelectSlotMenuWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _InventarioController, Assembly-CSharp
+      value: PauseMenuScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5361495594010736801, guid: 8bfc6cb5d292b224d9fb151f85a2d08d,
         type: 3}
